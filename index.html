@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUNAIS DESIGN | 谷奈斯空间设计</title>
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   CCD 结构 1:1 复刻 — ft.css (vw 字体系统)
+   ═══════════════════════════════════════════ */
+html {
+  font-size: 0.8333333333vw;
+  color: #000;
+}
+@media screen and (max-width:1024px){ html{font-size:14px;} }
+.f_14{font-size:0.7291666667vw;}
+.f_16{font-size:0.8333333333vw;}
+.f_18{font-size:0.9375vw;}
+.f_20{font-size:1.0416666667vw;}
+.f_22{font-size:1.1458333333vw;}
+.f_24{font-size:1.25vw;}
+.f_26{font-size:1.3541666667vw;}
+.f_32{font-size:1.6666666667vw;}
+.f_34{font-size:1.7708333333vw;}
+.f_36{font-size:1.875vw;}
+.f_38{font-size:1.9791666667vw;}
+.f_40{font-size:2.0833333333vw;}
+.f_48{font-size:2.5vw;}
+.f_50{font-size:2.6041666667vw;}
+.f_56{font-size:2.9166666667vw;}
+.f_64{font-size:3.3333333333vw;}
+.f_76{font-size:3.9583333333vw;}
+.f_80{font-size:4.1666666667vw;}
+.f_96{font-size:5vw;}
+.f_100{font-size:5.2083333333vw;}
+.f_128{font-size:6.6666666667vw;}
+@media screen and (max-width:1024px){
+  .f_14{font-size:14px}.f_16{font-size:14px}.f_18{font-size:16px}.f_20{font-size:18px}.f_22{font-size:18px}.f_24{font-size:18px}.f_26{font-size:18px}
+  .f_32{font-size:20px}.f_34{font-size:20px}.f_36{font-size:20px}.f_38{font-size:22px}.f_40{font-size:22px}.f_48{font-size:24px}.f_50{font-size:25px}
+  .f_56{font-size:28px}.f_64{font-size:30px}.f_76{font-size:34px}.f_80{font-size:24px}.f_96{font-size:32px}.f_100{font-size:32px}.f_128{font-size:50px}
+}
+
+/* ═══════════════════════════════════════════
+   CCD 结构 2: common.css (基础样式)
+   ═══════════════════════════════════════════ */
+*{font-family:"PingFang SC","Calibri","opensans","GothicArial","Arial","Microsoft YaHei","San Francisco",'Hiragino Sans GB',"Helvetica Neue",Helvetica,sans-serif;}
+body{background:#F7F3EF url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp');background:url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp') repeat;}
+::-webkit-scrollbar{width:0}
+body,ul,li,p,a,*{margin:0;padding:0;list-style:none;color:#272727;}
+a{text-decoration:none;color:inherit;}
+*{outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);box-sizing:border-box;}
+img{vertical-align:middle;max-width:100%;}
+.Tinos,.Tinos>*{font-family:'Tinos';}
+video::-webkit-media-controls-download-button{display:none;}
+
+/* ═══════════════════════════════════════════
+   CCD 结构 3: header.css (导航 + 页脚)
+   ═══════════════════════════════════════════ */
+.no-click{cursor:auto!important;pointer-events:none;}
+.no-click:hover{text-decoration:none!important;}
+
+body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.275);transition-timing-function:cubic-bezier(.175,.885,.32,1.275);}
+
+.header{position:fixed;left:0;top:0;width:100%;z-index:100;transition:all 600ms;padding:3.125vw 2.1875vw 1.25vw 2.1875vw;color:#fff;mix-blend-mode:exclusion;pointer-events:none;}
+.header.open{mix-blend-mode:normal;}
+.header .box{position:relative;padding-bottom:1.25vw;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+.header .box .logo{cursor:pointer;mix-blend-mode:exclusion;position:relative;z-index:10;pointer-events:visible;}
+.header .box .logo img{width:5.4688vw;display:block;}
+
+.nav{position:fixed;left:0;top:0;width:100%;height:100%;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:rgba(254,252,250,.81);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:all ease .3s;padding:0 0 50px;}
+.navopen .nav{opacity:1;pointer-events:visible;}
+.nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;text-align:center;}
+.nav .links .item:not(:last-child){margin-bottom:.41667vw}
+.nav .links .item a{display:block;color:#000;letter-spacing:1px;font-family:'Tinos';cursor:pointer;padding-bottom:30px;letter-spacing:2.16px;}
+.nav .links .item .a1{line-height:1.66667vw;min-width:214px;}
+.nav .links .item .pList{display:none;}
+.nav .links .item .pList a{line-height:1.25vw;letter-spacing:.5px;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:auto;text-underline-offset:auto;text-underline-position:from-font;}
+.nav .links .item.on .a1{text-decoration:underline}
+.nav .lan{display:flex;flex-wrap:wrap;color:#000;height:20px;}
+.nav .lan a{display:flex;align-items:center;font-family:'Tinos';font-size:22px;font-style:normal;font-weight:400;line-height:0%;letter-spacing:2.4px;height:20px;}
+.nav .lan a p{font-family:'Tinos';font-size:22px;line-height:20px;height:20px;}
+.nav .lan a:not(:last-child)::after{content:'|';margin:0 12px;}
+.nav-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:82px 47px;position:absolute;left:0;bottom:0;width:100%;}
+.navbar-toggle{display:inline-block;padding:0 0;margin-left:20px;z-index:55;position:relative;mix-blend-mode:exclusion;cursor:pointer;pointer-events:visible;}
+.navbar-toggle span{display:block;width:24px;height:2px;background-color:#fff;margin:14px 0;transition:.4s;}
+.navopen .line-top{-webkit-transform:rotate(45deg) translate(4px,7px);transform:rotate(45deg) translate(4px,7px);}
+.navopen .line-bottom{-webkit-transform:rotate(-45deg) translate(4px,-7px);transform:rotate(-45deg) translate(4px,-7px);}
+.fixed_links{display:flex;flex-wrap:wrap;align-items:center;gap:42px;transition:.6s ease;}
+.fixed_links.on{opacity:0}
+.fixed_links .icon{width:20px;height:20px;}
+.fixed_links .icon svg{max-width:100%;max-height:100%;}
+.fixed_links .icon svg path{fill:#000;}
+.fixed_links .icon img{max-width:100%;max-height:100%;}
+
+/* Mobile header */
+.pheader{display:none;position:fixed;top:0;height:60px;width:100%;left:0;z-index:100;box-shadow:0 2px 3px 0 rgba(0,0,0,.1);}
+.pheader .menu{width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;background-color:#fff;}
+.pheader .menu .l{display:flex;align-items:center;}
+.pheader .menu .l a{margin-left:20px;display:flex;align-items:center;}
+.pheader .menu .l a img{height:30px;object-fit:contain;}
+.pheader .menu .l a p{margin-left:10px;font-size:14px;}
+.pheader .menu .navbox{margin-right:20px;transition:all 600ms;}
+.pheader .menu .navbox .line{width:30px;height:1px;background-color:#000;margin:8px 0;-webkit-transition:all .6s;transition:all .6s;}
+.pheader .menu .activeBox{transform:translateX(10px);}
+.pheader .menu .activeBox .line:nth-child(1){transform:rotate(45deg) translateY(12px);}
+.pheader .menu .activeBox .line:nth-child(2){transform:translateX(30px);opacity:0;}
+.pheader .menu .activeBox .line:nth-child(3){transform:rotate(-45deg) translateY(-12px);}
+.menuList{position:fixed;left:0;top:59px;width:100%;z-index:1001;background:#ececec;display:none;height:calc(100vh - 59px);}
+.menuList .lan{padding:1rem;display:flex;justify-content:flex-end;align-items:center;}
+.menuList .lan a{color:#646464;margin-left:10px;}
+.menuList .lan .active{font-weight:bolder;color:#000;}
+.menuList .item{padding:1rem;background:#ececec;border-bottom:1px solid rgba(0,0,0,.05);}
+.menuList .item a{color:#000;display:block;position:relative;font-family:"Tinos";}
+.menuList .item a img{position:absolute;right:0;width:20px;transition:all 600ms;top:5px;}
+.menuList .item .tb{position:relative;display:flex;justify-content:space-between;align-items:center;}
+.menuList .item .tb a{display:block;}
+.menuList .item .tb img{width:30px;position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:10;transition:all 600ms;}
+.menuList .item .tb .rotate{transform:translateY(-50%) rotate(90deg);}
+.menuList .item .types_top{display:none;}
+.menuList .item .types_top a{font-size:14px;margin-top:15px;}
+
+/* Footer — 完整复制 CCD */
+.foot{border-top:1px solid #272727;padding:73px 48px 57px;position:relative;}
+.foot .dom1{display:flex;justify-content:space-between;}
+.foot .dom1 .links{display:flex;flex-wrap:wrap;gap:2vw;}
+.foot .dom1 .links .a1{font-weight:700;font-family:'Tinos';}
+.foot .dom1 .links a{color:#272727;letter-spacing:1px;width:fit-content;font-family:'Tinos';text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;display:block;line-height:1.14;margin:0 auto;min-width:7.031vw;}
+.foot .dom1 .links a:not(:last-child){margin-bottom:10px;}
+.foot .dom1 .r .media{display:flex;}
+.foot .dom1 .r .media a:not(:last-child){margin-right:1.14583vw;}
+.foot .dom1 .r .media a img{width:1.04167vw;opacity:.5;transition:all 600ms;}
+.foot .dom1 .r .media a:hover img{opacity:1;}
+.foot .follow{font-size:14px;font-weight:700;font-family:'Tinos';width:100%;text-align:center;margin-bottom:10px;display:none;}
+.foot .sharelist{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:35px;}
+.foot .sharelist .ev{width:30px;height:30px;}
+.foot .sharelist .ev img{width:100%;}
+.foot .copyright{width:100%;margin-top:60px;text-align:right;}
+.foot .copyright a{text-decoration:underline;}
+
+.goTop{position:absolute;right:50px;bottom:284px;z-index:10;cursor:pointer;transition:all 600ms;opacity:0;transform:translateY(4.16667vw);}
+.goTop svg{width:38px;}
+.goTop.show{opacity:1;transform:translateY(0);}
+
+@media screen and (max-width:1024px){
+  .header{display:none;}
+  .pheader{display:flex;}
+  .goTop{right:5%;bottom:10%;}
+  .goTop svg{width:15px;}
+  .foot{padding:15px 5%;}
+  .foot .dom1{flex-direction:column;}
+  .foot .dom1 .links{display:none;}
+  .foot .dom1 .r .media{justify-content:center;}
+  .foot .dom1 .r .media a:not(:last-child){margin-right:11px;}
+  .foot .dom1 .r .media a img{width:20px;}
+  .foot .sharelist{gap:25px;justify-content:center;}
+  .foot .follow{display:block;margin-top:10px;letter-spacing:.5px;}
+  .foot .sharelist .ev{width:18.55px;height:18.55px;}
+  .foot .copyright{width:100%;margin-top:25px;font-size:10px;text-align:center;color:#949494;padding-bottom:15px;}
+  .foot .copyright a{font-size:9px;text-decoration:underline;display:flex;justify-content:center;color:#949494!important;margin-top:4px;}
+}
+
+/* ═══════════════════════════════════════════
+   CCD 结构 4: index.css (首页版块)
+   ═══════════════════════════════════════════ */
+img{max-width:100%;max-height:100%;object-fit:cover;}
+.common_bg{position:absolute;width:100%;height:100%;top:0;left:0;z-index:-1;}
+.item_hover{overflow:hidden;}
+.item_hover:hover img{transform:scale(1.05);}
+.item_hover img{transition:.6s ease;}
+
+@keyframes fadeInUp_{0%{opacity:0;-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);}to{opacity:1;-webkit-transform:none;transform:none;}}
+.fadeInUp_{animation-name:fadeInUp_;animation-duration:2s;}
+
+@keyframes moveDown{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(20px);opacity:0;}}
+
+.banner{position:relative;}
+.banner .down{position:absolute;left:50%;transform:translateX(-50%);bottom:3.4375vw;cursor:pointer;}
+.banner .down svg{width:22px;height:11px;display:block;animation:moveDown 2s infinite ease-in-out;}
+.banner .down svg:last-child{animation-delay:200ms;}
+.banner .down svg:not(:last-child){margin:0 0 5px;}
+.banner video{width:100%;height:100vh;display:block;object-fit:cover;}
+
+.section1{padding:9.583vw 0 10.416vw;}
+.section1 .title{text-align:center;margin:0 0 10.677vw;}
+.section1 .title .p1{font-style:normal;font-weight:400;line-height:190%;letter-spacing:0.333vw;}
+.section1 .title .more{width:14.47917vw;height:3.4375vw;display:flex;align-items:center;justify-content:center;color:#FFF;font-style:normal;font-weight:500;margin:1.19792vw auto 0;background:#272727;}
+.section1 .content{padding:0 1.5625vw 0 0;display:flex;align-items:flex-end;flex-direction:column;position:relative;}
+.section1 .content .position{position:absolute;left:3.22917vw;top:.83333vw;color:#000;font-style:normal;font-weight:400;line-height:190%;writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:5.76px;white-space:nowrap;padding-right:2vw;}
+.section1 .content>div{width:fit-content;display:flex;align-items:flex-end;flex-direction:column;}
+.section1 .content .big_img{width:85.46875vw;height:32.91667vw;position:relative;overflow:hidden;}
+.section1 .content .big_img img{width:100%;height:120%;max-height:unset;top:-14.58333vw;position:relative;}
+.section1 .content .flex1{width:100%;margin:1.25vw 0 3.645vw;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.55208vw;padding-left:4.531vw;}
+.section1 .content .flex1 .p1{color:#000;font-style:normal;font-weight:400;line-height:190%;text-decoration-line:underline;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;letter-spacing:0.187vw;}
+.section1 .content .flex1 .p2{width:39.583vw;color:#000;font-style:normal;font-weight:400;line-height:140%;margin:.52083vw 0 0 0;}
+.section1 .content .flex2{width:39.583vw;padding:0 1.97917vw 0 0;}
+.section1 .content .flex2 .p1{color:#272727;font-style:normal;font-weight:400;text-decoration-line:underline;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;letter-spacing:0.187vw;}
+.section1 .content .flex2 .dis{display:flex;flex-wrap:wrap;width:100%;gap:1.09375vw;margin-top:1.354vw;}
+.section1 .content .flex2 .dis .img{width:auto;height:3.0729vw;display:flex;align-items:center;}
+
+@keyframes yAnimate{0%{transform:translateY(20px);opacity:0;}100%{opacity:1;transform:translateY(0);}}
+
+.section2{padding:0 16.5625vw;position:relative;overflow:hidden;}
+.section2 .top{position:absolute;right:5.52083vw;bottom:7.60417vw;width:1.5625vw;height:fit-content;}
+.section2 .t{margin:0 0 0 1.04167vw;}
+.section2 .t .title{color:#272727;font-style:normal;font-weight:400;line-height:1.5;margin:0 0 2.083vw;letter-spacing:0.187vw;}
+.section2 .t .cut{height:8.4vw;}
+.section2 .t .cut .cut_list{display:none;}
+.section2 .t .cut .cut_list.on{display:block;animation:yAnimate .6s ease forwards;}
+.section2 .t .p1{color:#272727;font-style:normal;font-weight:700;margin:0 0 .20833vw;}
+.section2 .t .p2{width:31.25vw;color:#272727;font-style:normal;font-weight:500;line-height:1.25vw;}
+.section2 .content{margin:3.38542vw 0 0 0;position:relative;}
+.section2 .content .swiper-pagination{position:static;height:1px;background:#ADADAD;margin:1.71875vw 1.04167vw 0 1.04167vw;}
+.section2 .content .swiper-pagination .swiper-pagination-progressbar-fill{height:2px;background:#4F4F4F;top:-1px;}
+.section2 .content .swiper1{width:83.07292vw;margin:0;}
+.section2 .content .swiper1 .swiper-slide{cursor:pointer;}
+.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale{height:100%;}
+.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale:after{opacity:1;}
+.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale .text{opacity:1;}
+.section2 .content .swiper1 .swiper-slide .img{height:22.65625vw;display:flex;flex-direction:column;justify-content:flex-end;}
+.section2 .content .swiper1 .swiper-slide .img:hover .scale:after{opacity:1;}
+.section2 .content .swiper1 .swiper-slide .img:hover .scale .text{opacity:1;}
+.section2 .content .swiper1 .swiper-slide .img .scale{position:relative;height:90%;width:100%;transition:all 600ms;}
+.section2 .content .swiper1 .swiper-slide .img .scale:after{content:'';position:absolute;width:100%;height:100%;top:0;left:0;background:linear-gradient(0deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.25) 100%);z-index:1;opacity:0;transition:.6s ease;}
+.section2 .content .swiper1 .swiper-slide .img .scale .text{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;color:#FFF;font-style:normal;font-weight:700;line-height:1.5;opacity:0;transition:.6s ease;}
+.section2 .content .swiper1 .swiper-slide .img img{width:100%;height:100%;object-fit:cover;transition:all 600ms;}
+.section2 .content2{margin:8.15625vw auto 8.33333vw;width:31.25vw;color:#000;text-align:center;font-style:normal;font-weight:400;line-height:2;letter-spacing:0.125vw;}
+
+.section3{border-top:1px solid #272727;border-bottom:1px solid #272727;display:flex;justify-content:space-between;}
+.section3 .l{position:relative;flex:1;}
+.section3 .l .t1{width:27.21875vw;text-align:right;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+.section3 .l .t1 .p1{color:#000;text-align:right;font-style:normal;font-weight:400;line-height:112%;margin:0 0 2.343vw;letter-spacing:0.312vw;}
+.section3 .l .t1 .p2{color:#000;text-align:right;font-style:italic;font-weight:400;line-height:143%;letter-spacing:1.44px;}
+.section3 .l .t2{margin:3.54167vw 0 0 16.40625vw;color:#000;text-align:center;font-style:normal;font-weight:400;line-height:112%;letter-spacing:5.76px;width:27.29167vw;}
+.section3 .img{width:45.52083vw;height:56.14583vw;}
+.section3 .img img{width:100%;height:100%;}
+
+.section4{margin:160px auto;width:1176px;height:784px;}
+.section4 img{width:100%;height:100%;}
+
+.section5{display:flex;height:61.19792vw;}
+.section5 .l{width:50%;height:100%;padding:11.45833vw 0 0 0;text-align:center;position:relative;z-index:1;}
+.section5 .l .title{color:#3D532C;text-align:center;font-style:normal;font-weight:400;line-height:112%;}
+.section5 .l .img{width:17.08333vw;height:25.625vw;margin:2.65625vw auto 0;}
+.section5 .l .img img{width:100%;height:100%;}
+.section5 .img2{width:50%;height:100%;}
+.section5 .img2 img{width:100%;height:100%;}
+
+.section6{padding:8.33333vw 1.97917vw;position:relative;display:flex;gap:.9375vw;overflow:hidden;}
+.section6 .item1{width:29.53125vw;margin:17.34375vw 0 0 0;}
+.section6 .item1 .p1{color:#000;font-style:italic;letter-spacing:1.2px;margin:0 0 .9375vw 0;}
+.section6 .item1 .img{width:100%;height:19.79167vw;}
+.section6 .item1 .img img,.section6 .item1 .img video{width:100%;height:100%;}
+.section6 .big_img{width:35vw;height:45.10417vw;}
+.section6 .big_img img,.section6 .big_img video{width:100%;height:100%;}
+.section6 .r{margin:1.09375vw 0 0 0;}
+.section6 .r .title{margin:0 0 0 1.04167vw;letter-spacing:0.26vw;}
+.section6 .r .title p{color:#000;font-style:normal;font-weight:400;line-height:1.2;position:relative;}
+.section6 .r .title p:nth-child(2){left:0;text-align:right;}
+.section6 .r .img{margin:8.28125vw 0 0 0;width:29.53125vw;height:19.79167vw;}
+.section6 .r .img img,.section6 .r .img video{width:100%;height:100%;}
+.section6 .r .pick{color:#000;font-style:italic;line-height:48%;letter-spacing:1.2px;margin:.98958vw 0 0 0;}
+
+.section7{display:flex;height:61.19792vw;}
+.section7 .l{width:50%;height:100%;padding:11.09375vw 0 0 0;position:relative;z-index:2;}
+.section7 .l .img{width:12.65625vw;height:7.29167vw;margin:0 auto 21.97917vw;}
+.section7 .l .img img{width:100%;}
+.section7 .l .p1{width:27.48958vw;margin:auto;color:#EADFDA;text-align:center;font-style:normal;font-weight:400;line-height:112%;letter-spacing:0.114vw;}
+.section7 .img2{width:50%;height:100%;}
+.section7 .img2 img{width:100%;height:100%;}
+
+.section8{padding:7.91667vw 1.92708vw 5.46875vw 1.97917vw;position:relative;display:flex;overflow:hidden;}
+.section8 .title{position:absolute;top:18.85417vw;left:19.53125vw;color:#000;font-style:normal;font-weight:400;line-height:1.2;z-index:1;letter-spacing:0.666vw;}
+.section8 .title p{position:relative;}
+.section8 .title p:last-child{left:14.47917vw;top:1.25vw;}
+.section8 .p1{width:28.80208vw;color:#000;font-style:italic;font-weight:300;line-height:149%;position:absolute;top:35.98958vw;left:34.21875vw;}
+.section8 img{width:100%;height:100%;}
+.section8 .img1{width:30.10417vw;height:43.33333vw;margin:6.5625vw 4.47917vw 0 0;}
+.section8 .center .img2{width:16.04167vw;height:22.76042vw;margin:0 0 12.76042vw 12.03125vw;}
+.section8 .center .img3{width:26.45833vw;height:17.70833vw;}
+.section8 .r{margin:2.70833vw 0 0 11.875vw;position:relative;}
+.section8 .r .img4{width:21.5625vw;height:32.29167vw;}
+.section8 .r .img5{position:absolute;top:22.76042vw;left:-6.71875vw;z-index:2;}
+.section8 .r .img5 .pic{width:14.47917vw;height:19.21875vw;}
+.section8 .r .img5 .p2{color:#000;font-style:italic;width:15.9375vw;font-weight:300;line-height:149%;margin:.41667vw 0 0 0;}
+
+/* Loading */
+.loading{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:999;display:flex;align-items:center;justify-content:center;cursor:none;transition:.6s ease;}
+.loading.on{opacity:0;transition-delay:1.2s;cursor:unset;}
+.loading .fist{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:5s linear;}
+
+/* Custom cursor */
+.cursor{position:fixed;top:0;left:0;transform:translate(-50%,-50%);display:flex;align-items:center;pointer-events:none;gap:12px;z-index:999999;}
+.cursor .circle{width:18px;height:18px;background:#272727;border-radius:50%;}
+.cursor p{color:#272727;font-size:16px;font-style:normal;font-weight:700;line-height:normal;}
+
+/* Mobile responsive for index sections */
+@media screen and (max-width:1024px){
+  .banner{margin-top:60px;}
+  .banner video{height:auto;}
+  .section1{padding:50px 5%;}
+  .section1 .title{margin:0 0 50px;}
+  .section1 .title .more{width:170px;height:40px;font-size:13px;margin:15px auto 0;}
+  .section1 .content{padding:0;}
+  .section1 .content>div{align-items:unset;}
+  .section1 .content .position{display:none;}
+  .section1 .content .big_img{width:100%;height:auto;}
+  .section1 .content .big_img img{top:0;transform:none!important;}
+  .section1 .content .flex1{flex-direction:column;gap:0;padding:0;}
+  .section1 .content .flex1 .p1{margin:0 0 20px;}
+  .section1 .content .flex1 .p2{margin:0;width:100%;}
+  .section1 .content .flex2{flex-direction:column;align-items:unset;margin:22px 0 0 0;width:100%;}
+  .section1 .content .flex2 .p1{text-align:left;}
+  .section1 .content .flex2 .dis{width:100%;height:auto;gap:22px;margin-top:20px;}
+  .section1 .content .flex2 .dis .img{height:40px;}
+  .section2{padding:50px 5%;}
+  .section2 .t .cut{height:180px;}
+  .section2 .t .title{line-height:unset;margin:0 0 20px;}
+  .section2 .t .p1{margin:0 0 10px;}
+  .section2 .t .p2{line-height:1.5;width:100%;}
+  .section2 .content{margin:30px 0 0 0;}
+  .section2 .content .swiper1{width:100%;height:auto;}
+  .section2 .content .swiper1 .swiper-slide .img{height:400px;}
+  .section2 .content .swiper1 .swiper-slide .img .scale{height:100%;}
+  .section2 .content .swiper1 .swiper-slide .img .scale::after{opacity:1;}
+  .section2 .content .swiper1 .swiper-slide .img .scale .text{opacity:1;}
+  .section2 .content .swiper-pagination{margin:30px auto 0;}
+  .section2 .content2{width:100%;margin:50px auto 0;}
+  .section2 .top{right:50px;bottom:20px;width:15px;}
+  .section2 .top svg{width:100%;}
+  .section3{height:auto;flex-direction:column;}
+  .section3 .img{width:100%;height:auto;}
+  .section3 .l .t1{width:100%;text-align:left;position:static;transform:none;padding:5%;}
+  .section3 .l .t1 .p1,.section3 .l .t1 .p2{text-align:left;}
+  .section3 .l .t2{margin:25px 0 0 0;width:100%;text-align:left;}
+  .section4{width:90%;height:auto;margin:60px auto;}
+  .section5{flex-direction:column;height:auto;}
+  .section5 .l{width:100%;height:auto;padding:50px 5%;}
+  .section5 .l .img{width:40%;height:auto;margin:40px auto 0;}
+  .section5 .img2{width:100%;height:auto;}
+  .section6{padding:50px 5%;flex-direction:column;gap:15px;}
+  .section6 .item1{width:100%;margin:0;}
+  .section6 .item1 .p1{margin:0 0 15px;line-height:inherit;}
+  .section6 .item1 .img{height:auto;}
+  .section6 .big_img{width:100%;height:auto;}
+  .section6 .r{margin:20px 0 0 0;width:100%;}
+  .section6 .r .title{margin:0;}
+  .section6 .r .title p:nth-child(2){text-align:left;left:30px;}
+  .section6 .r .img{width:100%;height:auto;margin:25px 0 0 0;}
+  .section6 .r .pick{margin:15px 0 0 0;}
+  .section7{flex-direction:column;height:auto;}
+  .section7 .img2{width:100%;height:auto;}
+  .section7 .l{width:100%;height:400px;padding:50px 5%;}
+  .section7 .l .img{width:100px;height:auto;margin:0 auto 200px;}
+  .section7 .l .p1{width:100%;}
+  .section8{padding:70px 5%;flex-direction:column;}
+  .section8 .title{position:static;margin:0 0 30px;}
+  .section8 .p1{position:static;width:100%;left:0;top:0;}
+  .section8 .img1{width:100%;height:auto;margin:15px 0;}
+  .section8 .center .img2{margin:0 0 15px;width:100%;height:auto;}
+  .section8 .center .img3{width:100%;height:auto;}
+  .section8 .r{margin:15px 0 0 0;}
+  .section8 .r .img4{width:100%;height:auto;}
+  .section8 .r .img5{position:static;margin:15px 0 0 0;}
+  .section8 .r .img5 .pic{width:100%;height:auto;}
+  .section8 .r .img5 .p2{width:100%;margin:15px 0 0 0;}
+  .loading,.cursor{display:none;}
+  .home{overflow:hidden;}
+}
+
+/* ═══════════════════════════════════════════
+   Swiper CSS (轮播组件)
+   ═══════════════════════════════════════════ */
+.swiper{width:100%;height:100%;}
+.swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative;}
+
+/* ═══════════════════════════════════════════
+   GUNAIS 附加样式
+   ═══════════════════════════════════════════ */
+/* Logo 文字样式（替代 CCD Logo 图片） */
+.logo-text{font-family:'Tinos',serif;font-size:1.5vw;letter-spacing:6px;color:#fff;white-space:nowrap;mix-blend-mode:exclusion;}
+@media screen and (max-width:1024px){.logo-text{font-size:18px;letter-spacing:3px;color:#272727;mix-blend-mode:normal;}}
+
+/* 图片占位符 */
+.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#e0dbd5;color:#999;font-size:14px;letter-spacing:1px;}
+
+/* Section 7 深色背景 */
+.section7{background:#272727;}
+
+/* 移动端 section7 背景 */
+@media screen and (max-width:1024px){
+  .section7 .l .p1{color:#EADFDA;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     Loading Screen (CCD 结构)
+     ═══════════════════════════════════════════ -->
+<div class="loading on" id="loading">
+  <div class="fist">
+    <p class="f_128 Tinos" style="color:#272727;">GUNAIS</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Custom Cursor (CCD 结构 — 仅桌面端)
+     ═══════════════════════════════════════════ -->
+<div class="cursor" id="cursor">
+  <div class="circle"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Header — 完整 CCD 导航结构
+     ═══════════════════════════════════════════ -->
+<div class="header" id="header">
+  <div class="box">
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <!-- ★ 替换为 GUNAIS Logo 图片: <img src="logo.png" alt="GUNAIS"> -->
+      <span class="logo-text">GUNAIS</span>
+    </div>
+    <div class="fixed_links">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+      </div>
+    </div>
+    <div class="navbar-toggle" id="navToggle">
+      <span class="line-top"></span>
+      <span class="line-bottom"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Header -->
+<div class="pheader">
+  <div class="menu">
+    <div class="l">
+      <a href="#">
+        <!-- ★ 移动端 Logo: <img src="logo.png"> -->
+        <p class="f_24 Tinos" style="font-weight:700;">GUNAIS</p>
+      </a>
+    </div>
+    <div class="navbox" id="mNavToggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Full-screen Nav (CCD 结构) -->
+<div class="nav" id="fullNav">
+  <div class="links">
+    <div class="item"><a class="a1 f_64 Tinos" href="#">HOME</a></div>
+    <div class="item"><a class="a1 f_64 Tinos" href="#">ABOUT</a></div>
+    <div class="item"><a class="a1 f_64 Tinos" href="#">PORTFOLIO</a></div>
+    <div class="item"><a class="a1 f_64 Tinos" href="#">CAREER</a></div>
+    <div class="item"><a class="a1 f_64 Tinos" href="#">CONNECT</a></div>
+    <div class="item"><a class="a1 f_64 Tinos" href="#">NEWS</a></div>
+  </div>
+  <div class="nav-bottom">
+    <div class="lan">
+      <a href="#"><p>EN</p></a>
+      <a href="#"><p>中文</p></a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu List -->
+<div class="menuList" id="menuList">
+  <div class="lan">
+    <a href="#" class="active">EN</a>
+    <a href="#">中文</a>
+  </div>
+  <div class="item"><a href="#">HOME</a></div>
+  <div class="item"><a href="#">ABOUT</a></div>
+  <div class="item"><a href="#">PORTFOLIO</a></div>
+  <div class="item"><a href="#">CAREER</a></div>
+  <div class="item"><a href="#">CONNECT</a></div>
+  <div class="item"><a href="#">NEWS</a></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Main Content — 完整 CCD 首页 8 个版块
+     ═══════════════════════════════════════════ -->
+<div class="home">
+
+  <!-- ═══ Section: Banner (CCD 全屏视频) ═══ -->
+  <div class="banner">
+    <!-- ★★★ 替换视频: 把视频文件放入同目录，取消注释下方 <video> 标签 ★★★ -->
+    <!--
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="hero-video.mp4" type="video/mp4" />
+    </video>
+    -->
+    <div class="img-placeholder" style="height:100vh;background:#d5cfc6;">HERO VIDEO<br>← 替换为背景视频</div>
+
+    <div class="down" onclick="document.querySelector('.section1').scrollIntoView({behavior:'smooth'})">
+      <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
+      <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <!-- ═══ Section 1: Our Story + Sub-brands (CCD) ═══ -->
+  <div class="section1">
+    <div class="title">
+      <p class="p1 f_48 Tinos" style="letter-spacing:0.333vw;">
+        It started from a sketch,<br>
+        then grew into a space that breathes.
+      </p>
+      <div class="more f_22">OUR STORY</div>
+    </div>
+
+    <div class="content">
+      <div class="position f_16">GUNAIS DESIGN · EST. 2024 · SHANGHAI</div>
+
+      <div>
+        <!-- 大图 -->
+        <div class="big_img item_hover">
+          <!-- ★ 替换为实景大图 -->
+          <div class="img-placeholder">OUR STORY 大图 ← 替换</div>
+        </div>
+
+        <!-- Flex 1: Our Story 文字 + 副文字 -->
+        <div class="flex1">
+          <p class="p1 f_32 Tinos">OUR STORY 我们的故事</p>
+          <p class="p2 f_20">
+            谷奈斯空间设计（GUNAIS DESIGN）创立于2024年，扎根上海。创始人均有15年以上大型建筑设计企业深耕经验，深谙商业综合体、办公楼、酒店、展览展示等多业态空间设计。我们以理性美学为骨架，以人文体验为血肉，追求精细化设计与品牌价值的深度融合。
+          </p>
+        </div>
+
+        <!-- Flex 2: Sub-brands / 核心能力 -->
+        <div class="flex2">
+          <p class="p1 f_24 Tinos">Core Capabilities 核心能力</p>
+          <div class="dis">
+            <!-- ★ 替换为实际能力Logo图片 -->
+            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 1</div></div>
+            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 2</div></div>
+            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 3</div></div>
+            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 4</div></div>
+            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 5</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Section 2: Services 轮播 (CCD Swiper 结构) ═══ -->
+  <div class="section2">
+    <div class="t">
+      <p class="title f_50 Tinos">SERVICES</p>
+      <div class="cut">
+        <div class="cut_list on">
+          <p class="p1 f_22 Tinos">WHAT WE DO</p>
+          <p class="p2 f_20">空间设计 · 施工图深化 · 设计管理 · 品牌咨询 · 艺术顾问 · FF&E 机电照明 标识设计</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="swiper1 swiper">
+        <div class="swiper-wrapper">
+          <!-- ★ 替换为实际项目图片 -->
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 1</div><div class="text f_40 Tinos">PROJECT ONE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 2</div><div class="text f_40 Tinos">PROJECT TWO</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 3</div><div class="text f_40 Tinos">PROJECT THREE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 4</div><div class="text f_40 Tinos">PROJECT FOUR</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 5</div><div class="text f_40 Tinos">PROJECT FIVE</div></div></div></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="content2 f_22 Tinos">
+      EVERY CORNER, A CANVAS.<br>
+      EVERY MOMENT, A MASTERPIECE.
+    </div>
+  </div>
+
+  <!-- ═══ Section 3: 哲学 + 大图 (CCD 左文右图结构) ═══ -->
+  <div class="section3">
+    <div class="l">
+      <div class="t1">
+        <p class="p1 f_64 Tinos" style="letter-spacing:0.312vw;">EVERY<br>CORNER,<br>A CANVAS.</p>
+        <p class="p2 f_24 Tinos">Living Art</p>
+      </div>
+      <p class="t2 f_16">理性 · 克制 · 融合 · 体验</p>
+    </div>
+    <div class="img item_hover">
+      <!-- ★ 替换为实景大图 -->
+      <div class="img-placeholder" style="width:45.52083vw;height:56.14583vw;">Section 3 大图 ← 替换</div>
+    </div>
+  </div>
+
+  <!-- ═══ Section 4: 全宽图片 (CCD 居中宽图) ═══ -->
+  <div class="section4 item_hover">
+    <!-- ★ 替换为全宽展示图片 -->
+    <div class="img-placeholder" style="width:1176px;height:784px;margin:160px auto;">Section 4 全宽图 ← 替换</div>
+  </div>
+
+  <!-- ═══ Section 5: 左文右图 (CCD 绿色主题) ═══ -->
+  <div class="section5">
+    <div class="l">
+      <p class="title f_56 Tinos" style="color:#3D532C;">FINE<br>DESIGN</p>
+      <div class="img item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:17.08333vw;height:25.625vw;">Section 5 小图 ← 替换</div>
+      </div>
+    </div>
+    <div class="img2 item_hover">
+      <!-- ★ 替换为实景图片 -->
+      <div class="img-placeholder" style="width:50%;height:61.19792vw;">Section 5 大图 ← 替换</div>
+    </div>
+  </div>
+
+  <!-- ═══ Section 6: 三列不规则图片 (CCD 编辑式排版) ═══ -->
+  <div class="section6">
+    <div class="item1">
+      <p class="p1 f_32 Tinos">Studio Life</p>
+      <div class="img item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:29.53125vw;height:19.79167vw;">Section 6 图 1 ← 替换</div>
+      </div>
+    </div>
+    <div class="big_img item_hover">
+      <!-- ★ 替换为实景图片 -->
+      <div class="img-placeholder" style="width:35vw;height:45.10417vw;">Section 6 图 2 ← 替换</div>
+    </div>
+    <div class="r">
+      <div class="title">
+        <p class="f_64 Tinos">ART</p>
+        <p class="f_64 Tinos">& DESIGN</p>
+      </div>
+      <div class="img item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:29.53125vw;height:19.79167vw;">Section 6 图 3 ← 替换</div>
+      </div>
+      <p class="pick f_32 Tinos">Every detail matters.</p>
+    </div>
+  </div>
+
+  <!-- ═══ Section 7: 深色背景 + Logo + 哲学 (CCD 暗色版块) ═══ -->
+  <div class="section7">
+    <div class="l">
+      <div class="img">
+        <!-- ★ 替换为 Logo 图片 -->
+        <div class="img-placeholder" style="width:12.65625vw;height:7.29167vw;">LOGO</div>
+      </div>
+      <p class="p1 f_64 Tinos" style="color:#EADFDA;letter-spacing:0.114vw;">SPACE IS<br>EXPERIENCE.</p>
+    </div>
+    <div class="img2 item_hover">
+      <!-- ★ 替换为实景图片 -->
+      <div class="img-placeholder" style="width:50%;height:61.19792vw;background:#3a3a3a;">Section 7 大图 ← 替换</div>
+    </div>
+  </div>
+
+  <!-- ═══ Section 8: 多图拼贴 + 文字 (CCD 画廊式排版) ═══ -->
+  <div class="section8">
+    <div class="title f_76 Tinos">
+      <p>CRAFTING</p>
+      <p>SPACES</p>
+    </div>
+    <p class="p1 f_22 Tinos">
+      We believe that great design is born from<br>
+      the dialogue between space and human emotion.
+    </p>
+
+    <div class="img1 item_hover">
+      <!-- ★ 替换为实景图片 -->
+      <div class="img-placeholder" style="width:30.10417vw;height:43.33333vw;">Section 8 图 1 ← 替换</div>
+    </div>
+
+    <div class="center">
+      <div class="img2 item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:16.04167vw;height:22.76042vw;">Section 8 图 2 ← 替换</div>
+      </div>
+      <div class="img3 item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:26.45833vw;height:17.70833vw;">Section 8 图 3 ← 替换</div>
+      </div>
+    </div>
+
+    <div class="r">
+      <div class="img4 item_hover">
+        <!-- ★ 替换为实景图片 -->
+        <div class="img-placeholder" style="width:21.5625vw;height:32.29167vw;">Section 8 图 4 ← 替换</div>
+      </div>
+      <div class="img5">
+        <div class="pic item_hover">
+          <!-- ★ 替换为实景图片 -->
+          <div class="img-placeholder" style="width:14.47917vw;height:19.21875vw;">Section 8 图 5 ← 替换</div>
+        </div>
+        <p class="p2 f_18 Tinos">Where light meets structure,<br>art is born.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.home -->
+
+<!-- ═══════════════════════════════════════════
+     Footer — 完整 CCD 页脚结构
+     ═══════════════════════════════════════════ -->
+<div class="foot">
+  <div class="dom1">
+    <div class="links">
+      <a href="#" class="a1 f_18">HOME</a>
+      <a href="#" class="f_18">ABOUT</a>
+      <a href="#" class="f_18">PORTFOLIO</a>
+      <a href="#" class="f_18">CAREER</a>
+      <a href="#" class="f_18">CONNECT</a>
+      <a href="#" class="f_18">NEWS</a>
+    </div>
+    <div class="r">
+      <div class="sharelist">
+        <a href="#" class="ev">
+          <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#272727" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" class="ev">
+          <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#272727" d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+      </div>
+      <div class="media">
+        <a href="#">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#272727" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#272727" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright f_16">
+    <a href="#">eric@gunais.com</a><br>
+    © 2024 GUNAIS DESIGN. All rights reserved.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Go Top (CCD 结构)
+     ═══════════════════════════════════════════ -->
+<div class="goTop" id="goTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 38 38" fill="none"><path d="M19 30L19 8M19 8L10 17M19 8L28 17" stroke="#272727" stroke-width="1.5"/></svg>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Scripts
+     ═══════════════════════════════════════════ -->
+<!-- Lenis 平滑滚动 (CCD 使用) -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- Swiper 轮播 (CCD Section 2 使用) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- GSAP (CCD 动画引擎) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+// ═══════════════════════════════════════════
+// 1. Loading Screen (CCD 结构)
+// ═══════════════════════════════════════════
+window.addEventListener('load', () => {
+  document.getElementById('loading').classList.add('on');
+});
+
+// ═══════════════════════════════════════════
+// 2. Lenis Smooth Scroll (CCD 使用)
+// ═══════════════════════════════════════════
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+// Lenis + ScrollTrigger 同步
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+gsap.ticker.lagSmoothing(0);
+
+// ═══════════════════════════════════════════
+// 3. Custom Cursor (CCD 结构)
+// ═══════════════════════════════════════════
+const cursor = document.getElementById('cursor');
+if (window.innerWidth > 1024 && cursor) {
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+}
+
+// ═══════════════════════════════════════════
+// 4. Navigation Toggle (CCD 结构)
+// ═══════════════════════════════════════════
+const header = document.getElementById('header');
+const navToggle = document.getElementById('navToggle');
+const fullNav = document.getElementById('fullNav');
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('navopen');
+    header.classList.toggle('open');
+    fullNav.style.pointerEvents = document.body.classList.contains('navopen') ? 'visible' : 'none';
+  });
+}
+
+// Mobile nav
+const mNavToggle = document.getElementById('mNavToggle');
+const menuList = document.getElementById('menuList');
+if (mNavToggle) {
+  mNavToggle.addEventListener('click', () => {
+    mNavToggle.classList.toggle('activeBox');
+    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+  });
+}
+
+// ═══════════════════════════════════════════
+// 5. Swiper (CCD Section 2 Services 轮播)
+// ═══════════════════════════════════════════
+new Swiper('.swiper1', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  centeredSlides: true,
+  loop: true,
+  speed: 800,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'progressbar',
+  },
+});
+
+// ═══════════════════════════════════════════
+// 6. GSAP Scroll Animations (CCD 使用 GSAP + ScrollTrigger)
+// ═══════════════════════════════════════════
+gsap.registerPlugin(ScrollTrigger);
+
+// Section 1 动画
+gsap.from('.section1 .title', {
+  scrollTrigger: { trigger: '.section1', start: 'top 80%' },
+  opacity: 0, y: 80, duration: 1.2
+});
+gsap.from('.section1 .big_img', {
+  scrollTrigger: { trigger: '.section1 .big_img', start: 'top 80%' },
+  opacity: 0, y: 60, duration: 1
+});
+gsap.from('.section1 .flex1', {
+  scrollTrigger: { trigger: '.section1 .flex1', start: 'top 80%' },
+  opacity: 0, y: 40, duration: 1
+});
+gsap.from('.section1 .flex2', {
+  scrollTrigger: { trigger: '.section1 .flex2', start: 'top 80%' },
+  opacity: 0, y: 40, duration: 1
+});
+
+// Section 2 动画
+gsap.from('.section2 .t', {
+  scrollTrigger: { trigger: '.section2', start: 'top 80%' },
+  opacity: 0, y: 60, duration: 1
+});
+
+// Section 3 动画
+gsap.from('.section3 .t1', {
+  scrollTrigger: { trigger: '.section3', start: 'top 60%' },
+  opacity: 0, x: -60, duration: 1.2
+});
+gsap.from('.section3 .img', {
+  scrollTrigger: { trigger: '.section3', start: 'top 60%' },
+  opacity: 0, scale: 0.95, duration: 1.2
+});
+
+// Section 4 动画
+gsap.from('.section4', {
+  scrollTrigger: { trigger: '.section4', start: 'top 80%' },
+  opacity: 0, y: 60, duration: 1
+});
+
+// Section 5 动画
+gsap.from('.section5 .l', {
+  scrollTrigger: { trigger: '.section5', start: 'top 60%' },
+  opacity: 0, x: -60, duration: 1
+});
+gsap.from('.section5 .img2', {
+  scrollTrigger: { trigger: '.section5', start: 'top 60%' },
+  opacity: 0, scale: 0.95, duration: 1.2
+});
+
+// Section 6 动画
+gsap.from('.section6 .item1', {
+  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
+  opacity: 0, y: 60, duration: 1
+});
+gsap.from('.section6 .big_img', {
+  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
+  opacity: 0, y: 60, duration: 1.2, delay: 0.2
+});
+gsap.from('.section6 .r', {
+  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
+  opacity: 0, y: 60, duration: 1, delay: 0.4
+});
+
+// Section 7 动画
+gsap.from('.section7 .l .p1', {
+  scrollTrigger: { trigger: '.section7', start: 'top 60%' },
+  opacity: 0, y: 60, duration: 1
+});
+gsap.from('.section7 .img2', {
+  scrollTrigger: { trigger: '.section7', start: 'top 60%' },
+  opacity: 0, scale: 0.95, duration: 1.2
+});
+
+// Section 8 动画
+gsap.from('.section8 .title', {
+  scrollTrigger: { trigger: '.section8', start: 'top 70%' },
+  opacity: 0, y: 60, duration: 1
+});
+gsap.from('.section8 .img1', {
+  scrollTrigger: { trigger: '.section8', start: 'top 60%' },
+  opacity: 0, y: 40, duration: 1, delay: 0.2
+});
+
+// ═══════════════════════════════════════════
+// 7. Video pause on scroll (CCD 行为)
+// ═══════════════════════════════════════════
+const bannerVideo = document.querySelector('.banner video');
+if (bannerVideo) {
+  ScrollTrigger.create({
+    trigger: '.banner',
+    start: 'top top',
+    end: 'bottom top',
+    onLeave: () => bannerVideo.pause(),
+    onEnter: () => bannerVideo.play(),
+  });
+}
+
+// ═══════════════════════════════════════════
+// 8. GoTop Button (CCD 结构)
+// ═══════════════════════════════════════════
+const goTop = document.getElementById('goTop');
+if (goTop) {
+  window.addEventListener('scroll', () => {
+    goTop.classList.toggle('show', window.scrollY > window.innerHeight);
+  });
+}
+
+// ═══════════════════════════════════════════
+// 9. Banner scroll-down bounce (CCD 结构)
+// ═══════════════════════════════════════════
+const bannerDown = document.querySelector('.banner .down');
+if (bannerDown) {
+  ScrollTrigger.create({
+    trigger: '.banner',
+    start: 'top top',
+    end: '+=100',
+    onLeave: () => { bannerDown.style.opacity = '0'; },
+    onEnterBack: () => { bannerDown.style.opacity = '1'; },
+  });
+}
+</script>
+
+</body>
+</html>
