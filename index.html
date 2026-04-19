@@ -66,11 +66,11 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
 .header{position:fixed;left:0;top:0;width:100%;z-index:100;transition:all 600ms;padding:3.125vw 2.1875vw 1.25vw 2.1875vw;color:#fff;mix-blend-mode:exclusion;pointer-events:none;}
 .header.open{mix-blend-mode:normal;}
 .header .box{position:relative;padding-bottom:1.25vw;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
-.header .box .logo{cursor:pointer;mix-blend-mode:exclusion;position:relative;z-index:10;pointer-events:visible;}
+.header .box .logo{cursor:pointer;mix-blend-mode:exclusion;position:relative;z-index:10;pointer-events:auto;}
 .header .box .logo img{width:5.4688vw;display:block;}
 
 .nav{position:fixed;left:0;top:0;width:100%;height:100%;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:rgba(254,252,250,.81);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:all ease .3s;padding:0 0 50px;}
-.navopen .nav{opacity:1;pointer-events:visible;}
+.navopen .nav{opacity:1;pointer-events:auto;}
 .nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;text-align:center;}
 .nav .links .item:not(:last-child){margin-bottom:.41667vw}
 .nav .links .item a{display:block;color:#000;letter-spacing:1px;font-family:'Tinos';cursor:pointer;padding-bottom:30px;letter-spacing:2.16px;}
@@ -83,11 +83,11 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
 .nav .lan a p{font-family:'Tinos';font-size:22px;line-height:20px;height:20px;}
 .nav .lan a:not(:last-child)::after{content:'|';margin:0 12px;}
 .nav-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:82px 47px;position:absolute;left:0;bottom:0;width:100%;}
-.navbar-toggle{display:inline-block;padding:0 0;margin-left:20px;z-index:55;position:relative;mix-blend-mode:exclusion;cursor:pointer;pointer-events:visible;}
+.navbar-toggle{display:inline-block;padding:0 0;margin-left:20px;z-index:55;position:relative;mix-blend-mode:exclusion;cursor:pointer;pointer-events:auto;}
 .navbar-toggle span{display:block;width:24px;height:2px;background-color:#fff;margin:14px 0;transition:.4s;}
 .navopen .line-top{-webkit-transform:rotate(45deg) translate(4px,7px);transform:rotate(45deg) translate(4px,7px);}
 .navopen .line-bottom{-webkit-transform:rotate(-45deg) translate(4px,-7px);transform:rotate(-45deg) translate(4px,-7px);}
-.fixed_links{display:flex;flex-wrap:wrap;align-items:center;gap:42px;transition:.6s ease;}
+.fixed_links{display:flex;flex-wrap:wrap;align-items:center;gap:42px;transition:.6s ease;pointer-events:auto;}
 .fixed_links.on{opacity:0}
 .fixed_links .icon{width:20px;height:20px;}
 .fixed_links .icon svg{max-width:100%;max-height:100%;}
@@ -378,9 +378,15 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 /* ═══════════════════════════════════════════
    GUNAIS 附加样式
    ═══════════════════════════════════════════ */
-/* Logo 文字样式（替代 CCD Logo 图片） */
-.logo-text{font-family:'Tinos',serif;font-size:1.5vw;letter-spacing:6px;color:#fff;white-space:nowrap;mix-blend-mode:exclusion;}
-@media screen and (max-width:1024px){.logo-text{font-size:18px;letter-spacing:3px;color:#272727;mix-blend-mode:normal;}}
+/* Logo 标注提示（导航Logo处加虚线边框标识） */
+.logo-mark{position:relative;}
+.logo-mark::after{content:'★ 替换Logo';position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:#e65100;background:#fff9c4;padding:1px 6px;border-radius:2px;font-weight:700;white-space:nowrap;letter-spacing:1px;opacity:0.7;}
+.logo-text{font-family:'Tinos',serif;font-weight:900;font-size:2.2vw;letter-spacing:0.35vw;color:#fff;display:block;white-space:nowrap;}
+@media screen and (max-width:1024px){.logo-text{font-size:18px;letter-spacing:3px;color:#272727;mix-blend-mode:normal;font-weight:900;}}
+
+/* ★★★ 黄色高光标注：所有需要替换的区域 ★★★ */
+.need-replace{background:#fff9c4 !important;outline:2px dashed #f9a825;outline-offset:2px;position:relative;}
+.need-replace::before{content:'★ 需要替换';position:absolute;top:4px;left:8px;font-size:11px;color:#e65100;background:#fff9c4;padding:1px 8px;border-radius:2px;font-weight:700;z-index:10;letter-spacing:1px;}
 
 /* 图片占位符 */
 .img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#e0dbd5;color:#999;font-size:14px;letter-spacing:1px;}
@@ -402,7 +408,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
      ═══════════════════════════════════════════ -->
 <div class="loading on" id="loading">
   <div class="fist">
-    <p class="f_128 Tinos" style="color:#272727;">GUNAIS</p>
+    <p class="f_128 Tinos" style="color:#272727;font-weight:900;">GUNAIS</p>
   </div>
 </div>
 
@@ -420,7 +426,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
   <div class="box">
     <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
       <!-- ★ 替换为 GUNAIS Logo 图片: <img src="logo.png" alt="GUNAIS"> -->
-      <span class="logo-text">GUNAIS</span>
+      <span class="logo-text logo-mark">GUNAIS</span>
     </div>
     <div class="fixed_links">
       <div class="icon">
@@ -443,7 +449,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="l">
       <a href="#">
         <!-- ★ 移动端 Logo: <img src="logo.png"> -->
-        <p class="f_24 Tinos" style="font-weight:700;">GUNAIS</p>
+        <p class="f_24 Tinos" style="font-weight:900;">GUNAIS</p>
       </a>
     </div>
     <div class="navbox" id="mNavToggle">
@@ -499,7 +505,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <source src="hero-video.mp4" type="video/mp4" />
     </video>
     -->
-    <div class="img-placeholder" style="height:100vh;background:#d5cfc6;">HERO VIDEO<br>← 替换为背景视频</div>
+    <div class="img-placeholder need-replace" style="height:100vh;background:#d5cfc6;">HERO VIDEO<br>← 替换为背景视频</div>
 
     <div class="down" onclick="document.querySelector('.section1').scrollIntoView({behavior:'smooth'})">
       <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
@@ -518,13 +524,13 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     </div>
 
     <div class="content">
-      <div class="position f_16">GUNAIS DESIGN · EST. 2024 · SHANGHAI</div>
+      <div class="position f_16" style="font-weight:700;">GUNAIS DESIGN · EST. 2024 · SHANGHAI</div>
 
       <div>
         <!-- 大图 -->
         <div class="big_img item_hover">
           <!-- ★ 替换为实景大图 -->
-          <div class="img-placeholder">OUR STORY 大图 ← 替换</div>
+          <div class="img-placeholder need-replace">OUR STORY 大图 ← 替换</div>
         </div>
 
         <!-- Flex 1: Our Story 文字 + 副文字 -->
@@ -540,11 +546,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
           <p class="p1 f_24 Tinos">Core Capabilities 核心能力</p>
           <div class="dis">
             <!-- ★ 替换为实际能力Logo图片 -->
-            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 1</div></div>
-            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 2</div></div>
-            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 3</div></div>
-            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 4</div></div>
-            <div class="img"><div class="img-placeholder" style="height:3.0729vw;width:auto;min-width:120px;">Logo 5</div></div>
+            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 1</div></div>
+            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 2</div></div>
+            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 3</div></div>
+            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 4</div></div>
+            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 5</div></div>
           </div>
         </div>
       </div>
@@ -567,11 +573,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <div class="swiper1 swiper">
         <div class="swiper-wrapper">
           <!-- ★ 替换为实际项目图片 -->
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 1</div><div class="text f_40 Tinos">PROJECT ONE</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 2</div><div class="text f_40 Tinos">PROJECT TWO</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 3</div><div class="text f_40 Tinos">PROJECT THREE</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 4</div><div class="text f_40 Tinos">PROJECT FOUR</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder">Project 5</div><div class="text f_40 Tinos">PROJECT FIVE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 1</div><div class="text f_40 Tinos">PROJECT ONE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 2</div><div class="text f_40 Tinos">PROJECT TWO</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 3</div><div class="text f_40 Tinos">PROJECT THREE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 4</div><div class="text f_40 Tinos">PROJECT FOUR</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 5</div><div class="text f_40 Tinos">PROJECT FIVE</div></div></div></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -594,14 +600,14 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     </div>
     <div class="img item_hover">
       <!-- ★ 替换为实景大图 -->
-      <div class="img-placeholder" style="width:45.52083vw;height:56.14583vw;">Section 3 大图 ← 替换</div>
+      <div class="img-placeholder need-replace" style="width:45.52083vw;height:56.14583vw;">Section 3 大图 ← 替换</div>
     </div>
   </div>
 
   <!-- ═══ Section 4: 全宽图片 (CCD 居中宽图) ═══ -->
   <div class="section4 item_hover">
     <!-- ★ 替换为全宽展示图片 -->
-    <div class="img-placeholder" style="width:1176px;height:784px;margin:160px auto;">Section 4 全宽图 ← 替换</div>
+    <div class="img-placeholder need-replace" style="width:1176px;height:784px;margin:160px auto;">Section 4 全宽图 ← 替换</div>
   </div>
 
   <!-- ═══ Section 5: 左文右图 (CCD 绿色主题) ═══ -->
@@ -610,12 +616,12 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <p class="title f_56 Tinos" style="color:#3D532C;">FINE<br>DESIGN</p>
       <div class="img item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:17.08333vw;height:25.625vw;">Section 5 小图 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:17.08333vw;height:25.625vw;">Section 5 小图 ← 替换</div>
       </div>
     </div>
     <div class="img2 item_hover">
       <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder" style="width:50%;height:61.19792vw;">Section 5 大图 ← 替换</div>
+      <div class="img-placeholder need-replace" style="width:50%;height:61.19792vw;">Section 5 大图 ← 替换</div>
     </div>
   </div>
 
@@ -625,12 +631,12 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <p class="p1 f_32 Tinos">Studio Life</p>
       <div class="img item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:29.53125vw;height:19.79167vw;">Section 6 图 1 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:29.53125vw;height:19.79167vw;">Section 6 图 1 ← 替换</div>
       </div>
     </div>
     <div class="big_img item_hover">
       <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder" style="width:35vw;height:45.10417vw;">Section 6 图 2 ← 替换</div>
+      <div class="img-placeholder need-replace" style="width:35vw;height:45.10417vw;">Section 6 图 2 ← 替换</div>
     </div>
     <div class="r">
       <div class="title">
@@ -639,7 +645,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       </div>
       <div class="img item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:29.53125vw;height:19.79167vw;">Section 6 图 3 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:29.53125vw;height:19.79167vw;">Section 6 图 3 ← 替换</div>
       </div>
       <p class="pick f_32 Tinos">Every detail matters.</p>
     </div>
@@ -650,13 +656,13 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="l">
       <div class="img">
         <!-- ★ 替换为 Logo 图片 -->
-        <div class="img-placeholder" style="width:12.65625vw;height:7.29167vw;">LOGO</div>
+        <div class="img-placeholder need-replace" style="width:12.65625vw;height:7.29167vw;">LOGO</div>
       </div>
       <p class="p1 f_64 Tinos" style="color:#EADFDA;letter-spacing:0.114vw;">SPACE IS<br>EXPERIENCE.</p>
     </div>
     <div class="img2 item_hover">
       <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder" style="width:50%;height:61.19792vw;background:#3a3a3a;">Section 7 大图 ← 替换</div>
+      <div class="img-placeholder need-replace" style="width:50%;height:61.19792vw;background:#3a3a3a;">Section 7 大图 ← 替换</div>
     </div>
   </div>
 
@@ -673,29 +679,29 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 
     <div class="img1 item_hover">
       <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder" style="width:30.10417vw;height:43.33333vw;">Section 8 图 1 ← 替换</div>
+      <div class="img-placeholder need-replace" style="width:30.10417vw;height:43.33333vw;">Section 8 图 1 ← 替换</div>
     </div>
 
     <div class="center">
       <div class="img2 item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:16.04167vw;height:22.76042vw;">Section 8 图 2 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:16.04167vw;height:22.76042vw;">Section 8 图 2 ← 替换</div>
       </div>
       <div class="img3 item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:26.45833vw;height:17.70833vw;">Section 8 图 3 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:26.45833vw;height:17.70833vw;">Section 8 图 3 ← 替换</div>
       </div>
     </div>
 
     <div class="r">
       <div class="img4 item_hover">
         <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder" style="width:21.5625vw;height:32.29167vw;">Section 8 图 4 ← 替换</div>
+        <div class="img-placeholder need-replace" style="width:21.5625vw;height:32.29167vw;">Section 8 图 4 ← 替换</div>
       </div>
       <div class="img5">
         <div class="pic item_hover">
           <!-- ★ 替换为实景图片 -->
-          <div class="img-placeholder" style="width:14.47917vw;height:19.21875vw;">Section 8 图 5 ← 替换</div>
+          <div class="img-placeholder need-replace" style="width:14.47917vw;height:19.21875vw;">Section 8 图 5 ← 替换</div>
         </div>
         <p class="p2 f_18 Tinos">Where light meets structure,<br>art is born.</p>
       </div>
@@ -807,21 +813,43 @@ const fullNav = document.getElementById('fullNav');
 
 if (navToggle) {
   navToggle.addEventListener('click', () => {
-    document.body.classList.toggle('navopen');
+    const isOpen = document.body.classList.toggle('navopen');
     header.classList.toggle('open');
-    fullNav.style.pointerEvents = document.body.classList.contains('navopen') ? 'visible' : 'none';
+    fullNav.style.opacity = isOpen ? '1' : '0';
+    fullNav.style.pointerEvents = isOpen ? 'auto' : 'none';
+    // 禁止/恢复背景滚动
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 }
+
+// 点击导航链接后关闭菜单
+document.querySelectorAll('.nav .links a, .nav-bottom a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.body.classList.remove('navopen');
+    header.classList.remove('open');
+    fullNav.style.opacity = '0';
+    fullNav.style.pointerEvents = 'none';
+    document.body.style.overflow = '';
+  });
+});
 
 // Mobile nav
 const mNavToggle = document.getElementById('mNavToggle');
 const menuList = document.getElementById('menuList');
 if (mNavToggle) {
   mNavToggle.addEventListener('click', () => {
-    mNavToggle.classList.toggle('activeBox');
-    menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+    const isOpen = mNavToggle.classList.toggle('activeBox');
+    menuList.style.display = isOpen ? 'block' : 'none';
   });
 }
+
+// 移动端菜单链接点击后关闭
+document.querySelectorAll('.menuList .item a').forEach(link => {
+  link.addEventListener('click', () => {
+    mNavToggle.classList.remove('activeBox');
+    menuList.style.display = 'none';
+  });
+});
 
 // ═══════════════════════════════════════════
 // 5. Swiper (CCD Section 2 Services 轮播)
