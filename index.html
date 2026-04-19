@@ -46,7 +46,7 @@ html {
    CCD 结构 2: common.css (基础样式)
    ═══════════════════════════════════════════ */
 *{font-family:"PingFang SC","Calibri","opensans","GothicArial","Arial","Microsoft YaHei","San Francisco",'Hiragino Sans GB',"Helvetica Neue",Helvetica,sans-serif;}
-body{background:#F7F3EF url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp');background:url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp') repeat;}
+body{background:url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp') repeat;}
 ::-webkit-scrollbar{width:0}
 body,ul,li,p,a,*{margin:0;padding:0;list-style:none;color:#272727;}
 a{text-decoration:none;color:inherit;}
@@ -69,7 +69,7 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
 .header .box .logo{cursor:pointer;mix-blend-mode:exclusion;position:relative;z-index:10;pointer-events:auto;}
 .header .box .logo img{width:5.4688vw;display:block;}
 
-.nav{position:fixed;left:0;top:0;width:100%;height:100%;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:rgba(254,252,250,.81);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:all ease .3s;padding:0 0 50px;}
+.nav{position:fixed;left:0;top:0;width:100%;height:100%;z-index:200;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:rgba(254,252,250,.95);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:all ease .3s;padding:0 0 50px;}
 .navopen .nav{opacity:1;pointer-events:auto;}
 .nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;text-align:center;}
 .nav .links .item:not(:last-child){margin-bottom:.41667vw}
@@ -122,7 +122,7 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
 .menuList .item .types_top a{font-size:14px;margin-top:15px;}
 
 /* Footer — 完整复制  */
-.foot{border-top:1px solid #272727;padding:73px 48px 57px;position:relative;}
+.foot{border-top:1px solid #272727;padding:73px 48px 57px;position:relative;background:#fff;}
 .foot .dom1{display:flex;justify-content:space-between;}
 .foot .dom1 .links{display:flex;flex-wrap:wrap;gap:2vw;}
 .foot .dom1 .links .a1{font-weight:700;font-family:'Tinos';}
@@ -138,6 +138,12 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
 .foot .sharelist .ev img{width:100%;}
 .foot .copyright{width:100%;margin-top:60px;text-align:right;}
 .foot .copyright a{text-decoration:underline;}
+.foot .copyright .company-name{font-size:14px;color:#272727;margin-bottom:8px;font-family:'Tinos';letter-spacing:1px;}
+.foot .copyright .contact-info{margin-bottom:8px;}
+.foot .copyright .contact-info a{color:#666;font-size:12px;text-decoration:none;}
+.foot .copyright .contact-info a:hover{text-decoration:underline;}
+.foot .copyright .beian{font-size:11px;color:#999;margin-bottom:5px;}
+.foot .copyright .copyright-text{font-size:11px;color:#999;}
 
 .goTop{position:absolute;right:50px;bottom:284px;z-index:10;cursor:pointer;transition:all 600ms;opacity:0;transform:translateY(4.16667vw);}
 .goTop svg{width:38px;}
@@ -157,7 +163,13 @@ body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-tra
   .foot .sharelist{gap:25px;justify-content:center;}
   .foot .follow{display:block;margin-top:10px;letter-spacing:.5px;}
   .foot .sharelist .ev{width:18.55px;height:18.55px;}
+  .foot .sharelist.wechat-row{justify-content:center;}
+  .foot .wechat-qr-img{width:60px;height:60px;}
   .foot .copyright{width:100%;margin-top:25px;font-size:10px;text-align:center;color:#949494;padding-bottom:15px;}
+  .foot .copyright .company-name{font-size:12px;color:#666;margin-bottom:8px;}
+  .foot .copyright .contact-info{margin-bottom:6px;}
+  .foot .copyright .contact-info a{font-size:11px;}
+  .foot .copyright .beian{font-size:10px;margin-bottom:5px;}
   .foot .copyright a{font-size:9px;text-decoration:underline;display:flex;justify-content:center;color:#949494!important;margin-top:4px;}
 }
 
@@ -260,7 +272,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 .section6 .r .title p:nth-child(2){left:0;text-align:right;}
 .section6 .r .img{margin:8.28125vw 0 0 0;width:29.53125vw;height:19.79167vw;}
 .section6 .r .img img,.section6 .r .img video{width:100%;height:100%;}
-.section6 .r .pick{color:#000;font-style:italic;line-height:48%;letter-spacing:1.2px;margin:.98958vw 0 0 0;}
+.section6 .r .pick{color:#000;font-style:italic;line-height:1.5;letter-spacing:0.5px;margin:.98958vw 0 0 0;}
 
 .section7{display:flex;height:61.19792vw;}
 .section7 .l{width:50%;height:100%;padding:11.09375vw 0 0 0;position:relative;z-index:2;}
@@ -274,7 +286,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 .section8 .title{position:absolute;top:18.85417vw;left:19.53125vw;color:#000;font-style:normal;font-weight:400;line-height:1.2;z-index:1;letter-spacing:0.666vw;}
 .section8 .title p{position:relative;}
 .section8 .title p:last-child{left:14.47917vw;top:1.25vw;}
-.section8 .p1{width:28.80208vw;color:#000;font-style:italic;font-weight:300;line-height:149%;position:absolute;top:35.98958vw;left:34.21875vw;}
+.section8 .p1{width:28.80208vw;color:#000;font-style:italic;font-weight:300;line-height:1.6;position:absolute;top:35.98958vw;left:34.21875vw;}
 .section8 img{width:100%;height:100%;}
 .section8 .img1{width:30.10417vw;height:43.33333vw;margin:6.5625vw 4.47917vw 0 0;}
 .section8 .center .img2{width:16.04167vw;height:22.76042vw;margin:0 0 12.76042vw 12.03125vw;}
@@ -364,7 +376,8 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
   .section8 .r .img4{width:100%;height:auto;}
   .section8 .r .img5{position:static;margin:15px 0 0 0;}
   .section8 .r .img5 .pic{width:100%;height:auto;}
-  .section8 .r .img5 .p2{width:100%;margin:15px 0 0 0;}
+  .section8 .r .img5 .p2{width:100%;margin:15px 0 0 0;line-height:1.6;}
+  .section8 .p1{line-height:1.6;}
   .loading,.cursor{display:none;}
   .home{overflow:hidden;}
 }
@@ -380,15 +393,31 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
    ═══════════════════════════════════════════ */
 /* Logo 标注提示（导航Logo处加虚线边框标识） */
 .logo-mark{position:relative;}
-.logo-mark::after{content:;position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:#e65100;background:#fff9c4;padding:1px 6px;border-radius:2px;font-weight:700;white-space:nowrap;letter-spacing:1px;opacity:0.7;}
 .logo-text{font-family:'Tinos',serif;font-weight:900;font-size:2.2vw;letter-spacing:0.35vw;color:#fff;display:block;white-space:nowrap;}
 @media screen and (max-width:1024px){.logo-text{font-size:18px;letter-spacing:3px;color:#272727;mix-blend-mode:normal;font-weight:900;}}
 
-/* ★★★ 黄色高光标注：所有需要替换的区域 ★★★ */
-.need-replace{background:#fff9c4 !important;outline:2px dashed #f9a825;outline-offset:2px;position:relative;}
-.need-replace::before{content:'★ 需要替换';position:absolute;top:4px;left:8px;font-size:11px;color:#e65100;background:#fff9c4;padding:1px 8px;border-radius:2px;font-weight:700;z-index:10;letter-spacing:1px;}
 
-/* 图片占位符 */
+/* 图片占位符样式已移除 */
+
+/* 微信公众号二维码样式 */
+.wechat-row {
+  align-items: center;
+  gap: 20px;
+}
+.wechat-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.wechat-qr-img {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+}
+.wechat-tip {
+  font-size: 12px;
+  color: #999;
+}
 .img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#e0dbd5;color:#999;font-size:14px;letter-spacing:1px;}
 
 /* Section 7 深色背景 */
@@ -431,9 +460,6 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="fixed_links">
       <div class="icon">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </div>
-      <div class="icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
       </div>
     </div>
     <div class="navbar-toggle" id="navToggle">
@@ -499,13 +525,9 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 
   <!-- ═══ Section: Banner ( 全屏视频) ═══ -->
   <div class="banner">
-    <!-- ★★★ 替换视频: 把视频文件放入同目录，取消注释下方 <video> 标签 ★★★ -->
-   
-    <video autoplay muted loop playsinline preload="auto" style="width:100vw;height:100vh;object-fit:cover"></video>
-      <source src="/design-gunais-cn/videos/SYSP-.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline preload="auto" style="width:100vw;height:100vh;object-fit:cover">
+      <source src="videos/SYSP-.mp4" type="video/mp4" />
     </video>
-
-    <div class="img-placeholder need-replace" style="height:100vh;background:#d5cfc6;">HERO VIDEO<br>← 替换为背景视频</div>
 
     <div class="down" onclick="document.querySelector('.section1').scrollIntoView({behavior:'smooth'})">
       <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
@@ -529,8 +551,7 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <div>
         <!-- 大图 -->
         <div class="big_img item_hover">
-          <!-- ★ 替换为实景大图 -->
-          <div class="img-placeholder need-replace">OUR STORY 大图 ← 替换</div>
+          <img src="images/1.png" alt="GUNAIS Design">
         </div>
 
         <!-- Flex 1: Our Story 文字 + 副文字 -->
@@ -545,12 +566,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
         <div class="flex2">
           <p class="p1 f_24 Tinos">Core Capabilities 核心能力</p>
           <div class="dis">
-            <!-- ★ 替换为实际能力Logo图片 -->
-            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 1</div></div>
-            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 2</div></div>
-            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 3</div></div>
-            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 4</div></div>
-            <div class="img"><div class="img-placeholder need-replace" style="height:3.0729vw;width:auto;min-width:120px;">Logo 5</div></div>
+            <div class="img"><img src="images/2.png" alt="商业空间设计"></div>
+            <div class="img"><img src="images/3.png" alt="施工图深化"></div>
+            <div class="img"><img src="images/4.png" alt="设计管理"></div>
+            <div class="img"><img src="images/5.png" alt="品牌咨询"></div>
+            <div class="img"><img src="images/6.png" alt="艺术顾问"></div>
           </div>
         </div>
       </div>
@@ -572,20 +592,19 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="content">
       <div class="swiper1 swiper">
         <div class="swiper-wrapper">
-          <!-- ★ 替换为实际项目图片 -->
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 1</div><div class="text f_40 Tinos">PROJECT ONE</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 2</div><div class="text f_40 Tinos">PROJECT TWO</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 3</div><div class="text f_40 Tinos">PROJECT THREE</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 4</div><div class="text f_40 Tinos">PROJECT FOUR</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><div class="img-placeholder need-replace">Project 5</div><div class="text f_40 Tinos">PROJECT FIVE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><img src="images/7.png" alt="商业综合体"><div class="text f_40 Tinos">COMMERCIAL COMPLEX</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><img src="images/8.png" alt="办公空间"><div class="text f_40 Tinos">OFFICE SPACE</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><img src="images/9.png" alt="酒店会展"><div class="text f_40 Tinos">HOTEL & EXHIBITION</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><img src="images/10.png" alt="展览展示"><div class="text f_40 Tinos">EXHIBITION DESIGN</div></div></div></div>
+          <div class="swiper-slide"><div class="img"><div class="scale"><img src="images/11.png" alt="餐饮空间"><div class="text f_40 Tinos">DINING SPACE</div></div></div></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
     </div>
 
     <div class="content2 f_22 Tinos">
-      EVERY CORNER, A CANVAS.<br>
-      EVERY MOMENT, A MASTERPIECE.
+      EVERY CORNER A CANVAS<br>
+      EVERY MOMENT A MASTERPIECE
     </div>
   </div>
 
@@ -596,18 +615,16 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
         <p class="p1 f_64 Tinos" style="letter-spacing:0.312vw;">EVERY<br>CORNER,<br>A CANVAS.</p>
         <p class="p2 f_24 Tinos">Living Art</p>
       </div>
-      <p class="t2 f_16">理性 · 克制 · 融合 · 体验</p>
+      <p class="t2 f_16">理性 克制 融合 体验</p>
     </div>
     <div class="img item_hover">
-      <!-- ★ 替换为实景大图 -->
-      <div class="img-placeholder need-replace" style="width:45.52083vw;height:56.14583vw;">Section 3 大图 ← 替换</div>
+      <img src="images/12.png" alt="GUNAIS Design Philosophy" style="width:100%;height:100%;">
     </div>
   </div>
 
   <!-- ═══ Section 4: 全宽图片 (CCD 居中宽图) ═══ -->
   <div class="section4 item_hover">
-    <!-- ★ 替换为全宽展示图片 -->
-    <div class="img-placeholder need-replace" style="width:1176px;height:784px;margin:160px auto;">Section 4 全宽图 ← 替换</div>
+    <img src="images/13.png" alt="GUNAIS Projects" style="width:1176px;height:784px;margin:0 auto;display:block;">
   </div>
 
   <!-- ═══ Section 5: 左文右图 (CCD 绿色主题) ═══ -->
@@ -615,13 +632,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="l">
       <p class="title f_56 Tinos" style="color:#3D532C;">FINE<br>DESIGN</p>
       <div class="img item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:17.08333vw;height:25.625vw;">Section 5 小图 ← 替换</div>
+        <img src="images/14.png" alt="Fine Design Detail" style="width:100%;height:100%;">
       </div>
     </div>
     <div class="img2 item_hover">
-      <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder need-replace" style="width:50%;height:61.19792vw;">Section 5 大图 ← 替换</div>
+      <img src="images/15.png" alt="Fine Design" style="width:100%;height:100%;">
     </div>
   </div>
 
@@ -630,13 +645,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     <div class="item1">
       <p class="p1 f_32 Tinos">Studio Life</p>
       <div class="img item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:29.53125vw;height:19.79167vw;">Section 6 图 1 ← 替换</div>
+        <img src="images/4.png" alt="Studio Life" style="width:100%;height:100%;">
       </div>
     </div>
     <div class="big_img item_hover">
-      <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder need-replace" style="width:35vw;height:45.10417vw;">Section 6 图 2 ← 替换</div>
+      <img src="images/5.png" alt="Art & Design" style="width:100%;height:100%;">
     </div>
     <div class="r">
       <div class="title">
@@ -644,10 +657,9 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
         <p class="f_64 Tinos">& DESIGN</p>
       </div>
       <div class="img item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:29.53125vw;height:19.79167vw;">Section 6 图 3 ← 替换</div>
+        <img src="images/6.png" alt="Design Detail" style="width:100%;height:100%;">
       </div>
-      <p class="pick f_32 Tinos">Every detail matters.</p>
+      <p class="pick f_32 Tinos">Every detail matters</p>
     </div>
   </div>
 
@@ -655,14 +667,13 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
   <div class="section7">
     <div class="l">
       <div class="img">
-        <!-- ★ 替换 Logo 图片 -->
-        <div class="img-placeholder need-replace" style="width:12.65625vw;height:7.29167vw;">LOGO</div>
+        <img src="images/logo-white.png" alt="GUNAIS" style="width:100%;height:100%;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
+        <span class="f_48 Tinos" style="color:#EADFDA;font-weight:900;letter-spacing:0.3vw;">GUNAIS</span>
       </div>
-      <p class="p1 f_64 Tinos" style="color:#EADFDA;letter-spacing:0.114vw;">SPACE IS<br>EXPERIENCE.</p>
+      <p class="p1 f_64 Tinos" style="color:#EADFDA;letter-spacing:0.114vw;">SPACE IS<br>EXPERIENCE</p>
     </div>
     <div class="img2 item_hover">
-      <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder need-replace" style="width:50%;height:61.19792vw;background:#3a3a3a;">Section 7 大图 ← 替换</div>
+      <img src="images/7.png" alt="Space Experience" style="width:100%;height:100%;">
     </div>
   </div>
 
@@ -674,41 +685,38 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
     </div>
     <p class="p1 f_22 Tinos">
       We believe that great design is born from<br>
-      the dialogue between space and human emotion.
+      the dialogue between space and human emotion
     </p>
 
     <div class="img1 item_hover">
-      <!-- ★ 替换为实景图片 -->
-      <div class="img-placeholder need-replace" style="width:30.10417vw;height:43.33333vw;">Section 8 图 1 ← 替换</div>
+      <img src="images/8.png" alt="Crafting Spaces 1" style="width:100%;height:100%;">
     </div>
 
     <div class="center">
       <div class="img2 item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:16.04167vw;height:22.76042vw;">Section 8 图 2 ← 替换</div>
+        <img src="images/9.png" alt="Crafting Spaces 2" style="width:100%;height:100%;">
       </div>
       <div class="img3 item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:26.45833vw;height:17.70833vw;">Section 8 图 3 ← 替换</div>
+        <img src="images/1.png" alt="Crafting Spaces 3" style="width:100%;height:100%;">
       </div>
     </div>
 
     <div class="r">
       <div class="img4 item_hover">
-        <!-- ★ 替换为实景图片 -->
-        <div class="img-placeholder need-replace" style="width:21.5625vw;height:32.29167vw;">Section 8 图 4 ← 替换</div>
+        <img src="images/2.png" alt="Crafting Spaces 4" style="width:100%;height:100%;">
       </div>
       <div class="img5">
         <div class="pic item_hover">
-          <!-- ★ 替换为实景图片 -->
-          <div class="img-placeholder need-replace" style="width:14.47917vw;height:19.21875vw;">Section 8 图 5 ← 替换</div>
+          <img src="images/3.png" alt="Crafting Spaces 5" style="width:100%;height:100%;">
         </div>
-        <p class="p2 f_18 Tinos">Where light meets structure,<br>art is born.</p>
+        <p class="p2 f_18 Tinos">Where light meets structure<br>art is born</p>
       </div>
     </div>
   </div>
 
 </div><!-- /.home -->
+
+
 
 <!-- ═══════════════════════════════════════════
      Footer — 完整  页脚结构
@@ -724,27 +732,21 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       <a href="#" class="f_18">NEWS</a>
     </div>
     <div class="r">
-      <div class="sharelist">
-        <a href="#" class="ev">
-          <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#272727" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="#" class="ev">
-          <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#272727" d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-        </a>
-      </div>
-      <div class="media">
-        <a href="#">
-          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#272727" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="#">
-          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#272727" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
+      <div class="sharelist wechat-row">
+        <div class="wechat-section">
+          <img src="images/wechat-qr-clean.png" alt="微信公众号" class="wechat-qr-img">
+          <span class="wechat-tip" style="display:none;">请上传 wechat-qr.png</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="copyright f_16">
-    <a href="#">eric@gunais.com</a><br>
-    © 2024 GUNAIS DESIGN. All rights reserved.
+    <div class="company-name">上海谷奈斯空间设计有限公司</div>
+    <div class="contact-info">
+      <a href="mailto:eric@gunais.com">eric@gunais.com</a>
+    </div>
+    <div class="beian">沪ICP备XXXXXXXX号-1</div>
+    <div class="copyright-text">© 2024 GUNAIS DESIGN. All rights reserved.</div>
   </div>
 </div>
 
