@@ -282,20 +282,16 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 .section7 .img2{width:50%;height:100%;}
 .section7 .img2 img{width:100%;height:100%;}
 
-.section8{padding:7.91667vw 1.92708vw 5.46875vw 1.97917vw;position:relative;display:flex;overflow:hidden;}
-.section8 .title{position:absolute;top:18.85417vw;left:19.53125vw;color:#000;font-style:normal;font-weight:400;line-height:1.2;z-index:1;letter-spacing:0.666vw;}
-.section8 .title p{position:relative;}
-.section8 .title p:last-child{left:14.47917vw;top:1.25vw;}
-.section8 .p1{width:28.80208vw;color:#000;font-style:italic;font-weight:300;line-height:1.6;position:absolute;top:35.98958vw;left:34.21875vw;}
-.section8 img{width:100%;height:100%;}
-.section8 .img1{width:30.10417vw;height:43.33333vw;margin:6.5625vw 4.47917vw 0 0;}
-.section8 .center .img2{width:16.04167vw;height:22.76042vw;margin:0 0 12.76042vw 12.03125vw;}
-.section8 .center .img3{width:26.45833vw;height:17.70833vw;}
-.section8 .right-col{margin:2.70833vw 0 0 5vw;display:flex;flex-direction:column;gap:2vw;}
-.section8 .right-col .img4{width:21.5625vw;height:32.29167vw;}
-.section8 .bottom-row{display:flex;align-items:flex-start;gap:2vw;}
-.section8 .bottom-row .img5{width:14.47917vw;height:19.21875vw;}
-.section8 .bottom-row .p2{color:#000;font-style:italic;width:18vw;font-weight:300;line-height:1.5;padding-top:1vw;}
+.section8{padding:7.91667vw 1.92708vw 5.46875vw 1.97917vw;}
+.section8 .gallery-grid{width:100%;}
+.section8 .gallery-row{display:flex;gap:1.5vw;margin-bottom:1.5vw;}
+.section8 .gallery-row.row1 .img-box{height:25vw;}
+.section8 .gallery-row.row2 .img-box{height:20vw;}
+.section8 .gallery-row .img-box{flex:1;border:1px solid #000;overflow:hidden;}
+.section8 .gallery-row .img-box img{width:100%;height:100%;object-fit:cover;}
+.section8 .gallery-text{text-align:left;padding:2vw 0 0 0;}
+.section8 .gallery-text .f_22{font-size:1.3vw;line-height:1.6;margin-bottom:1vw;}
+.section8 .gallery-text .p2{font-size:1.1vw;font-style:italic;color:#666;}
 
 /* Loading */
 .loading{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:999;display:flex;align-items:center;justify-content:center;cursor:none;transition:.6s ease;}
@@ -366,18 +362,13 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
   .section7 .l{width:100%;height:400px;padding:50px 5%;}
   .section7 .l .img{width:100px;height:auto;margin:0 auto 200px;}
   .section7 .l .p1{width:100%;}
-  .section8{padding:70px 5%;flex-direction:column;}
-  .section8 .title{position:static;margin:0 0 30px;}
-  .section8 .p1{position:static;width:100%;left:0;top:0;}
-  .section8 .img1{width:100%;height:auto;margin:15px 0;}
-  .section8 .center .img2{margin:0 0 15px;width:100%;height:auto;}
-  .section8 .center .img3{width:100%;height:auto;}
-  .section8 .right-col{margin:15px 0 0 0;}
-  .section8 .right-col .img4{width:100%;height:auto;}
-  .section8 .bottom-row{flex-direction:column;}
-  .section8 .bottom-row .img5{width:100%;height:auto;}
-  .section8 .bottom-row .p2{width:100%;line-height:1.6;padding-top:0;}
-  .section8 .p1{line-height:1.6;}
+  .section8{padding:70px 5%;}
+  .section8 .gallery-row{flex-direction:column;gap:15px;}
+  .section8 .gallery-row.row1 .img-box,
+  .section8 .gallery-row.row2 .img-box{height:auto;aspect-ratio:4/3;}
+  .section8 .gallery-text{text-align:center;padding:20px 0 0 0;}
+  .section8 .gallery-text .f_22{font-size:4vw;}
+  .section8 .gallery-text .p2{font-size:3.5vw;}
   .loading,.cursor{display:none;}
   .home{overflow:hidden;}
 }
@@ -679,39 +670,33 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 
   <!-- ═══ Section 8: 多图拼贴 + 文字 (CCD 画廊式排版) ═══ -->
   <div class="section8">
-    <div class="title f_76 Tinos">
-      <p>CRAFTING</p>
-      <p>SPACES</p>
-    </div>
-    <p class="p1 f_22 Tinos">
-      We believe that great design is born from<br>
-      the dialogue between space and human emotion
-    </p>
-
-    <div class="img1 item_hover">
-      <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/8.png" alt="Crafting Spaces 1" style="width:100%;height:100%;">
-    </div>
-
-    <div class="center">
-      <div class="img2 item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/9.png" alt="Crafting Spaces 2" style="width:100%;height:100%;">
-      </div>
-      <div class="img3 item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/1.png" alt="Crafting Spaces 3" style="width:100%;height:100%;">
-      </div>
-    </div>
-
-    <!-- 右列：两张图 + 文字说明 -->
-    <div class="right-col">
-      <div class="img4 item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="Crafting Spaces 4">
-      </div>
-      <div class="bottom-row">
-        <div class="img5 item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="Crafting Spaces 5">
+    <!-- 图片画廊区域 -->
+    <div class="gallery-grid">
+      <div class="gallery-row row1">
+        <div class="img-box item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/8.png" alt="Gallery 1">
         </div>
-        <p class="p2 f_18 Tinos">Where light meets structure<br>art is born</p>
+        <div class="img-box item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/9.png" alt="Gallery 2">
+        </div>
+        <div class="img-box item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/1.png" alt="Gallery 3">
+        </div>
       </div>
+      <div class="gallery-row row2">
+        <div class="img-box item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="Gallery 4">
+        </div>
+        <div class="img-box item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="Gallery 5">
+        </div>
+      </div>
+    </div>
+    
+    <!-- 文字说明 -->
+    <div class="gallery-text">
+      <p class="f_22 Tinos">We believe that great design is born from the dialogue between space and human emotion</p>
+      <p class="p2 f_18 Tinos">Where light meets structure art is born</p>
     </div>
   </div>
 
@@ -949,13 +934,13 @@ gsap.from('.section7 .img2', {
 });
 
 // Section 8 动画
-gsap.from('.section8 .title', {
+gsap.from('.section8 .gallery-grid', {
   scrollTrigger: { trigger: '.section8', start: 'top 70%' },
-  opacity: 0, y: 60, duration: 1
+  opacity: 0, y: 40, duration: 1
 });
-gsap.from('.section8 .img1', {
+gsap.from('.section8 .gallery-row', {
   scrollTrigger: { trigger: '.section8', start: 'top 60%' },
-  opacity: 0, y: 40, duration: 1, delay: 0.2
+  opacity: 0, y: 30, duration: 0.8, stagger: 0.2
 });
 
 // ═══════════════════════════════════════════
