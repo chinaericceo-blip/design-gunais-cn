@@ -291,11 +291,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
 .section8 .img1{width:30.10417vw;height:43.33333vw;margin:6.5625vw 4.47917vw 0 0;}
 .section8 .center .img2{width:16.04167vw;height:22.76042vw;margin:0 0 12.76042vw 12.03125vw;}
 .section8 .center .img3{width:26.45833vw;height:17.70833vw;}
-.section8 .r{margin:2.70833vw 0 0 11.875vw;position:relative;}
-.section8 .r .img4{width:21.5625vw;height:32.29167vw;}
-.section8 .r .img5{position:absolute;top:22.76042vw;left:-6.71875vw;z-index:2;}
-.section8 .r .img5 .pic{width:14.47917vw;height:19.21875vw;}
-.section8 .r .img5 .p2{color:#000;font-style:italic;width:15.9375vw;font-weight:300;line-height:149%;margin:.41667vw 0 0 0;}
+.section8 .right-col{margin:2.70833vw 0 0 5vw;display:flex;flex-direction:column;gap:2vw;}
+.section8 .right-col .img4{width:21.5625vw;height:32.29167vw;}
+.section8 .bottom-row{display:flex;align-items:flex-start;gap:2vw;}
+.section8 .bottom-row .img5{width:14.47917vw;height:19.21875vw;}
+.section8 .bottom-row .p2{color:#000;font-style:italic;width:18vw;font-weight:300;line-height:1.5;padding-top:1vw;}
 
 /* Loading */
 .loading{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:999;display:flex;align-items:center;justify-content:center;cursor:none;transition:.6s ease;}
@@ -372,11 +372,11 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
   .section8 .img1{width:100%;height:auto;margin:15px 0;}
   .section8 .center .img2{margin:0 0 15px;width:100%;height:auto;}
   .section8 .center .img3{width:100%;height:auto;}
-  .section8 .r{margin:15px 0 0 0;}
-  .section8 .r .img4{width:100%;height:auto;}
-  .section8 .r .img5{position:static;margin:15px 0 0 0;}
-  .section8 .r .img5 .pic{width:100%;height:auto;}
-  .section8 .r .img5 .p2{width:100%;margin:15px 0 0 0;line-height:1.6;}
+  .section8 .right-col{margin:15px 0 0 0;}
+  .section8 .right-col .img4{width:100%;height:auto;}
+  .section8 .bottom-row{flex-direction:column;}
+  .section8 .bottom-row .img5{width:100%;height:auto;}
+  .section8 .bottom-row .p2{width:100%;line-height:1.6;padding-top:0;}
   .section8 .p1{line-height:1.6;}
   .loading,.cursor{display:none;}
   .home{overflow:hidden;}
@@ -701,13 +701,14 @@ img{max-width:100%;max-height:100%;object-fit:cover;}
       </div>
     </div>
 
-    <div class="r">
+    <!-- 右列：两张图 + 文字说明 -->
+    <div class="right-col">
       <div class="img4 item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="Crafting Spaces 4" style="width:100%;height:100%;">
+        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="Crafting Spaces 4">
       </div>
-      <div class="img5">
-        <div class="pic item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="Crafting Spaces 5" style="width:100%;height:100%;">
+      <div class="bottom-row">
+        <div class="img5 item_hover">
+          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="Crafting Spaces 5">
         </div>
         <p class="p2 f_18 Tinos">Where light meets structure<br>art is born</p>
       </div>
