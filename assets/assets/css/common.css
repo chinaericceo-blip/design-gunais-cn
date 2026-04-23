@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ===== 全局字体变量 ===== */
+:root {
+    /* 标题字体 - 衬线体（与LOGO一致） */
+    --font-heading: 'Times New Roman', Georgia, 'Noto Serif SC', 'STSong', serif;
+    /* 正文字体 - 无衬线体 */
+    --font-body: "PingFang SC", "Calibri", "opensans", "GothicArial", "Arial", "Microsoft YaHei", "San Francisco", 'Hiragino Sans GB', "Helvetica Neue", Helvetica, sans-serif;
+}
+
+* {
+    font-family: var(--font-body);
+}
+
+body {
+    background: #F7F3EF;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body, ul, li, p, a, * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #272727;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.Tinos, .Tinos > * {
+    font-family: 'Tinos', serif;
+}
+
+/* 标题字体 - 衬线体（与LOGO一致） */
+.font-heading,
+.heading,
+h1, h2, h3, h4, h5, h6,
+.logo-text {
+    font-family: var(--font-heading);
+}
+
+/* 移除原有的Tinos，改用统一标题字体 */
+.Tinos {
+    font-family: var(--font-heading);
+}
+
+video::-webkit-media-controls-download-button {
+    display: none;
+}
+
+/* ============================================================
+   微信二维码弹窗样式
+============================================================ */
+.wechat-qr-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.sharelist {
+    position: relative;
+}
+
+.wechat-qr-trigger .qr-icon {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.wechat-qr-trigger:hover .qr-icon {
+    opacity: 0.7;
+}
+
+.qr-popup {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 15px);
+    right: 0;
+    z-index: 99999;
+    animation: fadeIn 0.3s ease;
+}
+
+.qr-popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+}
+
+.qr-popup-content .qr-code {
+    display: flex;
+    justify-content: center;
+}
+
+.qr-popup-content .qr-code img {
+    width: 140px;
+    height: 140px;
+}
+
+.qr-popup-content .qr-title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Tinos', serif;
+}
+
+.qr-popup-content .qr-desc {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.qr-popup-content .qr-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.qr-popup-content .qr-close:hover {
+    color: #333;
+}
+
+.qr-popup-content .qr-title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+    font-family: var(--font-heading);
+}
+
+.qr-popup-content .qr-code img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 弹窗小三角箭头 */
+.qr-popup-content::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

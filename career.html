@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Career | GUNAIS Design</title>
+    <meta name="keywords" content="GUNAIS Design, 谷奈斯, 空间设计, 商业空间设计, interior design">
+    <meta name="description" content="Join GUNAIS Design — We're looking for talented designers to create exceptional spaces together.">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="assets/icons/gunais-logo.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header_v2.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/common.js"></script>
+
+    <style>
+        body { background: #FFFFFF; }
+        .wow { visibility: hidden; }
+        
+        /* Main Layout - Two Columns */
+        .main-container {
+            display: flex;
+            min-height: calc(100vh - 180px);
+        }
+        
+        /* Left Content - 45% */
+        .left-content {
+            width: 45%;
+            padding: 6vw 4vw 4vw 10vw;
+            background: #FFFFFF;
+        }
+        
+        .left-content .title-wrap {
+            text-align: center;
+            margin-bottom: 4vw;
+        }
+        
+        .left-content .title-wrap .main-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 4vw;
+            color: #272727;
+            font-weight: normal;
+            letter-spacing: 0.15vw;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        
+        .left-content .title-wrap .sub-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1vw;
+            color: #272727;
+            font-weight: normal;
+            letter-spacing: 0.3vw;
+            margin-top: 0.5vw;
+            text-transform: uppercase;
+        }
+        
+        /* Positions List */
+        .positions-list {
+            margin-top: 2vw;
+        }
+        
+        .pos-item {
+            border-top: 1px solid rgba(39,39,39,0.15);
+        }
+        
+        .pos-item:first-child {
+            border-top: none;
+        }
+        
+        .pos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2vw 0;
+            cursor: pointer;
+        }
+        
+        .pos-header:hover {
+            opacity: 0.7;
+        }
+        
+        .pos-item {
+            cursor: pointer;
+        }
+        
+        .pos-header .p-name {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.9vw;
+            color: #272727;
+            text-transform: uppercase;
+            letter-spacing: 0.05vw;
+        }
+        
+        .pos-header .p-arrow {
+            width: 1vw;
+            transition: transform 0.4s ease;
+        }
+        
+        .pos-header .p-arrow svg {
+            width: 100%;
+            height: auto;
+        }
+        
+        .pos-item.active .p-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .pos-content {
+            display: none;
+        }
+        
+        .pos-item.active .pos-content {
+            display: block;
+        }
+        
+        .pos-body {
+            padding-bottom: 1.5vw;
+        }
+        
+        .pos-body .p-locations {
+            font-family: var(--font-body);
+            font-size: 0.75vw;
+            color: rgba(39,39,39,0.6);
+            margin-bottom: 1vw;
+            padding-bottom: 1vw;
+            border-bottom: 1px solid rgba(39,39,39,0.1);
+        }
+        
+        .pos-body .p-requirements {
+            list-style: disc;
+            padding-left: 1.2vw;
+            margin-bottom: 1.5vw;
+        }
+        
+        .pos-body .p-requirements li {
+            font-family: var(--font-body);
+            font-size: 0.8vw;
+            color: rgba(39,39,39,0.7);
+            line-height: 1.8;
+            margin-bottom: 0.3vw;
+        }
+        
+        .pos-body .p-apply {
+            font-family: var(--font-body);
+            font-size: 0.8vw;
+            color: #272727;
+            text-decoration: underline;
+        }
+        
+        /* Right Image - 55% */
+        .right-image {
+            width: 55%;
+            min-height: 100vh;
+            background: #272727;
+            display: flex;
+            align-items: stretch;
+        }
+        
+        .right-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .main-container { flex-direction: column-reverse; }
+            .left-content { width: 100%; padding: 15vw 6vw 10vw; }
+            .left-content .title-wrap { text-align: left; }
+            .left-content .title-wrap .main-title { font-size: 10vw; }
+            .left-content .title-wrap .sub-title { font-size: 3vw; }
+            .pos-header .p-name { font-size: 3.5vw; }
+            .pos-header .p-arrow { width: 3vw; }
+            .pos-body .p-locations { font-size: 2.5vw; }
+            .pos-body .p-requirements li { font-size: 3vw; }
+            .pos-body .p-apply { font-size: 3vw; }
+            .right-image { width: 100%; height: 50vh; min-height: auto; }
+        }
+    </style>
+</head>
+
+<body style="background:#FFFFFF;">
+<div class="home">
+
+<!-- DESKTOP HEADER -->
+<div class="header">
+    <div class="box">
+        <a href="index.html" class="logo">
+            <span class="logo-text">GUNAIS</span>
+        </a>
+        <div class="navbar-toggle">
+            <span class="line-top"></span>
+            <span class="line-bottom"></span>
+        </div>
+    </div>
+</div>
+
+<!-- DESKTOP NAV -->
+<div class="nav">
+    <div class="links">
+        <div class="item"><a href="index.html" class="a1 f_36">HOME</a></div>
+        <div class="item">
+            <a class="a1 f_36 no-click">ABOUT</a>
+            <div class="pList f_20">
+                <a href="index.html?type=1">OUR STORY</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="a1 f_36 no-click">PORTFOLIO</a>
+            <div class="pList f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
+        </div>
+        <div class="item"><a href="career.html" class="a1 f_36">CAREER</a></div>
+        <div class="item"><a href="contact.html" class="a1 f_36">CONNECT</a></div>
+        <div class="item">
+            <a class="a1 f_36 no-click">NEWS</a>
+            <div class="pList f_20">
+                <a href="press.html">PRESS</a>
+                <a href="awards.html">AWARDS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="pheader">
+    <div class="menu">
+        <div class="l">
+            <a href="index.html" target="_self"><span class="logo-text" style="color:#fff;">GUNAIS</span></a>
+        </div>
+        <div class="navbox"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="menuList">
+    <div class="item"><div class="tb"><a href="index.html">HOME</a></div></div>
+    <div class="item">
+        <div class="tb"><a class="no-click">ABOUT</a><img src="assets/icons/arrow.svg" alt=""></div>
+        <div class="types_top"><a href="index.html?type=1">OUR STORY</a><a href="team.html">TEAM</a></div>
+    </div>
+    <div class="item">
+        <div class="tb"><a class="no-click">PORTFOLIO</a><img src="assets/icons/arrow.svg" alt=""></div>
+        <div class="types_top"><a href="portfolio.html">CURATED</a><a href="portfolio.html#all">ALL</a></div>
+    </div>
+    <div class="item"><a href="career.html">CAREER</a></div>
+    <div class="item"><a href="contact.html">CONNECT</a></div>
+    <div class="item">
+        <div class="tb"><a class="no-click">NEWS</a><img src="assets/icons/arrow.svg" alt=""></div>
+        <div class="types_top"><a href="press.html">PRESS</a><a href="awards.html">AWARDS</a></div>
+    </div>
+    <div class="item"><div class="tb"><a href="index.html">EN</a></div></div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<div class="main-container">
+    <!-- Left Content -->
+    <div class="left-content">
+        <div class="title-wrap">
+            <h1 class="main-title">Career</h1>
+            <p class="sub-title">Opportunities</p>
+        </div>
+        
+        <div class="positions-list">
+            <div class="pos-item">
+                <div class="pos-header">
+                    <span class="p-name">Senior Interior Designer</span>
+                    <span class="p-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13" fill="none">
+                            <path d="M23 0.999999L12 12L1 0.999998" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="pos-content">
+                    <div class="pos-body">
+                        <div class="p-locations">Shanghai</div>
+                        <ul class="p-requirements">
+                            <li>5+ years of experience in commercial interior design</li>
+                            <li>Proficiency in AutoCAD, SketchUp, and Adobe Creative Suite</li>
+                            <li>Strong portfolio demonstrating high-end project experience</li>
+                            <li>Excellent communication and presentation skills</li>
+                            <li>Experience with luxury hospitality or retail projects preferred</li>
+                        </ul>
+                        <a href="javascript:openRecruitModal();" class="p-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pos-item">
+                <div class="pos-header">
+                    <span class="p-name">Technical Design Manager</span>
+                    <span class="p-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13" fill="none">
+                            <path d="M23 0.999999L12 12L1 0.999998" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="pos-content">
+                    <div class="pos-body">
+                        <div class="p-locations">Shanghai</div>
+                        <ul class="p-requirements">
+                            <li>7+ years of experience in construction drawing and technical design</li>
+                            <li>Expert knowledge of Chinese construction codes and standards</li>
+                            <li>Strong team management and mentoring abilities</li>
+                            <li>Experience coordinating with contractors and suppliers</li>
+                            <li>Bilingual communication skills (Chinese/English)</li>
+                        </ul>
+                        <a href="javascript:openRecruitModal();" class="p-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pos-item">
+                <div class="pos-header">
+                    <span class="p-name">Construction Drawing Specialist</span>
+                    <span class="p-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13" fill="none">
+                            <path d="M23 0.999999L12 12L1 0.999998" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="pos-content">
+                    <div class="pos-body">
+                        <div class="p-locations">Shanghai</div>
+                        <ul class="p-requirements">
+                            <li>3+ years of experience in detailed construction drawings</li>
+                            <li>Advanced AutoCAD and BIM skills required</li>
+                            <li>Experience with commercial and retail projects</li>
+                            <li>Strong attention to detail and accuracy</li>
+                            <li>Ability to read and interpret design specifications</li>
+                        </ul>
+                        <a href="javascript:openRecruitModal();" class="p-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pos-item">
+                <div class="pos-header">
+                    <span class="p-name">Project Coordinator</span>
+                    <span class="p-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 13" fill="none">
+                            <path d="M23 0.999999L12 12L1 0.999998" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="pos-content">
+                    <div class="pos-body">
+                        <div class="p-locations">Shanghai</div>
+                        <ul class="p-requirements">
+                            <li>2+ years of experience in project coordination</li>
+                            <li>Excellent organizational and time management skills</li>
+                            <li>Experience with project scheduling and milestone tracking</li>
+                            <li>Strong communication abilities with clients and team</li>
+                            <li>Detail-oriented with documentation management</li>
+                        </ul>
+                        <a href="javascript:openRecruitModal();" class="p-apply">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Right Image -->
+    <div class="right-image">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/mmbiz.png" alt="Career">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+    <div class="dom1">
+        <div class="links">
+            <div class="item"><a href="index.html" class="a1">HOME</a></div>
+            <div class="item">
+                <a class="a1">ABOUT</a>
+                <div class="pList f_14"><a href="index.html?type=1">OUR STORY</a><a href="team.html">TEAM</a></div>
+            </div>
+            <div class="item"><a href="portfolio.html" class="a1">PORTFOLIO</a></div>
+            <div class="item"><a href="career.html" class="a1">CAREER</a></div>
+            <div class="item"><a href="contact.html" class="a1">CONNECT</a></div>
+            <div class="item">
+                <a class="a1">NEWS</a>
+                <div class="pList f_14"><a href="press.html">PRESS</a><a href="awards.html">AWARDS</a></div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="sharelist">
+                <a href="https://www.facebook.com" target="_blank" class="ev"><div class="icon"><img src="assets/icons/RZnT5orjJLwTP.svg" alt="Facebook"></div></a>
+                <a href="https://www.linkedin.com" target="_blank" class="ev"><div class="icon"><img src="assets/icons/mYjizJtTRc4Fy.svg" alt="LinkedIn"></div></a>
+                <a class="ev wechat-qr-trigger">
+                    <div class="icon qr-icon"><img src="assets/icons/wechat.svg" alt="WeChat"></div>
+                    <div class="qr-popup" id="wechatQrPopup2">
+                        <div class="qr-popup-content">
+                            <div class="qr-title">Follow Us on WeChat</div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
+                            <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright f_14">© 2024–2025 GUNAIS Design. All Rights Reserved.<br>上海谷奈斯空间设计有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025117609号-1</a></div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Recruitment QR Code Modal -->
+<div id="recruitModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:40px; border-radius:8px; text-align:center; max-width:320px; position:relative;">
+        <span onclick="closeRecruitModal()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#999;">&times;</span>
+        <div style="font-size:18px; font-weight:bold; margin-bottom:20px; color:#272727;">Apply via WeChat</div>
+        <div style="margin-bottom:15px;"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code" style="width:200px; height:200px;"></div>
+        <div style="font-size:13px; color:#666; line-height:1.6;">Scan QR code to connect<br>Design Excellence Awaits</div>
+    </div>
+</div>
+
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script>
+    // Positions accordion - using jQuery
+    jQuery(document).ready(function($) {
+        $('.pos-item').on('click', function(e) {
+            if ($(e.target).is('a')) return;
+            
+            var $item = $(this);
+            var isActive = $item.hasClass('active');
+            
+            $('.pos-item').removeClass('active');
+            
+            if (!isActive) {
+                $item.addClass('active');
+            }
+        });
+    });
+
+    // WeChat QR Popup
+    $(document).ready(function() {
+        $('.wechat-qr-trigger').each(function() {
+            var popup = $(this).find('.qr-popup')[0];
+            if (popup) {
+                $(this).on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $(popup).css('display', 'block');
+                });
+            }
+        });
+        $(document).on('click', function(e) {
+            $('.qr-popup').each(function() {
+                if ($(this).css('display') === 'block' && !$(this).contains(e.target) && !$(e.target).closest('.wechat-qr-trigger').length) {
+                    $(this).css('display', 'none');
+                }
+            });
+        });
+        $(window).on('scroll', function() {
+            $('.qr-popup:visible').css('display', 'none');
+        });
+    });
+
+    new WOW().init();
+
+    // Recruitment Modal Functions
+    function openRecruitModal() {
+        document.getElementById('recruitModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeRecruitModal() {
+        document.getElementById('recruitModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    document.getElementById('recruitModal').addEventListener('click', function(e) {
+        if (e.target === this) closeRecruitModal();
+    });
+</script>
+
+</body>
+</html>

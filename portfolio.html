@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>GUNAIS - PORTFOLIO</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header_v2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts in HEAD for navigation -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/lenis.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #fff; }
+        
+        /* 隐藏页面顶部可能出现的线条 */
+        body,
+        .home {
+            border-top: none !important;
+        }
+        
+        /* Section 1 - Same as CCD */
+        .home .section1 { padding: 10.3646vw 17.2917vw 6.25vw; }
+        .home .section1 h1 { font-weight: 400; letter-spacing: 0.52vw; text-align: center; font-family: var(--font-heading); font-size: 4vw; }
+        .home .section1 h2 { line-height: 1.55; font-weight: 400; text-align: center; padding-bottom: 1.04167vw; border-bottom: 1px solid #272727; margin-bottom: 4.6875vw; letter-spacing: 0.208333vw; font-family: var(--font-heading); font-size: 2.25vw; }
+        .home .section1 .wrap_box .box .items a .text .name { font-weight: 700; font-family: var(--font-heading); font-size: 1.2vw; color: #888; margin-bottom: 0.5vw; }
+        .home .section1 .wrap_box .box .items a .text .des { font-family: var(--font-heading); font-size: 1.1vw; }
+        .home .section1 .wrap_box .box .single_item .text .name { font-weight: 700; font-family: var(--font-heading); font-size: 1.2vw; color: #888; margin-bottom: 0.5vw; }
+        .home .section1 .wrap_box .box .single_item .text .des { font-family: var(--font-heading); font-size: 1.1vw; }
+        
+        /* Wrap Box */
+        .home .section1 .wrap_box .box { margin-bottom: 3vw; }
+        
+        /* Items Grid - 2 columns */
+        .home .section1 .wrap_box .box .items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.04167vw; }
+        .home .section1 .wrap_box .box .items a { display: block; width: 100%; text-align: center; text-decoration: none; color: #272727; }
+        .home .section1 .wrap_box .box .items a .pic { overflow: hidden; }
+        .home .section1 .wrap_box .box .items a .pic img { width: 100%; display: block; object-fit: cover; height: 19.7917vw; transition: 600ms; }
+        .home .section1 .wrap_box .box .items a .text { padding: 1vw 0; }
+
+        .home .section1 .wrap_box .box .items a:hover .pic img { transform: scale(1.05); }
+        
+        /* Single Item - Full Width */
+        .home .section1 .wrap_box .box .single_item { display: block; width: 100%; text-decoration: none; color: #272727; margin-top: 1.5vw; }
+        .home .section1 .wrap_box .box .single_item .pic { overflow: hidden; }
+        .home .section1 .wrap_box .box .single_item .pic img { width: 100%; display: block; object-fit: cover; height: 28vw; transition: 600ms; }
+        .home .section1 .wrap_box .box .single_item .text { padding: 1vw 0; text-align: center; }
+
+        .home .section1 .wrap_box .box .single_item:hover .pic img { transform: scale(1.05); }
+        .home .section1 .wrap_box .box:last-child .single_item { margin-bottom: 0; }
+        
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .home .section1 { padding: 15vw 5% 8vw; }
+            .home .section1 h1 { font-size: 8vw; }
+            .home .section1 h2 { font-size: 4vw; margin-bottom: 6vw; }
+            .home .section1 .wrap_box .box .items { grid-template-columns: 1fr; gap: 4vw; }
+            .home .section1 .wrap_box .box .items a .pic img { height: 50vw; }
+            .home .section1 .wrap_box .box .items a .text .name { font-size: 3vw; }
+            .home .section1 .wrap_box .box .items a .text .des { font-size: 2.5vw; }
+            .home .section1 .wrap_box .box .single_item .pic img { height: 50vw; }
+            .home .section1 .wrap_box .box .single_item .text .name { font-size: 3vw; }
+            .home .section1 .wrap_box .box .single_item .text .des { font-size: 2.5vw; }
+            
+            /* Section 2 Responsive */
+            .home .section2 { padding: 0 5% 10vw; }
+            .home .section2 h1 { font-size: 4vw; }
+            .home .section2 h2 { font-size: 4vw; }
+            .home .section2 .types .item { font-size: 2.5vw; }
+            .home .section2 .boxes .box .list { grid-template-columns: 1fr; gap: 3vw; }
+            .home .section2 .boxes .box .list a .text p { font-size: 3vw; }
+        }
+        
+        /* Section 2 - ALL */
+        .home .section2 { padding: 0 17.2917vw 6.25vw; }
+        .home .section2 h1 { line-height: 1.5; text-align: center; font-weight: 400; font-family: var(--font-heading); font-size: 2vw; margin-bottom: 3vw; }
+        .home .section2 h2 { display: none; }
+        .home .section2-divider { border-bottom: none !important; margin-bottom: 2vw; }
+        
+        /* Types Filter */
+        .home .section2 .types { display: flex; justify-content: center; gap: 3vw; margin-bottom: 4vw; }
+        .home .section2 .types .item { color: #7d7d7d; font-family: var(--font-heading); font-size: 1.2vw; cursor: pointer; transition: color 0.3s; }
+        .home .section2 .types .item.on { color: #272727; font-weight: 700; }
+        .home .section2 .types .item:hover { color: #272727; }
+        
+        /* Section 2 Boxes - Grid 3 columns */
+        .home .section2 .boxes { margin: 0; }
+        .home .section2 .boxes .box .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5vw; }
+        .home .section2 .boxes .box .list a { display: block; position: relative; overflow: hidden; text-decoration: none; color: #fff; }
+        .home .section2 .boxes .box .list a img { width: 100%; display: block; object-fit: cover; aspect-ratio: 4/3; transition: transform 0.6s ease; }
+        .home .section2 .boxes .box .list a .text { position: absolute; left: 0; bottom: 0; width: 100%; padding: 1.5vw; opacity: 0; transition: opacity 0.4s ease; background: linear-gradient(transparent, rgba(0,0,0,0.6)); }
+        .home .section2 .boxes .box .list a .text p { font-family: var(--font-heading); font-size: 1.1vw; font-weight: 700; color: #fff; }
+        .home .section2 .boxes .box .list a:hover img { transform: scale(1.05); }
+        .home .section2 .boxes .box .list a:hover .text { opacity: 1; }
+    </style>
+</head>
+<body>
+<div class="home">
+
+<!-- DESKTOP HEADER -->
+<div class="header">
+    <div class="box">
+        <a href="index.html" class="logo">
+            <span class="logo-text">GUNAIS</span>
+        </a>
+        <div class="navbar-toggle">
+            <span class="line-top"></span>
+            <span class="line-bottom"></span>
+        </div>
+    </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <div class="links">
+        <div class="item">
+            <a href="index.html" class="a1">HOME</a>
+        </div>
+        <div class="item">
+            <a class="a1 no-click">ABOUT</a>
+            <div class="pList f_20">
+                <a href="index.html?type=1">OUR STORY</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="a1 no-click">PORTFOLIO</a>
+            <div class="pList f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
+        </div>
+        <div class="item">
+            <a href="career.html" class="a1">CAREER</a>
+        </div>
+        <div class="item">
+            <a href="contact.html" class="a1">CONNECT</a>
+        </div>
+        <div class="item">
+            <a class="a1 no-click">NEWS</a>
+            <div class="pList f_20">
+                <a href="press.html">PRESS</a>
+                <a href="awards.html">AWARDS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 2 - ALL -->
+<div class="section2">
+    <div class="section2-divider"></div>
+    <div class="types">
+        <div class="item on">OFFICE</div>
+        <div class="item">COMMERCIAL</div>
+        <div class="item">PUBLIC</div>
+        <div class="item">RESIDENTIAL</div>
+    </div>
+    <div class="boxes">
+        <div class="box on">
+            <div class="list">
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/1.png" alt="">
+                    <div class="text"><p>Dreamland Kids Club</p></div>
+                </a>
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/2.png" alt="">
+                    <div class="text"><p>Prestige Auto Pavilion</p></div>
+                </a>
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/3.png" alt="">
+                    <div class="text"><p>Lumina Reading Hub</p></div>
+                </a>
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/4.png" alt="">
+                    <div class="text"><p>Atelier Motor Studio</p></div>
+                </a>
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/5.png" alt="">
+                    <div class="text"><p>The Manor Club</p></div>
+                </a>
+                <a href="#">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6.png" alt="">
+                    <div class="text"><p>Serenity Yoga Loft</p></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+    <div class="dom1">
+        <div class="links">
+            <div class="item">
+                <a href="index.html" class="a1">HOME</a>
+            </div>
+            <div class="item">
+                <a class="a1">ABOUT</a>
+                <div class="pList f_14">
+                    <a href="index.html?type=1">OUR STORY</a>
+                    <a href="team.html">TEAM</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="portfolio.html" class="a1">PORTFOLIO</a>
+            </div>
+            <div class="item">
+                <a href="career.html" class="a1">CAREER</a>
+            </div>
+            <div class="item">
+                <a href="contact.html" class="a1">CONNECT</a>
+            </div>
+            <div class="item">
+                <a class="a1">NEWS</a>
+                <div class="pList f_14">
+                    <a href="press.html">PRESS</a>
+                    <a href="awards.html">AWARDS</a>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="sharelist">
+                <a href="https://www.facebook.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/RZnT5orjJLwTP.svg" alt="Facebook"></div>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/mYjizJtTRc4Fy.svg" alt="LinkedIn"></div>
+                </a>
+                <a class="ev wechat-qr-trigger">
+                    <div class="icon qr-icon"><img src="assets/icons/wechat.svg" alt="WeChat"></div>
+                    <div class="qr-popup" id="wechatQrPopup">
+                        <div class="qr-popup-content">
+                            <div class="qr-title">Follow Us on WeChat</div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
+                            <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright f_14">
+                Copyright © 2024–2025 GUNAIS Design. All Rights Reserved.<br>
+                上海谷奈斯空间设计有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025117609号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', smooth: true });
+function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+</script>
+</body>
+</html>

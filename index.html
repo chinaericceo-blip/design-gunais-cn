@@ -1,985 +1,642 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GUNAIS DESIGN | 谷奈斯空间设计</title>
-<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>GUNAIS Design | 谷奈斯空间设计</title>
+    <meta name="keywords" content="GUNAIS Design, 谷奈斯, 空间设计, 商业空间设计, 施工图深化设计, EPC设计管理, interior design, commercial space design">
+    <meta name="description" content="GUNAIS Design (谷奈斯空间设计) — 专注商业空间设计、施工图深化及EPC设计管理，以理性美学与场景体验融合为核心理念，致力于创造高品质空间。">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="assets/icons/gunais-logo.svg" type="image/svg+xml">
 
-<style>
-/* ═══════════════════════════════════════════
-   CCD 结构 1:1 复刻 — ft.css (vw 字体系统)
-   ═══════════════════════════════════════════ */
-html {
-  font-size: 0.8333333333vw;
-  color: #000;
-}
-@media screen and (max-width:1024px){ html{font-size:14px;} }
-.f_14{font-size:0.7291666667vw;}
-.f_16{font-size:0.8333333333vw;}
-.f_18{font-size:0.9375vw;}
-.f_20{font-size:1.0416666667vw;}
-.f_22{font-size:1.1458333333vw;}
-.f_24{font-size:1.25vw;}
-.f_26{font-size:1.3541666667vw;}
-.f_32{font-size:1.6666666667vw;}
-.f_34{font-size:1.7708333333vw;}
-.f_36{font-size:1.875vw;}
-.f_38{font-size:1.9791666667vw;}
-.f_40{font-size:2.0833333333vw;}
-.f_48{font-size:2.5vw;}
-.f_50{font-size:2.6041666667vw;}
-.f_56{font-size:2.9166666667vw;}
-.f_64{font-size:3.3333333333vw;}
-.f_76{font-size:3.9583333333vw;}
-.f_80{font-size:4.1666666667vw;}
-.f_96{font-size:5vw;}
-.f_100{font-size:5.2083333333vw;}
-.f_128{font-size:6.6666666667vw;}
-@media screen and (max-width:1024px){
-  .f_14{font-size:14px}.f_16{font-size:14px}.f_18{font-size:16px}.f_20{font-size:18px}.f_22{font-size:18px}.f_24{font-size:18px}.f_26{font-size:18px}
-  .f_32{font-size:20px}.f_34{font-size:20px}.f_36{font-size:20px}.f_38{font-size:22px}.f_40{font-size:22px}.f_48{font-size:24px}.f_50{font-size:25px}
-  .f_56{font-size:28px}.f_64{font-size:30px}.f_76{font-size:34px}.f_80{font-size:24px}.f_96{font-size:32px}.f_100{font-size:32px}.f_128{font-size:50px}
-}
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <script src="assets/js/swiper.js"></script>
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header_v2.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="assets/js/lenis.min.js"></script>
 
-/* ═══════════════════════════════════════════
-   CCD 结构 2: common.css (基础样式)
-   ═══════════════════════════════════════════ */
-*{font-family:"PingFang SC","Calibri","opensans","GothicArial","Arial","Microsoft YaHei","San Francisco",'Hiragino Sans GB',"Helvetica Neue",Helvetica,sans-serif;}
-body{background:url('https://qiniu.mfdemo.cn/ccdzjfuwu/images/body-bg.webp') repeat;}
-::-webkit-scrollbar{width:0}
-body,ul,li,p,a,*{margin:0;padding:0;list-style:none;color:#272727;}
-a{text-decoration:none;color:inherit;}
-*{outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);box-sizing:border-box;}
-img{vertical-align:middle;max-width:100%;}
-.Tinos,.Tinos>*{font-family:'Tinos';}
-video::-webkit-media-controls-download-button{display:none;}
-
-/* ═══════════════════════════════════════════
-   CCD 结构 3: header.css (导航 + 页脚)
-   ═══════════════════════════════════════════ */
-.no-click{cursor:auto!important;pointer-events:none;}
-.no-click:hover{text-decoration:none!important;}
-
-body [aos]{-webkit-transition-duration:2.5s;transition-duration:2.5s;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.275);transition-timing-function:cubic-bezier(.175,.885,.32,1.275);}
-
-.header{position:fixed;left:0;top:0;width:100%;z-index:100;transition:all 600ms;padding:3.125vw 2.1875vw 1.25vw 2.1875vw;color:#fff;mix-blend-mode:exclusion;pointer-events:none;}
-.header.open{mix-blend-mode:normal;}
-.header .box{position:relative;padding-bottom:1.25vw;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
-.header .box .logo{cursor:pointer;mix-blend-mode:exclusion;position:relative;z-index:10;pointer-events:auto;}
-.header .box .logo img{width:5.4688vw;display:block;}
-
-.nav{position:fixed;left:0;top:0;width:100%;height:100%;z-index:200;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:rgba(254,252,250,.95);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:all ease .3s;padding:0 0 50px;}
-.navopen .nav{opacity:1;pointer-events:auto;}
-.nav .links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;text-align:center;}
-.nav .links .item:not(:last-child){margin-bottom:.41667vw}
-.nav .links .item a{display:block;color:#000;letter-spacing:1px;font-family:'Tinos';cursor:pointer;padding-bottom:30px;letter-spacing:2.16px;}
-.nav .links .item .a1{line-height:1.66667vw;min-width:214px;}
-.nav .links .item .pList{display:none;}
-.nav .links .item .pList a{line-height:1.25vw;letter-spacing:.5px;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:auto;text-underline-offset:auto;text-underline-position:from-font;}
-.nav .links .item.on .a1{text-decoration:underline}
-.nav .lan{display:flex;flex-wrap:wrap;color:#000;height:20px;}
-.nav .lan a{display:flex;align-items:center;font-family:'Tinos';font-size:22px;font-style:normal;font-weight:400;line-height:0%;letter-spacing:2.4px;height:20px;}
-.nav .lan a p{font-family:'Tinos';font-size:22px;line-height:20px;height:20px;}
-.nav .lan a:not(:last-child)::after{content:'|';margin:0 12px;}
-.nav-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:82px 47px;position:absolute;left:0;bottom:0;width:100%;}
-.navbar-toggle{display:inline-block;padding:0 0;margin-left:20px;z-index:55;position:relative;mix-blend-mode:exclusion;cursor:pointer;pointer-events:auto;}
-.navbar-toggle span{display:block;width:24px;height:2px;background-color:#fff;margin:14px 0;transition:.4s;}
-.navopen .line-top{-webkit-transform:rotate(45deg) translate(4px,7px);transform:rotate(45deg) translate(4px,7px);}
-.navopen .line-bottom{-webkit-transform:rotate(-45deg) translate(4px,-7px);transform:rotate(-45deg) translate(4px,-7px);}
-.fixed_links{display:flex;flex-wrap:wrap;align-items:center;gap:42px;transition:.6s ease;pointer-events:auto;}
-.fixed_links.on{opacity:0}
-.fixed_links .icon{width:20px;height:20px;}
-.fixed_links .icon svg{max-width:100%;max-height:100%;}
-.fixed_links .icon svg path{fill:#000;}
-.fixed_links .icon img{max-width:100%;max-height:100%;}
-
-/* Mobile header */
-.pheader{display:none;position:fixed;top:0;height:60px;width:100%;left:0;z-index:100;box-shadow:0 2px 3px 0 rgba(0,0,0,.1);}
-.pheader .menu{width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;background-color:#fff;}
-.pheader .menu .l{display:flex;align-items:center;}
-.pheader .menu .l a{margin-left:20px;display:flex;align-items:center;}
-.pheader .menu .l a img{height:30px;object-fit:contain;}
-.pheader .menu .l a p{margin-left:10px;font-size:14px;}
-.pheader .menu .navbox{margin-right:20px;transition:all 600ms;}
-.pheader .menu .navbox .line{width:30px;height:1px;background-color:#000;margin:8px 0;-webkit-transition:all .6s;transition:all .6s;}
-.pheader .menu .activeBox{transform:translateX(10px);}
-.pheader .menu .activeBox .line:nth-child(1){transform:rotate(45deg) translateY(12px);}
-.pheader .menu .activeBox .line:nth-child(2){transform:translateX(30px);opacity:0;}
-.pheader .menu .activeBox .line:nth-child(3){transform:rotate(-45deg) translateY(-12px);}
-.menuList{position:fixed;left:0;top:59px;width:100%;z-index:1001;background:#ececec;display:none;height:calc(100vh - 59px);}
-.menuList .lan{padding:1rem;display:flex;justify-content:flex-end;align-items:center;}
-.menuList .lan a{color:#646464;margin-left:10px;}
-.menuList .lan .active{font-weight:bolder;color:#000;}
-.menuList .item{padding:1rem;background:#ececec;border-bottom:1px solid rgba(0,0,0,.05);}
-.menuList .item a{color:#000;display:block;position:relative;font-family:"Tinos";}
-.menuList .item a img{position:absolute;right:0;width:20px;transition:all 600ms;top:5px;}
-.menuList .item .tb{position:relative;display:flex;justify-content:space-between;align-items:center;}
-.menuList .item .tb a{display:block;}
-.menuList .item .tb img{width:30px;position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:10;transition:all 600ms;}
-.menuList .item .tb .rotate{transform:translateY(-50%) rotate(90deg);}
-.menuList .item .types_top{display:none;}
-.menuList .item .types_top a{font-size:14px;margin-top:15px;}
-
-/* Footer — 完整复制  */
-.foot{border-top:1px solid #272727;padding:73px 48px 57px;position:relative;background:#fff;}
-.foot .dom1{display:flex;justify-content:space-between;}
-.foot .dom1 .links{display:flex;flex-wrap:wrap;gap:2vw;}
-.foot .dom1 .links .a1{font-weight:700;font-family:'Tinos';}
-.foot .dom1 .links a{color:#272727;letter-spacing:1px;width:fit-content;font-family:'Tinos';text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;display:block;line-height:1.14;margin:0 auto;min-width:7.031vw;}
-.foot .dom1 .links a:not(:last-child){margin-bottom:10px;}
-.foot .dom1 .r .media{display:flex;}
-.foot .dom1 .r .media a:not(:last-child){margin-right:1.14583vw;}
-.foot .dom1 .r .media a img{width:1.04167vw;opacity:.5;transition:all 600ms;}
-.foot .dom1 .r .media a:hover img{opacity:1;}
-.foot .follow{font-size:14px;font-weight:700;font-family:'Tinos';width:100%;text-align:center;margin-bottom:10px;display:none;}
-.foot .sharelist{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:35px;}
-.foot .sharelist .ev{width:30px;height:30px;}
-.foot .sharelist .ev img{width:100%;}
-.foot .copyright{width:100%;margin-top:60px;text-align:right;}
-.foot .copyright a{text-decoration:underline;}
-.foot .copyright .company-name{font-size:14px;color:#272727;margin-bottom:8px;font-family:'Tinos';letter-spacing:1px;}
-.foot .copyright .contact-info{margin-bottom:8px;}
-.foot .copyright .contact-info a{color:#666;font-size:12px;text-decoration:none;}
-.foot .copyright .contact-info a:hover{text-decoration:underline;}
-.foot .copyright .beian{font-size:11px;color:#999;margin-bottom:5px;}
-.foot .copyright .copyright-text{font-size:11px;color:#999;}
-
-.goTop{position:absolute;right:50px;bottom:284px;z-index:10;cursor:pointer;transition:all 600ms;opacity:0;transform:translateY(4.16667vw);}
-.goTop svg{width:38px;}
-.goTop.show{opacity:1;transform:translateY(0);}
-
-@media screen and (max-width:1024px){
-  .header{display:none;}
-  .pheader{display:flex;}
-  .goTop{right:5%;bottom:10%;}
-  .goTop svg{width:15px;}
-  .foot{padding:15px 5%;}
-  .foot .dom1{flex-direction:column;}
-  .foot .dom1 .links{display:none;}
-  .foot .dom1 .r .media{justify-content:center;}
-  .foot .dom1 .r .media a:not(:last-child){margin-right:11px;}
-  .foot .dom1 .r .media a img{width:20px;}
-  .foot .sharelist{gap:25px;justify-content:center;}
-  .foot .follow{display:block;margin-top:10px;letter-spacing:.5px;}
-  .foot .sharelist .ev{width:18.55px;height:18.55px;}
-  .foot .sharelist.wechat-row{justify-content:center;}
-  .foot .wechat-qr-img{width:60px;height:60px;}
-  .foot .copyright{width:100%;margin-top:25px;font-size:10px;text-align:center;color:#949494;padding-bottom:15px;}
-  .foot .copyright .company-name{font-size:12px;color:#666;margin-bottom:8px;}
-  .foot .copyright .contact-info{margin-bottom:6px;}
-  .foot .copyright .contact-info a{font-size:11px;}
-  .foot .copyright .beian{font-size:10px;margin-bottom:5px;}
-  .foot .copyright a{font-size:9px;text-decoration:underline;display:flex;justify-content:center;color:#949494!important;margin-top:4px;}
-}
-
-/* ═══════════════════════════════════════════
-   结构 4: index.css (首页版块)
-   ═══════════════════════════════════════════ */
-img{max-width:100%;max-height:100%;object-fit:cover;}
-.common_bg{position:absolute;width:100%;height:100%;top:0;left:0;z-index:-1;}
-.item_hover{overflow:hidden;}
-.item_hover:hover img{transform:scale(1.05);}
-.item_hover img{transition:.6s ease;}
-
-@keyframes fadeInUp_{0%{opacity:0;-webkit-transform:translate3d(0,100px,0);transform:translate3d(0,100px,0);}to{opacity:1;-webkit-transform:none;transform:none;}}
-.fadeInUp_{animation-name:fadeInUp_;animation-duration:2s;}
-
-@keyframes moveDown{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(20px);opacity:0;}}
-
-.banner{position:relative;}
-.banner .down{position:absolute;left:50%;transform:translateX(-50%);bottom:3.4375vw;cursor:pointer;}
-.banner .down svg{width:22px;height:11px;display:block;animation:moveDown 2s infinite ease-in-out;}
-.banner .down svg:last-child{animation-delay:200ms;}
-.banner .down svg:not(:last-child){margin:0 0 5px;}
-.banner video{width:100%;height:100vh;display:block;object-fit:cover;}
-
-.section1{padding:9.583vw 0 10.416vw;}
-.section1 .title{text-align:center;margin:0 0 10.677vw;}
-.section1 .title .p1{font-style:normal;font-weight:400;line-height:190%;letter-spacing:0.333vw;}
-.section1 .title .more{width:14.47917vw;height:3.4375vw;display:flex;align-items:center;justify-content:center;color:#FFF;font-style:normal;font-weight:500;margin:1.19792vw auto 0;background:#272727;}
-.section1 .content{padding:0 1.5625vw 0 0;display:flex;align-items:flex-end;flex-direction:column;position:relative;}
-.section1 .content .position{position:absolute;left:3.22917vw;top:.83333vw;color:#000;font-style:normal;font-weight:400;line-height:190%;writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:5.76px;white-space:nowrap;padding-right:2vw;}
-.section1 .content>div{width:fit-content;display:flex;align-items:flex-end;flex-direction:column;}
-.section1 .content .big_img{width:85.46875vw;height:32.91667vw;position:relative;overflow:hidden;}
-.section1 .content .big_img img{width:100%;height:120%;max-height:unset;top:-14.58333vw;position:relative;}
-.section1 .content .flex1{width:100%;margin:1.25vw 0 3.645vw;display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.55208vw;padding-left:4.531vw;}
-.section1 .content .flex1 .p1{color:#000;font-style:normal;font-weight:400;line-height:190%;text-decoration-line:underline;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;letter-spacing:0.187vw;}
-.section1 .content .flex1 .p2{width:39.583vw;color:#000;font-style:normal;font-weight:400;line-height:140%;margin:.52083vw 0 0 0;}
-.section1 .content .flex2{width:39.583vw;padding:0 1.97917vw 0 0;}
-.section1 .content .flex2 .p1{color:#272727;font-style:normal;font-weight:400;text-decoration-line:underline;text-decoration-style:solid;text-decoration-skip-ink:none;text-decoration-thickness:5.5%;text-underline-offset:16%;text-underline-position:from-font;letter-spacing:0.187vw;}
-.section1 .content .flex2 .dis{display:flex;flex-wrap:wrap;width:100%;gap:1.09375vw;margin-top:1.354vw;}
-.section1 .content .flex2 .dis .img{width:auto;height:3.0729vw;display:flex;align-items:center;}
-
-@keyframes yAnimate{0%{transform:translateY(20px);opacity:0;}100%{opacity:1;transform:translateY(0);}}
-
-.section2{padding:0 16.5625vw;position:relative;overflow:hidden;}
-.section2 .top{position:absolute;right:5.52083vw;bottom:7.60417vw;width:1.5625vw;height:fit-content;}
-.section2 .t{margin:0 0 0 1.04167vw;}
-.section2 .t .title{color:#272727;font-style:normal;font-weight:400;line-height:1.5;margin:0 0 2.083vw;letter-spacing:0.187vw;}
-.section2 .t .cut{height:8.4vw;}
-.section2 .t .cut .cut_list{display:none;}
-.section2 .t .cut .cut_list.on{display:block;animation:yAnimate .6s ease forwards;}
-.section2 .t .p1{color:#272727;font-style:normal;font-weight:700;margin:0 0 .20833vw;}
-.section2 .t .p2{width:31.25vw;color:#272727;font-style:normal;font-weight:500;line-height:1.25vw;}
-.section2 .content{margin:3.38542vw 0 0 0;position:relative;}
-.section2 .content .swiper-pagination{position:static;height:1px;background:#ADADAD;margin:1.71875vw 1.04167vw 0 1.04167vw;}
-.section2 .content .swiper-pagination .swiper-pagination-progressbar-fill{height:2px;background:#4F4F4F;top:-1px;}
-.section2 .content .swiper1{width:83.07292vw;margin:0;}
-.section2 .content .swiper1 .swiper-slide{cursor:pointer;}
-.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale{height:100%;}
-.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale:after{opacity:1;}
-.section2 .content .swiper1 .swiper-slide.swiper-slide-active .img .scale .text{opacity:1;}
-.section2 .content .swiper1 .swiper-slide .img{height:22.65625vw;display:flex;flex-direction:column;justify-content:flex-end;}
-.section2 .content .swiper1 .swiper-slide .img:hover .scale:after{opacity:1;}
-.section2 .content .swiper1 .swiper-slide .img:hover .scale .text{opacity:1;}
-.section2 .content .swiper1 .swiper-slide .img .scale{position:relative;height:90%;width:100%;transition:all 600ms;}
-.section2 .content .swiper1 .swiper-slide .img .scale:after{content:'';position:absolute;width:100%;height:100%;top:0;left:0;background:linear-gradient(0deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.25) 100%);z-index:1;opacity:0;transition:.6s ease;}
-.section2 .content .swiper1 .swiper-slide .img .scale .text{width:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;color:#FFF;font-style:normal;font-weight:700;line-height:1.5;opacity:0;transition:.6s ease;}
-.section2 .content .swiper1 .swiper-slide .img img{width:100%;height:100%;object-fit:cover;transition:all 600ms;}
-.section2 .content2{margin:8.15625vw auto 8.33333vw;width:31.25vw;color:#000;text-align:center;font-style:normal;font-weight:400;line-height:2;letter-spacing:0.125vw;}
-
-.section3{border-top:1px solid #272727;border-bottom:1px solid #272727;display:flex;justify-content:space-between;}
-.section3 .l{position:relative;flex:1;}
-.section3 .l .t1{width:27.21875vw;text-align:right;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
-.section3 .l .t1 .p1{color:#000;text-align:right;font-style:normal;font-weight:400;line-height:112%;margin:0 0 2.343vw;letter-spacing:0.312vw;}
-.section3 .l .t1 .p2{color:#000;text-align:right;font-style:italic;font-weight:400;line-height:143%;letter-spacing:1.44px;}
-.section3 .l .t2{margin:3.54167vw 0 0 16.40625vw;color:#000;text-align:center;font-style:normal;font-weight:400;line-height:112%;letter-spacing:5.76px;width:27.29167vw;}
-.section3 .img{width:45.52083vw;height:56.14583vw;}
-.section3 .img img{width:100%;height:100%;}
-
-.section4{margin:160px auto;width:1176px;height:784px;}
-.section4 img{width:100%;height:100%;}
-
-.section5{display:flex;height:61.19792vw;}
-.section5 .l{width:50%;height:100%;padding:11.45833vw 0 0 0;text-align:center;position:relative;z-index:1;}
-.section5 .l .title{color:#3D532C;text-align:center;font-style:normal;font-weight:400;line-height:112%;}
-.section5 .l .img{width:17.08333vw;height:25.625vw;margin:2.65625vw auto 0;}
-.section5 .l .img img{width:100%;height:100%;}
-.section5 .img2{width:50%;height:100%;}
-.section5 .img2 img{width:100%;height:100%;}
-
-.section6{padding:8.33333vw 1.97917vw;position:relative;display:flex;gap:.9375vw;overflow:hidden;}
-.section6 .item1{width:29.53125vw;margin:17.34375vw 0 0 0;}
-.section6 .item1 .p1{color:#000;font-style:italic;letter-spacing:1.2px;margin:0 0 .9375vw 0;}
-.section6 .item1 .img{width:100%;height:19.79167vw;}
-.section6 .item1 .img img,.section6 .item1 .img video{width:100%;height:100%;}
-.section6 .big_img{width:35vw;height:45.10417vw;}
-.section6 .big_img img,.section6 .big_img video{width:100%;height:100%;}
-.section6 .r{margin:1.09375vw 0 0 0;}
-.section6 .r .title{margin:0 0 0 1.04167vw;letter-spacing:0.26vw;}
-.section6 .r .title p{color:#000;font-style:normal;font-weight:400;line-height:1.2;position:relative;}
-.section6 .r .title p:nth-child(2){left:0;text-align:right;}
-.section6 .r .img{margin:8.28125vw 0 0 0;width:29.53125vw;height:19.79167vw;}
-.section6 .r .img img,.section6 .r .img video{width:100%;height:100%;}
-.section6 .r .pick{color:#000;font-style:italic;line-height:1.5;letter-spacing:0.5px;margin:.98958vw 0 0 0;}
-
-.section7{display:flex;height:61.19792vw;}
-.section7 .l{width:50%;height:100%;padding:11.09375vw 0 0 0;position:relative;z-index:2;}
-.section7 .l .img{width:12.65625vw;height:7.29167vw;margin:0 auto 21.97917vw;}
-.section7 .l .img img{width:100%;}
-.section7 .l .p1{width:27.48958vw;margin:auto;color:#EADFDA;text-align:center;font-style:normal;font-weight:400;line-height:112%;letter-spacing:0.114vw;}
-.section7 .img2{width:50%;height:100%;}
-.section7 .img2 img{width:100%;height:100%;}
-
-.section8{padding:7.91667vw 1.92708vw 5.46875vw 1.97917vw;}
-.section8 .gallery-grid{width:100%;}
-.section8 .gallery-row{display:flex;gap:1.5vw;margin-bottom:1.5vw;}
-.section8 .gallery-row.row1 .img-box{height:25vw;}
-.section8 .gallery-row.row2 .img-box{height:20vw;}
-.section8 .gallery-row .img-box{flex:1;border:1px solid #000;overflow:hidden;}
-.section8 .gallery-row .img-box img{width:100%;height:100%;object-fit:cover;}
-.section8 .gallery-text{text-align:left;padding:2vw 0 0 0;}
-.section8 .gallery-text .f_22{font-size:1.3vw;line-height:1.6;margin-bottom:1vw;}
-.section8 .gallery-text .p2{font-size:1.1vw;font-style:italic;color:#666;}
-
-/* Loading */
-.loading{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:999;display:flex;align-items:center;justify-content:center;cursor:none;transition:.6s ease;}
-.loading.on{opacity:0;transition-delay:1.2s;cursor:unset;}
-.loading .fist{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:5s linear;}
-
-/* Custom cursor */
-.cursor{position:fixed;top:0;left:0;transform:translate(-50%,-50%);display:flex;align-items:center;pointer-events:none;gap:12px;z-index:999999;}
-.cursor .circle{width:18px;height:18px;background:#272727;border-radius:50%;}
-.cursor p{color:#272727;font-size:16px;font-style:normal;font-weight:700;line-height:normal;}
-
-/* Mobile responsive for index sections */
-@media screen and (max-width:1024px){
-  .banner{margin-top:60px;}
-  .banner video{height:auto;}
-  .section1{padding:50px 5%;}
-  .section1 .title{margin:0 0 50px;}
-  .section1 .title .more{width:170px;height:40px;font-size:13px;margin:15px auto 0;}
-  .section1 .content{padding:0;}
-  .section1 .content>div{align-items:unset;}
-  .section1 .content .position{display:none;}
-  .section1 .content .big_img{width:100%;height:auto;}
-  .section1 .content .big_img img{top:0;transform:none!important;}
-  .section1 .content .flex1{flex-direction:column;gap:0;padding:0;}
-  .section1 .content .flex1 .p1{margin:0 0 20px;}
-  .section1 .content .flex1 .p2{margin:0;width:100%;}
-  .section1 .content .flex2{flex-direction:column;align-items:unset;margin:22px 0 0 0;width:100%;}
-  .section1 .content .flex2 .p1{text-align:left;}
-  .section1 .content .flex2 .dis{width:100%;height:auto;gap:22px;margin-top:20px;}
-  .section1 .content .flex2 .dis .img{height:40px;}
-  .section2{padding:50px 5%;}
-  .section2 .t .cut{height:180px;}
-  .section2 .t .title{line-height:unset;margin:0 0 20px;}
-  .section2 .t .p1{margin:0 0 10px;}
-  .section2 .t .p2{line-height:1.5;width:100%;}
-  .section2 .content{margin:30px 0 0 0;}
-  .section2 .content .swiper1{width:100%;height:auto;}
-  .section2 .content .swiper1 .swiper-slide .img{height:400px;}
-  .section2 .content .swiper1 .swiper-slide .img .scale{height:100%;}
-  .section2 .content .swiper1 .swiper-slide .img .scale::after{opacity:1;}
-  .section2 .content .swiper1 .swiper-slide .img .scale .text{opacity:1;}
-  .section2 .content .swiper-pagination{margin:30px auto 0;}
-  .section2 .content2{width:100%;margin:50px auto 0;}
-  .section2 .top{right:50px;bottom:20px;width:15px;}
-  .section2 .top svg{width:100%;}
-  .section3{height:auto;flex-direction:column;}
-  .section3 .img{width:100%;height:auto;}
-  .section3 .l .t1{width:100%;text-align:left;position:static;transform:none;padding:5%;}
-  .section3 .l .t1 .p1,.section3 .l .t1 .p2{text-align:left;}
-  .section3 .l .t2{margin:25px 0 0 0;width:100%;text-align:left;}
-  .section4{width:90%;height:auto;margin:60px auto;}
-  .section5{flex-direction:column;height:auto;}
-  .section5 .l{width:100%;height:auto;padding:50px 5%;}
-  .section5 .l .img{width:40%;height:auto;margin:40px auto 0;}
-  .section5 .img2{width:100%;height:auto;}
-  .section6{padding:50px 5%;flex-direction:column;gap:15px;}
-  .section6 .item1{width:100%;margin:0;}
-  .section6 .item1 .p1{margin:0 0 15px;line-height:inherit;}
-  .section6 .item1 .img{height:auto;}
-  .section6 .big_img{width:100%;height:auto;}
-  .section6 .r{margin:20px 0 0 0;width:100%;}
-  .section6 .r .title{margin:0;}
-  .section6 .r .title p:nth-child(2){text-align:left;left:30px;}
-  .section6 .r .img{width:100%;height:auto;margin:25px 0 0 0;}
-  .section6 .r .pick{margin:15px 0 0 0;}
-  .section7{flex-direction:column;height:auto;}
-  .section7 .img2{width:100%;height:auto;}
-  .section7 .l{width:100%;height:400px;padding:50px 5%;}
-  .section7 .l .img{width:100px;height:auto;margin:0 auto 200px;}
-  .section7 .l .p1{width:100%;}
-  .section8{padding:70px 5%;}
-  .section8 .gallery-row{flex-direction:column;gap:15px;}
-  .section8 .gallery-row.row1 .img-box,
-  .section8 .gallery-row.row2 .img-box{height:auto;aspect-ratio:4/3;}
-  .section8 .gallery-text{text-align:center;padding:20px 0 0 0;}
-  .section8 .gallery-text .f_22{font-size:4vw;}
-  .section8 .gallery-text .p2{font-size:3.5vw;}
-  .loading,.cursor{display:none;}
-  .home{overflow:hidden;}
-}
-
-/* ═══════════════════════════════════════════
-   Swiper CSS (轮播组件)
-   ═══════════════════════════════════════════ */
-.swiper{width:100%;height:100%;}
-.swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative;}
-
-/* ═══════════════════════════════════════════
-   GUNAIS 附加样式
-   ═══════════════════════════════════════════ */
-/* Logo 标注提示（导航Logo处加虚线边框标识） */
-.logo-mark{position:relative;}
-.logo-text{font-family:'Tinos',serif;font-weight:900;font-size:2.2vw;letter-spacing:0.35vw;color:#fff;display:block;white-space:nowrap;}
-@media screen and (max-width:1024px){.logo-text{font-size:18px;letter-spacing:3px;color:#272727;mix-blend-mode:normal;font-weight:900;}}
-
-
-/* 图片占位符样式已移除 */
-
-/* 微信公众号二维码样式 */
-.wechat-row {
-  align-items: center;
-  gap: 20px;
-}
-.wechat-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.wechat-qr-img {
-  width: 80px;
-  height: 80px;
-  background: #fff;
-}
-.wechat-tip {
-  font-size: 12px;
-  color: #999;
-}
-.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#e0dbd5;color:#999;font-size:14px;letter-spacing:1px;}
-
-/* Section 7 深色背景 */
-.section7{background:#272727;}
-
-/* 移动端 section7 背景 */
-@media screen and (max-width:1024px){
-  .section7 .l .p1{color:#EADFDA;}
-}
-</style>
+    <style>
+        /* Body texture background */
+        body {
+            background: #F7F3EF;
+            background-image: repeating-linear-gradient(
+                0deg,
+                rgba(200,190,180,0.04) 0px,
+                rgba(200,190,180,0.04) 1px,
+                transparent 1px,
+                transparent 60px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                rgba(200,190,180,0.03) 0px,
+                rgba(200,190,180,0.03) 1px,
+                transparent 1px,
+                transparent 60px
+            );
+        }
+        /* ===== AOS WOW INIT ===== */
+        .wow { visibility: hidden; }
+        /* 首页页脚保持黑色 */
+        .foot { background: #272727 !important; color: #fff !important; }
+        .foot .dom1 .links .item .a1 { color: rgba(255,255,255,0.9) !important; }
+        .foot .dom1 .links .item .pList a { color: rgba(255,255,255,0.5) !important; }
+        .foot .dom1 .links .item .pList a:hover { color: rgba(255,255,255,0.9) !important; }
+        .foot .dom1 .r .follow { color: rgba(255,255,255,0.5) !important; }
+        .foot .dom1 .r .sharelist .ev .icon img { filter: invert(1) !important; }
+        .foot .dom1 .r .copyright { color: rgba(255,255,255,0.3) !important; }
+        .foot .dom1 .r .copyright a { color: rgba(255,255,255,0.3) !important; }
+        /* Swiper fix for pure CSS fallback */
+        .swiper-wrapper { display: flex; }
+        .swiper-slide { flex-shrink: 0; }
+    </style>
 </head>
 
 <body>
-
-<!-- ═══════════════════════════════════════════
-     Loading Screen (CCD 结构)
-     ═══════════════════════════════════════════ -->
-<div class="loading on" id="loading">
-  <div class="fist">
-    <p class="f_128 Tinos" style="color:#272727;font-weight:900;">GUNAIS</p>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     Custom Cursor (结构 — 仅桌面端)
-     ═══════════════════════════════════════════ -->
-<div class="cursor" id="cursor">
-  <div class="circle"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     Header — 完整  导航结构
-     ═══════════════════════════════════════════ -->
-<div class="header" id="header">
-  <div class="box">
-    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-      <!-- ★ 替换为 GUNAIS Logo 图片: <img src="logo.png" alt="GUNAIS"> -->
-      <span class="logo-text logo-mark">GUNAIS</span>
-    </div>
-    <div class="fixed_links">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </div>
-    </div>
-    <div class="navbar-toggle" id="navToggle">
-      <span class="line-top"></span>
-      <span class="line-bottom"></span>
-    </div>
-  </div>
-</div>
-
-<!-- Mobile Header -->
-<div class="pheader">
-  <div class="menu">
-    <div class="l">
-      <a href="#">
-        <!-- ★ 移动端 Logo: <img src="logo.png"> -->
-        <p class="f_24 Tinos" style="font-weight:900;">GUNAIS</p>
-      </a>
-    </div>
-    <div class="navbox" id="mNavToggle">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div>
-</div>
-
-<!-- Full-screen Nav (CCD 结构) -->
-<div class="nav" id="fullNav">
-  <div class="links">
-    <div class="item"><a class="a1 f_64 Tinos" href="#">HOME</a></div>
-    <div class="item"><a class="a1 f_64 Tinos" href="#">ABOUT</a></div>
-    <div class="item"><a class="a1 f_64 Tinos" href="#">PORTFOLIO</a></div>
-    <div class="item"><a class="a1 f_64 Tinos" href="#">CAREER</a></div>
-    <div class="item"><a class="a1 f_64 Tinos" href="#">CONNECT</a></div>
-    <div class="item"><a class="a1 f_64 Tinos" href="#">NEWS</a></div>
-  </div>
-  <div class="nav-bottom">
-    <div class="lan">
-      <a href="#"><p>EN</p></a>
-      <a href="#"><p>中文</p></a>
-    </div>
-  </div>
-</div>
-
-<!-- Mobile Menu List -->
-<div class="menuList" id="menuList">
-  <div class="lan">
-    <a href="#" class="active">EN</a>
-    <a href="#">中文</a>
-  </div>
-  <div class="item"><a href="#">HOME</a></div>
-  <div class="item"><a href="#">ABOUT</a></div>
-  <div class="item"><a href="#">PORTFOLIO</a></div>
-  <div class="item"><a href="#">CAREER</a></div>
-  <div class="item"><a href="#">CONNECT</a></div>
-  <div class="item"><a href="#">NEWS</a></div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     Main Content — 完整  首页 8 个版块
-     ═══════════════════════════════════════════ -->
 <div class="home">
 
-  <!-- ═══ Section: Banner ( 全屏视频) ═══ -->
-  <div class="banner">
-    <video autoplay muted loop playsinline preload="auto" style="width:100vw;height:100vh;object-fit:cover">
-      <source src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/videos/SYSP-.mp4" type="video/mp4" />
+<!-- ============================================================
+     DESKTOP HEADER
+============================================================ -->
+<div class="header">
+    <div class="box">
+        <a href="index.html" class="logo">
+            <span class="logo-text">GUNAIS</span>
+        </a>
+        <div class="navbar-toggle">
+            <span class="line-top"></span>
+            <span class="line-bottom"></span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     DESKTOP FULL-SCREEN NAV OVERLAY
+============================================================ -->
+<div class="nav">
+    <div class="links">
+        <div class="item">
+            <a href="index.html" class="a1 f_36">HOME</a>
+        </div>
+        <div class="item">
+            <a class="a1 f_36 no-click">ABOUT</a>
+            <div class="pList f_20">
+                <a href="index.html?type=1">OUR STORY</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="a1 f_36 no-click">PORTFOLIO</a>
+            <div class="pList f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
+        </div>
+        <div class="item">
+            <a href="career.html" class="a1 f_36">CAREER</a>
+        </div>
+        <div class="item">
+            <a href="contact.html" class="a1 f_36">CONNECT</a>
+        </div>
+        <div class="item">
+            <a class="a1 f_36 no-click">NEWS</a>
+            <div class="pList f_20">
+                <a href="press.html">PRESS</a>
+                <a href="awards.html">AWARDS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     MOBILE HEADER
+============================================================ -->
+<div class="pheader">
+    <div class="menu">
+        <div class="l">
+            <a href="index.html" target="_self" class="animated fadeInUpLeft">
+                <span class="logo-text" style="color:#fff;">GUNAIS</span>
+            </a>
+        </div>
+        <div class="navbox">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     MOBILE MENU LIST
+============================================================ -->
+<div class="menuList">
+    <div class="item">
+        <div class="tb">
+            <a href="index.html">HOME</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">ABOUT</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="index.html?type=1">OUR STORY</a>
+            <a href="team.html">TEAM</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">PORTFOLIO</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="portfolio.html">CURATED</a>
+            <a href="portfolio.html#all">ALL</a>
+        </div>
+    </div>
+    <div class="item">
+        <a href="career.html">CAREER</a>
+    </div>
+    <div class="item">
+        <a href="contact.html">CONNECT</a>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">NEWS</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="press.html">PRESS</a>
+            <a href="awards.html">AWARDS</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a href="index.html">EN</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     SECTION BANNER - HERO VIDEO
+     ※ 替换视频: 将视频文件放入 videos/ 文件夹后修改 src 路径
+============================================================ -->
+<div class="banner">
+    <video id="video"
+        src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/videos/lifestyle-video.mp4"
+        preload="metadata"
+        autoplay
+        loop
+        muted
+        playsinline
+        webkit-playsinline
+        x5-video-player-type="h5"
+        x5-video-player-fullscreen="true"
+        data-object-fit="cover"
+        controlslist="nodownload"
+        draggable="true">
     </video>
-
-    <div class="down" onclick="document.querySelector('.section1').scrollIntoView({behavior:'smooth'})">
-      <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
-      <svg viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L11 9L20 2" stroke="#fff" stroke-width="1.5"/></svg>
+    <div class="down">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="13" viewBox="0 0 24 13" fill="none">
+            <path d="M23 0.999999L12 12L1 0.999998" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="13" viewBox="0 0 24 13" fill="none">
+            <path d="M23 0.999999L12 12L1 0.999998" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 1: Our Story + Sub-brands (GUNAIS) ═══ -->
-  <div class="section1">
+<!-- ============================================================
+     SECTION 1 - OUR STORY
+     ※ 替换图片: images/SOtK5dKuEQZsL.webp → 替换为品牌主图
+============================================================ -->
+<div class="section1">
     <div class="title">
-      <p class="p1 f_48 Tinos" style="letter-spacing:0.333vw;">
-        It started from a sketch,<br>
-        then grew into a space that breathes.
-      </p>
-      <div class="more f_22">OUR STORY</div>
+        <div class="p1 f_64 wow animated fadeInUp_">
+            It started from a vision...
+        </div>
     </div>
-
-    <div class="content">
-      <div class="position f_16" style="font-weight:700;">GUNAIS DESIGN · EST. 2024 · SHANGHAI</div>
-
-      <div>
-        <!-- 大图 -->
-        <div class="big_img item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/1.png" alt="GUNAIS Design">
+    <div class="content wow animated fadeInUp_">
+        <div>
+            <div class="big_img">
+                <!-- ※ 替换图片 -->
+                <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/SOtK5dKuEQZsL.webp" alt="GUNAIS Design Story">
+            </div>
+            <div class="flex1 wow animated fadeInUp_">
+                <div class="p1 f_36">OUR STORY</div>
+                <div class="p2 Tinos f_20">
+                    <p style="text-align:left;">GUNAIS Design (谷奈斯空间设计) was founded by designer Eric Y (邵阳), a veteran of over 15 years in architectural and interior design. The firm specializes in high-quality commercial space design, construction drawing deepening, and EPC design management.</p>
+                    <p style="text-align:left;"><br></p>
+                    <p style="text-align:left;">With a philosophy rooted in rationality, restraint, and experiential depth, GUNAIS creates spaces that fuse commercial value with humanistic care — where every project tells a story of precision and artistry.</p>
+                    <p style="text-align:left;"><br></p>
+                    <p style="text-align:left;">From landmark commercial complexes and office buildings to hotel interiors and exhibition spaces, GUNAIS has earned a reputation for "refined design that creates high-quality spaces."</p>
+                </div>
+            </div>
+            <div class="flex2 wow animated fadeInUp_">
+                <div class="p1 f_32 CORE_SERVICES">CORE SERVICES</div>
+                <div class="dis">
+                    <!-- ※ 以下品牌图片可替换为GUNAIS合作品牌/子品牌LOGO -->
+                    <a class="img" href="javascript:void(0);"><img src="../logo/1LOGO.png" alt="Logo 1"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/2.png" alt="Logo 2"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/3.png" alt="Logo 3"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/4.png" alt="Logo 4"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/5.png" alt="Logo 5"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/6.png" alt="Logo 6"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/7.png" alt="Logo 7"></a>
+                    <a class="img" href="javascript:void(0);"><img src="../logo/8.png" alt="Logo 8"></a>
+                    <!-- 预留3个空位 -->
+                    <a class="img placeholder"></a>
+                    <a class="img placeholder"></a>
+                    <a class="img placeholder"></a>
+                </div>
+            </div>
         </div>
-
-        <!-- Flex 1: Our Story 文字 + 副文字 -->
-        <div class="flex1">
-          <p class="p1 f_32 Tinos">OUR STORY 我们的故事</p>
-          <p class="p2 f_20">
-            上海谷奈斯空间设计（GUNAIS DESIGN）创立于2024年，扎根上海。创始人均有15年以上大型建筑设计企业深耕经验，深谙商业综合体、办公楼、酒店、展览展示等多业态空间设计。我们以理性美学为骨架，以人文体验为血肉，追求精细化设计与品牌价值的深度融合。
-          </p>
-        </div>
-
-        <!-- Flex 2: Sub-brands / 核心能力 -->
-        <div class="flex2">
-          <p class="p1 f_24 Tinos">Core Capabilities 核心能力</p>
-          <div class="dis">
-            <div class="img"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="商业空间设计"></div>
-            <div class="img"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="施工图深化"></div>
-            <div class="img"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/4.png" alt="设计管理"></div>
-            <div class="img"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/5.png" alt="品牌咨询"></div>
-            <div class="img"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/6.png" alt="艺术顾问"></div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 2: Services 轮播 (Swiper 结构) ═══ -->
-  <div class="section2">
+<!-- ============================================================
+     SECTION 2 - SERVICES
+     ※ 服务分类图片可替换 images/ 文件夹对应文件
+============================================================ -->
+<div class="section2">
     <div class="t">
-      <p class="title f_50 Tinos">SERVICES</p>
-      <div class="cut">
-        <div class="cut_list on">
-          <p class="p1 f_22 Tinos">WHAT WE DO</p>
-          <p class="p2 f_20">空间设计 · 施工图深化 · 设计管理 · 品牌咨询 · 艺术顾问 · FF&E 机电照明 标识设计</p>
+        <div class="title f_36 wow animated fadeInUp_">SERVICES</div>
+        <div class="cut wow animated fadeInUp_">
+            <div class="cut_list on">
+                <div class="p1 f_16 Tinos">COMMERCIAL SPACE DESIGN</div>
+                <div class="p2 f_16 Tinos">
+                    <p>GUNAIS collaborates with leading clients across commercial complexes, retail chains, and brand flagships to deliver immersive commercial environments that balance aesthetic ambition with operational efficiency.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">INTERIOR DESIGN</div>
+                <div class="p2 f_16 Tinos">
+                    <p>From concept to completion, GUNAIS delivers full-scope interior design for luxury hotels, resorts, corporate offices, cultural institutions, and premium residences — at any scale.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">CONSTRUCTION DRAWING DEEPENING</div>
+                <div class="p2 f_16 Tinos">
+                    <p>GUNAIS provides precision construction documentation services, translating conceptual designs into detailed, buildable drawings that ensure quality execution from ground-up.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">EPC DESIGN MANAGEMENT</div>
+                <div class="p2 f_16 Tinos">
+                    <p>Our EPC management model integrates engineering, procurement, and construction coordination under one design-led framework — minimizing errors, reducing waste, and delivering projects on time.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">HOSPITALITY DESIGN</div>
+                <div class="p2 f_16 Tinos">
+                    <p>Drawing from extensive experience in international hotel and resort projects, GUNAIS creates hospitality environments that elevate guest experience through thoughtful spatial storytelling.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">EXHIBITION & SHOWROOM DESIGN</div>
+                <div class="p2 f_16 Tinos">
+                    <p>From brand pavilions to permanent cultural exhibitions, GUNAIS designs immersive showroom environments that communicate brand values through space, light, and material.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">HERITAGE RESTORATION</div>
+                <div class="p2 f_16 Tinos">
+                    <p>GUNAIS has participated in the restoration of heritage structures and ancient architecture, applying rigorous research and technical mastery to preserve cultural legacy with modern craftsmanship.</p>
+                </div>
+            </div>
+            <div class="cut_list">
+                <div class="p1 f_16 Tinos">ON-SITE TECHNICAL SERVICES</div>
+                <div class="p2 f_16 Tinos">
+                    <p>After project commencement, GUNAIS dispatches project designers to site regularly, reporting back to clients on construction progress and quality — ensuring alignment with design intent until final handover.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <div class="content">
-      <div class="swiper1 swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><div class="img"><div class="scale"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/7.png" alt="商业综合体"><div class="text f_40 Tinos">COMMERCIAL COMPLEX</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/8.png" alt="办公空间"><div class="text f_40 Tinos">OFFICE SPACE</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/9.png" alt="酒店会展"><div class="text f_40 Tinos">HOTEL & EXHIBITION</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/10.png" alt="展览展示"><div class="text f_40 Tinos">EXHIBITION DESIGN</div></div></div></div>
-          <div class="swiper-slide"><div class="img"><div class="scale"><img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/11.png" alt="餐饮空间"><div class="text f_40 Tinos">DINING SPACE</div></div></div></div>
+    <div class="content wow animated fadeInUp_">
+        <div class="swiper1 swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide swiper-slide-active">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/KyJKTpx1oDBSV.webp" alt="COMMERCIAL SPACE DESIGN">
+                            <div class="text f_16 Tinos">COMMERCIAL<br>SPACE DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/q3dFuMW4jHisn.webp" alt="INTERIOR DESIGN">
+                            <div class="text f_16 Tinos">INTERIOR DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/0twy9EaFSlBEo.webp" alt="CONSTRUCTION DRAWING">
+                            <div class="text f_16 Tinos">CONSTRUCTION<br>DRAWING DEEPENING</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/Q7R0RGJjgMA4s.webp" alt="EPC DESIGN MANAGEMENT">
+                            <div class="text f_16 Tinos">EPC DESIGN<br>MANAGEMENT</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/YKv3HYEpwvFQi.webp" alt="HOSPITALITY DESIGN">
+                            <div class="text f_16 Tinos">HOSPITALITY DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/kCMB4oremjUAM.webp" alt="EXHIBITION DESIGN">
+                            <div class="text f_16 Tinos">EXHIBITION &amp;<br>SHOWROOM DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/Ypch8ZKLhRd25.webp" alt="HERITAGE RESTORATION">
+                            <div class="text f_16 Tinos">HERITAGE RESTORATION</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 8 -->
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="scale">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/ZijFkjcEcZFQ7.webp" alt="ON-SITE TECHNICAL SERVICES">
+                            <div class="text f_16 Tinos">ON-SITE TECHNICAL<br>SERVICES</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
+        <div class="swiper-pagination swiper-pagination-progressbar">
+            <span class="swiper-pagination-progressbar-fill" style="transform: translate3d(0px,0px,0px) scaleX(0.125) scaleY(1);"></span>
+        </div>
     </div>
 
-    <div class="content2 f_22 Tinos">
-      EVERY CORNER A CANVAS<br>
-      EVERY MOMENT A MASTERPIECE
+    <div class="content2 f_36 wow animated fadeInUp_">
+        <p>EVERY&nbsp;SPACE,&nbsp;A&nbsp;STORY.<br>EVERY&nbsp;LINE,&nbsp;A&nbsp;PURPOSE.</p>
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 3: 哲学 + 大图 (CCD 左文右图结构) ═══ -->
-  <div class="section3">
+<!-- ============================================================
+     SECTION 3 - LIVING ART (特色视觉区)
+     ※ 替换图片: images/KeIIwBeQ6VOR0.webp → 替换为GUNAIS代表作品图
+============================================================ -->
+<div class="section3">
     <div class="l">
-      <div class="t1">
-        <p class="p1 f_64 Tinos" style="letter-spacing:0.312vw;">EVERY<br>CORNER,<br>A CANVAS.</p>
-        <p class="p2 f_24 Tinos">Living Art</p>
-      </div>
-      <p class="t2 f_16">理性 克制 融合 体验</p>
+        <div class="t1">
+            <div class="p1 f_96 wow animated fadeInUp_">SPACE<br>AS ART</div>
+            <div class="p2 f_20 Tinos wow animated fadeInUp_">
+                WHERE FUNCTION MEETS POETRY,<br>DESIGN IGNITES.
+            </div>
+        </div>
     </div>
-    <div class="img item_hover">
-      <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/12.png" alt="GUNAIS Design Philosophy" style="width:100%;height:100%;">
+    <div class="img item_hover wow animated fadeInUp_">
+        <!-- ※ 替换图片 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/KeIIwBeQ6VOR0.webp" alt="SPACE AS ART">
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 4: 全宽图片 (CCD 居中宽图) ═══ -->
-  <div class="section4 item_hover">
-    <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/13.png" alt="GUNAIS Projects" style="width:1176px;height:784px;margin:0 auto;display:block;">
-  </div>
+<!-- ============================================================
+     SECTION 4 - FULL WIDTH IMAGE (大图展示区)
+     ※ 替换图片: images/qbEmQPSlVM3l3.webp → 替换为GUNAIS全幅项目图
+============================================================ -->
+<div class="section4 item_hover wow animated fadeInUp_">
+    <!-- ※ 替换图片 -->
+    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/qbEmQPSlVM3l3.webp" alt="GUNAIS Featured Project">
+</div>
 
-  <!-- ═══ Section 5: 左文右图 (CCD 绿色主题) ═══ -->
-  <div class="section5">
+<!-- ============================================================
+     SECTION 5 - FEATURED PROJECT (项目特辑)
+     ※ 替换图片: images/6887127547350.webp 和 images/6887127937687.webp
+============================================================ -->
+<div class="section5">
     <div class="l">
-      <p class="title f_56 Tinos" style="color:#3D532C;">FINE<br>DESIGN</p>
-      <div class="img item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/14.png" alt="Fine Design Detail" style="width:100%;height:100%;">
-      </div>
+        <!-- ※ 替换背景图 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6887127547350.webp" class="common_bg" alt="">
+        <div class="title f_32 wow animated fadeInUp_">
+            <!-- ※ 可填入项目名称，如：上海虹桥航站楼 -->
+        </div>
     </div>
-    <div class="img2 item_hover">
-      <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/15.png" alt="Fine Design" style="width:100%;height:100%;">
+    <div class="img2 wow animated fadeInUp_">
+        <!-- ※ 替换图片 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6887127937687.webp" alt="GUNAIS Featured Project">
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 6: 三列不规则图片 (编辑式排版) ═══ -->
-  <div class="section6">
-    <div class="item1">
-      <p class="p1 f_32 Tinos">Studio Life</p>
-      <div class="img item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/4.png" alt="Studio Life" style="width:100%;height:100%;">
-      </div>
+<!-- ============================================================
+     SECTION 6 - LIFESTYLE AESTHETICS (生活美学 / 视频展示区)
+     ※ 替换视频: videos/lifestyle-video.mp4
+     ※ 替换图片: images/ZVztlA7rQETnE.webp 和 images/t0JmtmoDtOEtK.webp
+============================================================ -->
+<div class="section6">
+    <div class="item1 item_hover wow animated fadeInUp_">
+        <!-- ※ 替换图片 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/ZVztlA7rQETnE.webp" alt="GUNAIS Design Detail">
     </div>
-    <div class="big_img item_hover">
-      <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/5.png" alt="Art & Design" style="width:100%;height:100%;">
+    <div class="big_img item_hover wow animated fadeInUp_">
+        <video src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/videos/SYSP2.mp4"
+            controls
+            autoplay
+            muted
+            loop
+            id="video2"
+            playsinline
+            webkit-playsinline
+            disablepictureinpicture
+            disableremoteplayback
+            oncontextmenu="return false"
+            controlslist="nodownload">
+        </video>
     </div>
-    <div class="r">
-      <div class="title">
-        <p class="f_64 Tinos">ART</p>
-        <p class="f_64 Tinos">& DESIGN</p>
-      </div>
-      <div class="img item_hover">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/6.png" alt="Design Detail" style="width:100%;height:100%;">
-      </div>
-      <p class="pick f_32 Tinos">Every detail matters</p>
+    <div class="item2 item_hover wow animated fadeInUp_">
+        <!-- ※ 替换图片 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/t0JmtmoDtOEtK.webp" alt="GUNAIS Design Philosophy">
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 7: 深色背景 + Logo + 哲学 (CCD 暗色版块) ═══ -->
-  <div class="section7">
+<!-- ============================================================
+     SECTION 7 - NEWS / EVENTS (新闻资讯区)
+     ※ 替换图片: images/689adb6ebae49.webp (背景), images/689adb78ec26a.webp (前景), images/68835eeeecffe.webp (右图)
+============================================================ -->
+<div class="section7">
     <div class="l">
-      <div class="img">
-        <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/logo-white.png" alt="GUNAIS" style="width:100%;height:100%;filter:brightness(0) invert(1);" onerror="this.style.display='none'">
-        <span class="f_48 Tinos" style="color:#EADFDA;font-weight:900;letter-spacing:0.3vw;">GUNAIS</span>
-      </div>
-      <p class="p1 f_64 Tinos" style="color:#EADFDA;letter-spacing:0.114vw;">SPACE IS<br>EXPERIENCE</p>
+        <!-- ※ 替换背景图 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/689adb6ebae49.webp" class="common_bg" alt="">
+        <div class="img wow animated fadeInUp_">
+            <!-- ※ 替换图片 -->
+            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/689adb78ec26a.webp" alt="GUNAIS News">
+        </div>
+        <div class="p1 f_36 wow animated fadeInUp_">
+            EXCHANGE THOUGHTS<br>EXPAND WORLDS
+        </div>
     </div>
-    <div class="img2 item_hover">
-      <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/7.png" alt="Space Experience" style="width:100%;height:100%;">
+    <div class="img2 wow animated fadeInUp_">
+        <!-- ※ 替换图片 -->
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/68835eeeecffe.webp" alt="GUNAIS Events">
     </div>
-  </div>
+</div>
 
-  <!-- ═══ Section 8: 多图拼贴 + 文字 (CCD 画廊式排版) ═══ -->
-  <div class="section8">
-    <!-- 图片画廊区域 -->
-    <div class="gallery-grid">
-      <div class="gallery-row row1">
-        <div class="img-box item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/8.png" alt="Gallery 1">
+<!-- ============================================================
+     GO TOP BUTTON
+============================================================ -->
+<div class="goTop" id="goTop">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 21" fill="none">
+        <path d="M39 20L20 1L1 20" stroke="#272727" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<div class="foot" style="background: #272727;">
+    <div class="dom1">
+        <div class="links">
+            <div class="item">
+                <a href="index.html" class="a1">HOME</a>
+            </div>
+            <div class="item">
+                <a class="a1">ABOUT</a>
+                <div class="pList f_14">
+                    <a href="index.html?type=1">OUR STORY</a>
+                    <a href="team.html">TEAM</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="portfolio.html" class="a1">PORTFOLIO</a>
+            </div>
+            <div class="item">
+                <a href="career.html" class="a1">CAREER</a>
+            </div>
+            <div class="item">
+                <a href="contact.html" class="a1">CONNECT</a>
+            </div>
+            <div class="item">
+                <a class="a1">NEWS</a>
+                <div class="pList f_14">
+                    <a href="press.html">PRESS</a>
+                    <a href="awards.html">AWARDS</a>
+                </div>
+            </div>
         </div>
-        <div class="img-box item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/9.png" alt="Gallery 2">
+        <div class="r">
+            <div class="sharelist">
+                <a href="https://www.facebook.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/RZnT5orjJLwTP.svg" alt="Facebook"></div>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/mYjizJtTRc4Fy.svg" alt="LinkedIn"></div>
+                </a>
+                <a class="ev wechat-qr-trigger">
+                    <div class="icon qr-icon"><img src="assets/icons/wechat.svg" alt="WeChat"></div>
+                    <div class="qr-popup" id="wechatQrPopup">
+                        <div class="qr-popup-content">
+                            <div class="qr-title">Follow Us on WeChat</div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
+                            <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright f_14">
+                Copyright © 2024–2025 GUNAIS Design. All Rights Reserved.<br>
+                上海谷奈斯空间设计有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025117609号-1</a>
+            </div>
         </div>
-        <div class="img-box item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/1.png" alt="Gallery 3">
-        </div>
-      </div>
-      <div class="gallery-row row2">
-        <div class="img-box item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/2.png" alt="Gallery 4">
-        </div>
-        <div class="img-box item_hover">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/3.png" alt="Gallery 5">
-        </div>
-      </div>
     </div>
-    
-    <!-- 文字说明 -->
-    <div class="gallery-text">
-      <p class="f_22 Tinos">We believe that great design is born from the dialogue between space and human emotion</p>
-      <p class="p2 f_18 Tinos">Where light meets structure art is born</p>
-    </div>
-  </div>
+</div>
 
 </div><!-- /.home -->
 
-
-
-<!-- ═══════════════════════════════════════════
-     Footer — 完整  页脚结构
-     ═══════════════════════════════════════════ -->
-<div class="foot">
-  <div class="dom1">
-    <div class="links">
-      <a href="#" class="a1 f_18">HOME</a>
-      <a href="#" class="f_18">ABOUT</a>
-      <a href="#" class="f_18">PORTFOLIO</a>
-      <a href="#" class="f_18">CAREER</a>
-      <a href="#" class="f_18">CONNECT</a>
-      <a href="#" class="f_18">NEWS</a>
-    </div>
-    <div class="r">
-      <div class="sharelist wechat-row">
-        <div class="wechat-section">
-          <img src="https://cdn.jsdelivr.net/gh/chinaericceo-blip/design-gunais-cn@main/images/wechat-qr-clean.png" alt="微信公众号" class="wechat-qr-img">
-          <span class="wechat-tip" style="display:none;">请上传 wechat-qr.png</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="copyright f_16">
-    <div class="company-name">上海谷奈斯空间设计有限公司</div>
-    <div class="contact-info">
-      <a href="mailto:eric@gunais.com">eric@gunais.com</a>
-    </div>
-    <div class="beian">沪ICP备XXXXXXXX号-1</div>
-    <div class="copyright-text">© 2024 GUNAIS DESIGN. All rights reserved.</div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     Go Top (结构)
-     ═══════════════════════════════════════════ -->
-<div class="goTop" id="goTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg viewBox="0 0 38 38" fill="none"><path d="M19 30L19 8M19 8L10 17M19 8L28 17" stroke="#272727" stroke-width="1.5"/></svg>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     Scripts
-     ═══════════════════════════════════════════ -->
-<!-- Lenis 平滑滚动 ( 使用) -->
-<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<!-- Swiper 轮播 ( Section 2 使用) -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<!-- GSAP ( 动画引擎) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script src="assets/js/main.js"></script>
 <script>
-// ═══════════════════════════════════════════
-// 1. Loading Screen ( 结构)
-// ═══════════════════════════════════════════
-window.addEventListener('load', () => {
-  document.getElementById('loading').classList.add('on');
+// Lenis Smooth Scroll Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lenis
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+    });
+    
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                lenis.scrollTo(target, { offset: 0, duration: 1.5 });
+            }
+        });
+    });
+    
+    // WeChat QR Popup functionality
+    var trigger = document.querySelector('.wechat-qr-trigger');
+    var popup = document.getElementById('wechatQrPopup');
+    
+    if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            popup.style.display = 'block';
+        });
+    }
+    
+    document.addEventListener('click', function(e) {
+        if (popup && popup.style.display === 'block' && 
+            !popup.contains(e.target) && 
+            !trigger.contains(e.target)) {
+            popup.style.display = 'none';
+        }
+    });
+    
+    window.addEventListener('scroll', function() {
+        if (popup && popup.style.display === 'block') {
+            popup.style.display = 'none';
+        }
+    });
 });
-
-// ═══════════════════════════════════════════
-// 2. Lenis Smooth Scroll (使用)
-// ═══════════════════════════════════════════
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true,
-});
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-// Lenis + ScrollTrigger 同步
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-gsap.ticker.lagSmoothing(0);
-
-// ═══════════════════════════════════════════
-// 3. Custom Cursor (CCD 结构)
-// ═══════════════════════════════════════════
-const cursor = document.getElementById('cursor');
-if (window.innerWidth > 1024 && cursor) {
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-}
-
-// ═══════════════════════════════════════════
-// 4. Navigation Toggle (CCD 结构)
-// ═══════════════════════════════════════════
-const header = document.getElementById('header');
-const navToggle = document.getElementById('navToggle');
-const fullNav = document.getElementById('fullNav');
-
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = document.body.classList.toggle('navopen');
-    header.classList.toggle('open');
-    fullNav.style.opacity = isOpen ? '1' : '0';
-    fullNav.style.pointerEvents = isOpen ? 'auto' : 'none';
-    // 禁止/恢复背景滚动
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-}
-
-// 点击导航链接后关闭菜单
-document.querySelectorAll('.nav .links a, .nav-bottom a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.body.classList.remove('navopen');
-    header.classList.remove('open');
-    fullNav.style.opacity = '0';
-    fullNav.style.pointerEvents = 'none';
-    document.body.style.overflow = '';
-  });
-});
-
-// Mobile nav
-const mNavToggle = document.getElementById('mNavToggle');
-const menuList = document.getElementById('menuList');
-if (mNavToggle) {
-  mNavToggle.addEventListener('click', () => {
-    const isOpen = mNavToggle.classList.toggle('activeBox');
-    menuList.style.display = isOpen ? 'block' : 'none';
-  });
-}
-
-// 移动端菜单链接点击后关闭
-document.querySelectorAll('.menuList .item a').forEach(link => {
-  link.addEventListener('click', () => {
-    mNavToggle.classList.remove('activeBox');
-    menuList.style.display = 'none';
-  });
-});
-
-// ═══════════════════════════════════════════
-// 5. Swiper (Section 2 Services 轮播)
-// ═══════════════════════════════════════════
-new Swiper('.swiper1', {
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  centeredSlides: true,
-  loop: true,
-  speed: 800,
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'progressbar',
-  },
-});
-
-// ═══════════════════════════════════════════
-// 6. GSAP Scroll Animations (使用 GSAP + ScrollTrigger)
-// ═══════════════════════════════════════════
-gsap.registerPlugin(ScrollTrigger);
-
-// Section 1 动画
-gsap.from('.section1 .title', {
-  scrollTrigger: { trigger: '.section1', start: 'top 80%' },
-  opacity: 0, y: 80, duration: 1.2
-});
-gsap.from('.section1 .big_img', {
-  scrollTrigger: { trigger: '.section1 .big_img', start: 'top 80%' },
-  opacity: 0, y: 60, duration: 1
-});
-gsap.from('.section1 .flex1', {
-  scrollTrigger: { trigger: '.section1 .flex1', start: 'top 80%' },
-  opacity: 0, y: 40, duration: 1
-});
-gsap.from('.section1 .flex2', {
-  scrollTrigger: { trigger: '.section1 .flex2', start: 'top 80%' },
-  opacity: 0, y: 40, duration: 1
-});
-
-// Section 2 动画
-gsap.from('.section2 .t', {
-  scrollTrigger: { trigger: '.section2', start: 'top 80%' },
-  opacity: 0, y: 60, duration: 1
-});
-
-// Section 3 动画
-gsap.from('.section3 .t1', {
-  scrollTrigger: { trigger: '.section3', start: 'top 60%' },
-  opacity: 0, x: -60, duration: 1.2
-});
-gsap.from('.section3 .img', {
-  scrollTrigger: { trigger: '.section3', start: 'top 60%' },
-  opacity: 0, scale: 0.95, duration: 1.2
-});
-
-// Section 4 动画
-gsap.from('.section4', {
-  scrollTrigger: { trigger: '.section4', start: 'top 80%' },
-  opacity: 0, y: 60, duration: 1
-});
-
-// Section 5 动画
-gsap.from('.section5 .l', {
-  scrollTrigger: { trigger: '.section5', start: 'top 60%' },
-  opacity: 0, x: -60, duration: 1
-});
-gsap.from('.section5 .img2', {
-  scrollTrigger: { trigger: '.section5', start: 'top 60%' },
-  opacity: 0, scale: 0.95, duration: 1.2
-});
-
-// Section 6 动画
-gsap.from('.section6 .item1', {
-  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
-  opacity: 0, y: 60, duration: 1
-});
-gsap.from('.section6 .big_img', {
-  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
-  opacity: 0, y: 60, duration: 1.2, delay: 0.2
-});
-gsap.from('.section6 .r', {
-  scrollTrigger: { trigger: '.section6', start: 'top 60%' },
-  opacity: 0, y: 60, duration: 1, delay: 0.4
-});
-
-// Section 7 动画
-gsap.from('.section7 .l .p1', {
-  scrollTrigger: { trigger: '.section7', start: 'top 60%' },
-  opacity: 0, y: 60, duration: 1
-});
-gsap.from('.section7 .img2', {
-  scrollTrigger: { trigger: '.section7', start: 'top 60%' },
-  opacity: 0, scale: 0.95, duration: 1.2
-});
-
-// Section 8 动画
-gsap.from('.section8 .gallery-grid', {
-  scrollTrigger: { trigger: '.section8', start: 'top 70%' },
-  opacity: 0, y: 40, duration: 1
-});
-gsap.from('.section8 .gallery-row', {
-  scrollTrigger: { trigger: '.section8', start: 'top 60%' },
-  opacity: 0, y: 30, duration: 0.8, stagger: 0.2
-});
-
-// ═══════════════════════════════════════════
-// 7. Video pause on scroll (CCD 行为)
-// ═══════════════════════════════════════════
-const bannerVideo = document.querySelector('.banner video');
-if (bannerVideo) {
-  ScrollTrigger.create({
-    trigger: '.banner',
-    start: 'top top',
-    end: 'bottom top',
-    onLeave: () => bannerVideo.pause(),
-    onEnter: () => bannerVideo.play(),
-  });
-}
-
-// ═══════════════════════════════════════════
-// 8. GoTop Button ( 结构)
-// ═══════════════════════════════════════════
-const goTop = document.getElementById('goTop');
-if (goTop) {
-  window.addEventListener('scroll', () => {
-    goTop.classList.toggle('show', window.scrollY > window.innerHeight);
-  });
-}
-
-// ═══════════════════════════════════════════
-// 9. Banner scroll-down bounce (结构)
-// ═══════════════════════════════════════════
-const bannerDown = document.querySelector('.banner .down');
-if (bannerDown) {
-  ScrollTrigger.create({
-    trigger: '.banner',
-    start: 'top top',
-    end: '+=100',
-    onLeave: () => { bannerDown.style.opacity = '0'; },
-    onEnterBack: () => { bannerDown.style.opacity = '1'; },
-  });
-}
 </script>
 
 </body>

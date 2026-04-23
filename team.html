@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Team | GUNAIS Design</title>
+    <meta name="keywords" content="GUNAIS Design, 谷奈斯, 空间设计, 商业空间设计, 团队, interior design, commercial space design">
+    <meta name="description" content="GUNAIS Design Team — Meet the creative minds behind our design excellence.">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="assets/icons/gunais-logo.svg" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header_v2.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="assets/js/lenis.min.js"></script>
+    
+    <style>
+        body {
+            background: #fff;
+        }
+        .wow { visibility: hidden; }
+        
+        /* Hero Section */
+        .hero-founder {
+            padding: 12vw 5vw 6vw;
+            text-align: center;
+        }
+        .hero-founder .name {
+            font-family: var(--font-heading);
+            font-size: 4vw;
+            color: #272727;
+            letter-spacing: 0.2vw;
+            margin-bottom: 0.5vw;
+        }
+        .hero-founder .title {
+            font-family: var(--font-heading);
+            font-size: 1.2vw;
+            color: rgba(39,39,39,0.6);
+            letter-spacing: 0.15vw;
+            margin-bottom: 3vw;
+        }
+        .hero-founder .quote {
+            font-family: var(--font-body);
+            font-size: 1.1vw;
+            color: rgba(39,39,39,0.7);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4vw 5vw 3vw;
+            text-align: center;
+            border-top: 1px solid rgba(39,39,39,0.1);
+        }
+        .page-header .title {
+            font-family: var(--font-heading);
+            font-size: 3vw;
+            color: #272727;
+            letter-spacing: 0.3vw;
+        }
+        .page-header .subtitle {
+            font-family: var(--font-body);
+            font-size: 0.9vw;
+            color: rgba(39,39,39,0.5);
+            margin-top: 1vw;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            padding: 3vw 5vw 8vw;
+        }
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .team-item {
+            text-align: center;
+        }
+        .team-item .img {
+            width: 100%;
+            aspect-ratio: 1;
+            background: rgba(39,39,39,0.05);
+            overflow: hidden;
+            margin-bottom: 1.5vw;
+        }
+        .team-item .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.4s ease;
+        }
+        .team-item:hover .img img {
+            filter: grayscale(0%);
+        }
+        .team-item .name {
+            font-family: var(--font-heading);
+            font-size: 1.3vw;
+            color: #272727;
+            margin-bottom: 0.5vw;
+        }
+        .team-item .position {
+            font-family: var(--font-body);
+            font-size: 0.85vw;
+            color: rgba(39,39,39,0.6);
+        }
+        .team-item .desc {
+            font-family: var(--font-body);
+            font-size: 0.8vw;
+            color: rgba(39,39,39,0.5);
+            margin-top: 1vw;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .hero-founder {
+                padding: 22vw 5vw 10vw;
+            }
+            .hero-founder .name {
+                font-size: 8vw;
+            }
+            .hero-founder .title {
+                font-size: 3vw;
+            }
+            .hero-founder .quote {
+                font-size: 3vw;
+            }
+            .page-header {
+                padding: 6vw 5vw 4vw;
+            }
+            .page-header .title {
+                font-size: 6vw;
+            }
+            .team-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 5vw;
+            }
+            .team-item .name {
+                font-size: 3vw;
+            }
+            .team-item .position {
+                font-size: 2vw;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .team-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body style="background:#fff;">
+<div class="home">
+
+<!-- DESKTOP HEADER -->
+<div class="header">
+    <div class="box">
+        <a href="index.html" class="logo">
+            <span class="logo-text">GUNAIS</span>
+        </a>
+        <div class="navbar-toggle">
+            <span class="line-top"></span>
+            <span class="line-bottom"></span>
+        </div>
+    </div>
+</div>
+
+<!-- DESKTOP NAV -->
+<div class="nav">
+    <div class="links">
+        <div class="item">
+            <a href="index.html" class="a1 f_36">HOME</a>
+        </div>
+        <div class="item">
+            <a class="a1 ff3 f_36 no-click">ABOUT</a>
+            <div class="pList ff7 f_20">
+                <a href="index.html?type=1">OUR STORY</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="a1 ff3 f_36 no-click">PORTFOLIO</a>
+            <div class="pList ff7 f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
+        </div>
+        <div class="item">
+            <a href="join.html" class="a1 f_36">CAREER</a>
+        </div>
+        <div class="item">
+            <a href="join.html?type=1" class="a1 f_36">CONNECT</a>
+        </div>
+        <div class="item">
+            <a class="a1 ff3 f_36 no-click">NEWS</a>
+            <div class="pList ff7 f_20">
+                <a href="press.html">PRESS</a>
+                <a href="awards.html">AWARDS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="pheader">
+    <div class="menu">
+        <div class="l">
+            <a href="index.html" target="_self" class="animated fadeInUpLeft">
+                <span class="logo-text" style="color:#fff;">GUNAIS</span>
+            </a>
+        </div>
+        <div class="navbox">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="menuList">
+    <div class="item">
+        <div class="tb"><a href="index.html">HOME</a></div>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">ABOUT</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="index.html?type=1">OUR STORY</a>
+            <a href="team.html">TEAM</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">PORTFOLIO</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="portfolio.html">CURATED</a>
+            <a href="portfolio.html#all">ALL</a>
+        </div>
+    </div>
+    <div class="item">
+        <a href="join.html">CAREER</a>
+    </div>
+    <div class="item">
+        <a href="join.html?type=1">CONNECT</a>
+    </div>
+    <div class="item">
+        <div class="tb">
+            <a class="no-click">NEWS</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="press.html">PRESS</a>
+            <a href="awards.html">AWARDS</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="tb"><a href="index.html">EN</a></div>
+    </div>
+</div>
+
+<!-- HERO FOUNDER -->
+<div class="hero-founder wow animated fadeInUp_">
+    <div class="name">ERIC Y (邵阳)</div>
+    <div class="title">FOUNDER OF GUNAIS DESIGN</div>
+    <div class="quote">
+        Design is not just about creating beautiful spaces.<br>
+        It's about crafting experiences that inspire.
+    </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header wow animated fadeInUp_">
+    <div class="title">TEAM</div>
+    <div class="subtitle">MORE THAN DESIGNERS — WE'RE SPATIAL INNOVATORS FUELED BY COLLABORATIVE FIRE</div>
+</div>
+
+<!-- TEAM GRID -->
+<div class="team-grid">
+    <div class="team-list">
+        <div class="team-item wow animated fadeInUp_">
+            <div class="img">
+                <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6887127937687.webp" alt="Eric Y">
+            </div>
+            <div class="name">Eric Y (邵阳)</div>
+            <div class="position">Founder & Principal Designer</div>
+            <div class="desc">ICDA高级室内建筑师，中国建筑学会及装饰协会会员。15年+设计行业经验，专注于商业空间设计与EPC设计管理。</div>
+        </div>
+        <div class="team-item wow animated fadeInUp_">
+            <div class="img">
+                <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/KeIIwBeQ6VOR0.webp" alt="Yang Xiaojuan">
+            </div>
+            <div class="name">Yang Xiaojuan</div>
+            <div class="position">Co-Founder</div>
+            <div class="desc">联合创始人，负责公司运营管理与战略发展。凭借丰富的行业资源与团队建设经验，推动企业持续成长。</div>
+        </div>
+        <div class="team-item wow animated fadeInUp_">
+            <div class="img">
+                <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/68835eeeecffe.webp" alt="Design Team">
+            </div>
+            <div class="name">Design Team</div>
+            <div class="position">Senior Designers</div>
+            <div class="desc">由资深设计师组成的技术团队，专注于施工图深化设计与技术管理，确保项目高质量落地执行。</div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+    <div class="dom1">
+        <div class="links">
+            <div class="item">
+                <a href="index.html" class="a1">HOME</a>
+            </div>
+            <div class="item">
+                <a class="a1">ABOUT</a>
+                <div class="pList f_14">
+                    <a href="index.html?type=1">OUR STORY</a>
+                    <a href="team.html">TEAM</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="portfolio.html" class="a1">PORTFOLIO</a>
+            </div>
+            <div class="item">
+                <a href="career.html" class="a1">CAREER</a>
+            </div>
+            <div class="item">
+                <a href="contact.html" class="a1">CONNECT</a>
+            </div>
+            <div class="item">
+                <a class="a1">NEWS</a>
+                <div class="pList f_14">
+                    <a href="press.html">PRESS</a>
+                    <a href="awards.html">AWARDS</a>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="sharelist">
+                <a href="https://www.facebook.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/RZnT5orjJLwTP.svg" alt="Facebook"></div>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/mYjizJtTRc4Fy.svg" alt="LinkedIn"></div>
+                </a>
+                <a class="ev wechat-qr-trigger">
+                    <div class="icon qr-icon"><img src="assets/icons/wechat.svg" alt="WeChat"></div>
+                    <div class="qr-popup" id="wechatQrPopup">
+                        <div class="qr-popup-content">
+                            <div class="qr-title">Follow Us on WeChat</div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
+                            <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright f_14">
+                Copyright © 2024–2025 GUNAIS Design. All Rights Reserved.<br>
+                上海谷奈斯空间设计有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025117609号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div><!-- /.home -->
+
+<script src="assets/js/main.js"></script>
+<script>
+// Lenis Smooth Scroll Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lenis
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+    });
+    
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                lenis.scrollTo(target, { offset: 0, duration: 1.5 });
+            }
+        });
+    });
+    
+    // WeChat QR Popup functionality
+    var trigger = document.querySelector('.wechat-qr-trigger');
+    var popup = document.getElementById('wechatQrPopup');
+    
+    if (trigger && popup) {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            popup.style.display = 'block';
+        });
+    }
+    
+    document.addEventListener('click', function(e) {
+        if (popup && popup.style.display === 'block' && 
+            !popup.contains(e.target) && 
+            !trigger.contains(e.target)) {
+            popup.style.display = 'none';
+        }
+    });
+    
+    window.addEventListener('scroll', function() {
+        if (popup && popup.style.display === 'block') {
+            popup.style.display = 'none';
+        }
+    });
+});
+</script>
+</body>
+</html>

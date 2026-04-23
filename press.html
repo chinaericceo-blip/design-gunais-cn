@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUNAIS | PRESS</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header_v2.css">
+    <style>
+        body {
+            background: #fff;
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 8vw 5vw 0;
+            text-align: center;
+            position: relative;
+        }
+        .page-header .title {
+            font-family: var(--font-heading);
+            font-size: 5vw;
+            color: #272727;
+            letter-spacing: 0.3vw;
+            margin-bottom: 12vw;
+        }
+        
+        /* Time Filter - Fixed position, aligned with nav bottom */
+        .time-filter {
+            position: fixed;
+            right: 8vw;
+            top: 50px;
+            z-index: 1000;
+        }
+        .time-filter select {
+            font-family: var(--font-body);
+            font-size: 0.7vw;
+            color: rgba(39,39,39,0.6);
+            background: transparent;
+            border: none;
+            padding: 0.3vw 1.5vw 0.3vw 0;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23272727' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 10px;
+            min-width: 60px;
+        }
+        .time-filter select option {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: #272727;
+        }
+        
+        /* Press List - Simple Layout */
+        .press-list {
+            padding: 0 8vw 15vw;
+        }
+        .press-container {
+            /* max-width removed to allow full width */
+        }
+        .press-item {
+            position: relative;
+            height: 5vw;
+            line-height: 5vw;
+            border-bottom: 1px solid rgba(39,39,39,0.12);
+            overflow: hidden;
+        }
+        .press-item:first-child {
+            border-top: 1px solid rgba(39,39,39,0.12);
+        }
+        .press-item a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            height: 100%;
+        }
+        
+        /* Date and Title - Normal State */
+        .press-item .press-date {
+            font-family: var(--font-body);
+            font-size: 0.85vw;
+            font-weight: 600;
+            color: rgba(39,39,39,0.6);
+            flex-shrink: 0;
+            transition: opacity 0.4s ease;
+        }
+        .press-item .press-title {
+            font-family: var(--font-body);
+            font-size: 0.85vw;
+            font-weight: normal;
+            color: #272727;
+            flex-grow: 1;
+            text-align: right;
+            padding-right: 5vw;
+            transition: opacity 0.4s ease;
+        }
+        
+        /* Hover State - Image and Overlay */
+        .press-item .press-image-wrap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .press-item:hover .press-image-wrap {
+            opacity: 1;
+        }
+        .press-item .press-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .press-item:hover .press-image-wrap img {
+            transform: scale(1.03);
+        }
+        .press-item .press-image-wrap::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(to right, 
+                rgba(255,255,255,1) 0%, 
+                rgba(255,255,255,0.9) 5%,
+                rgba(255,255,255,0.7) 10%,
+                rgba(255,255,255,0) 20%, 
+                rgba(255,255,255,0) 80%, 
+                rgba(255,255,255,0.7) 90%,
+                rgba(255,255,255,0.9) 95%,
+                rgba(255,255,255,1) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .press-item:hover .press-image-wrap::after {
+            opacity: 1;
+        }
+        .press-item .press-date,
+        .press-item .press-title {
+            transition: opacity 0.4s ease;
+        }
+        .press-item:hover .press-date,
+        .press-item:hover .press-title {
+            opacity: 0;
+        }
+        .press-item .press-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(39,39,39,0.6);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .press-item:hover .press-overlay {
+            opacity: 1;
+        }
+        .press-item .press-overlay-title {
+            font-family: var(--font-body);
+            font-size: 1.5vw;
+            color: #fff;
+        }
+        
+        /* Media Sources */
+        .media-sources {
+            padding: 4vw 8vw 6vw;
+        }
+        
+        /* Footer Top Border - Full Width */
+        .foot {
+            border-top: 1px solid rgba(39,39,39,0.1);
+        }
+        .media-sources .title {
+            font-family: var(--font-heading);
+            font-size: 1.2vw;
+            font-weight: 600;
+            color: #272727;
+            text-align: center;
+            margin-bottom: 3vw;
+            letter-spacing: 0.15vw;
+        }
+        .media-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3vw;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .media-item {
+            font-family: var(--font-body);
+            font-size: 0.9vw;
+            color: rgba(39,39,39,0.5);
+            transition: color 0.3s;
+        }
+        .media-item:hover {
+            color: #272727;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .page-header {
+                padding: 22vw 5vw 8vw;
+            }
+            .page-header .title {
+                font-size: 6vw;
+            }
+            .time-filter {
+                position: fixed;
+                right: 5vw;
+                top: auto;
+                bottom: 4vw;
+            }
+            .time-filter select {
+                font-size: 3vw;
+                padding: 2vw 6vw 2vw 0;
+                min-width: 120px;
+                background-position: right center;
+                background-size: 16px;
+            }
+            .press-list {
+                padding: 0 5vw 15vw;
+            }
+            .press-item {
+                height: 12vw;
+                line-height: 12vw;
+            }
+            .press-item .press-date {
+                font-size: 2.5vw;
+            }
+            .press-item .press-title {
+                font-size: 3.5vw;
+            }
+            .press-item .press-overlay-title {
+                font-size: 4vw;
+            }
+            .media-sources {
+                padding: 8vw 5vw;
+            }
+            .media-sources .title {
+                font-size: 3vw;
+            }
+            .media-item {
+                font-size: 2.5vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="home">
+
+<!-- DESKTOP HEADER -->
+<div class="header">
+    <div class="box">
+        <a href="index.html" class="logo">
+            <span class="logo-text">GUNAIS</span>
+        </a>
+        <div class="navbar-toggle">
+            <span class="line-top"></span>
+            <span class="line-bottom"></span>
+        </div>
+    </div>
+</div>
+
+<!-- DESKTOP NAV -->
+<div class="nav">
+    <div class="links">
+        <div class="item">
+            <a href="index.html" class="a1">HOME</a>
+        </div>
+        <div class="item">
+            <a class="a1">ABOUT</a>
+            <div class="pList f_14">
+                <a href="index.html?type=1">OUR STORY</a>
+                <a href="team.html">TEAM</a>
+            </div>
+        </div>
+        <div class="item">
+            <a href="portfolio.html" class="a1">PORTFOLIO</a>
+        </div>
+        <div class="item">
+            <a href="join.html" class="a1">CAREER</a>
+        </div>
+        <div class="item">
+            <a href="contact.html" class="a1">CONNECT</a>
+        </div>
+        <div class="item">
+            <a class="a1">NEWS</a>
+            <div class="pList f_14">
+                <a href="press.html">PRESS</a>
+                <a href="awards.html">AWARDS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+
+<!-- TIME FILTER - Fixed position -->
+<div class="time-filter">
+    <select id="pressYearFilter">
+        <option value="all">TIME</option>
+        <option value="2026">2026</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+    </select>
+</div>
+
+<!-- MEDIA SOURCES -->
+<div class="media-sources">
+    <div class="title">MEDIA CHANNEL</div>
+    <div class="media-list">
+        <div class="media-item">微信公众号</div>
+        <div class="media-item">知乎平台</div>
+        <div class="media-item">设计头条</div>
+    </div>
+</div>
+
+<!-- PRESS LIST -->
+<div class="press-list">
+    <div class="press-container">
+        <div class="press-item wow animated fadeInUp_">
+            <a href="https://mp.weixin.qq.com/s/7W1jFopUTokJAex2KIVcbw" target="_blank">
+                <span class="press-date">2026-02</span>
+                <span class="press-title">设计师邵阳：从军旅到设计的十五年修行</span>
+                <span class="press-image-wrap">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/WZimags/777.png" alt="">
+                </span>
+                <span class="press-overlay">
+                    <span class="press-overlay-title">设计师邵阳：从军旅到设计的十五年修行</span>
+                </span>
+            </a>
+        </div>
+        <div class="press-item wow animated fadeInUp_">
+            <a href="https://mp.weixin.qq.com/s/CWD2smcHo25nba6j6q8fvQ" target="_blank">
+                <span class="press-date">2025-10</span>
+                <span class="press-title">一个空间，值多少钱？——商业设计的真正价值</span>
+                <span class="press-image-wrap">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/WZimags/探索-企业官网.png" alt="">
+                </span>
+                <span class="press-overlay">
+                    <span class="press-overlay-title">一个空间，值多少钱？</span>
+                </span>
+            </a>
+        </div>
+        <div class="press-item wow animated fadeInUp_">
+            <a href="https://mp.weixin.qq.com/s/ZxJ1TEtwKW3sKV7nFI60Fg" target="_blank">
+                <span class="press-date">2025-08</span>
+                <span class="press-title">商业空间设计静默革命</span>
+                <span class="press-image-wrap">
+                    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/WZimags/夜间建筑物的黑白照片.jpg" alt="">
+                </span>
+                <span class="press-overlay">
+                    <span class="press-overlay-title">商业空间设计静默革命</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+    <div class="dom1">
+        <div class="links">
+            <div class="item">
+                <a href="index.html" class="a1">HOME</a>
+            </div>
+            <div class="item">
+                <a class="a1">ABOUT</a>
+                <div class="pList f_14">
+                    <a href="index.html?type=1">OUR STORY</a>
+                    <a href="team.html">TEAM</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="portfolio.html" class="a1">PORTFOLIO</a>
+            </div>
+            <div class="item">
+                <a href="career.html" class="a1">CAREER</a>
+            </div>
+            <div class="item">
+                <a href="contact.html" class="a1">CONNECT</a>
+            </div>
+            <div class="item">
+                <a class="a1">NEWS</a>
+                <div class="pList f_14">
+                    <a href="press.html">PRESS</a>
+                    <a href="awards.html">AWARDS</a>
+                </div>
+            </div>
+        </div>
+        <div class="r">
+            <div class="sharelist">
+                <a href="https://www.facebook.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/RZnT5orjJLwTP.svg" alt="Facebook"></div>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="ev">
+                    <div class="icon"><img src="assets/icons/mYjizJtTRc4Fy.svg" alt="LinkedIn"></div>
+                </a>
+                <a class="ev wechat-qr-trigger">
+                    <div class="icon qr-icon"><img src="assets/icons/wechat.svg" alt="WeChat"></div>
+                    <div class="qr-popup" id="wechatQrPopup">
+                        <div class="qr-popup-content">
+                            <div class="qr-title">Follow Us on WeChat</div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
+                            <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright f_14">
+                Copyright © 2024–2025 GUNAIS Design. All Rights Reserved.<br>
+                上海谷奈斯空间设计有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2025117609号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Press Year Filter
+    const yearFilter = document.getElementById('pressYearFilter');
+    const pressItems = document.querySelectorAll('.press-item');
+    
+    if (yearFilter) {
+        yearFilter.addEventListener('change', function() {
+            const selectedYear = this.value;
+            
+            pressItems.forEach(function(item) {
+                if (selectedYear === 'all') {
+                    item.style.display = '';
+                } else {
+                    const dateEl = item.querySelector('.press-date');
+                    if (dateEl && dateEl.textContent.startsWith(selectedYear)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        });
+    }
+});
+</script>
+</body>
+</html>
