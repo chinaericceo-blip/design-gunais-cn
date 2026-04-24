@@ -27,24 +27,36 @@
     // 翻译模式下强制 Logo 显示"谷奈斯"
     (function() {
         function forceLogoChinese() {
+            // 检测是否启用了中文翻译（Chrome 翻译会改变 lang 属性或添加特定 class）
+            var isTranslated = document.documentElement.lang === 'zh' || 
+                               document.body.lang === 'zh' ||
+                               document.body.classList.contains('translated-ltr') ||
+                               document.body.classList.contains('translated');
+            
             var logoTexts = document.querySelectorAll('.logo-text');
             logoTexts.forEach(function(el) {
-                if (el.textContent.trim() !== '谷奈斯') {
-                    el.textContent = '谷奈斯';
+                if (isTranslated) {
+                    // 翻译模式下显示"谷奈斯"
+                    if (el.textContent.trim() !== '谷奈斯') {
+                        el.textContent = '谷奈斯';
+                    }
+                } else {
+                    // 正常模式保持 GUNAIS
+                    if (el.textContent.trim() !== 'GUNAIS') {
+                        el.textContent = 'GUNAIS';
+                    }
                 }
             });
         }
         // 初始执行
         forceLogoChinese();
-        // 监听 DOM 变化（应对翻译插件动态替换）
+        // 监听 DOM 变化
         var observer = new MutationObserver(function() {
             forceLogoChinese();
         });
-        var logoElements = document.querySelectorAll('.logo-text, .logo');
-        logoElements.forEach(function(el) {
-            observer.observe(el, { childList: true, subtree: true, characterData: true });
-        });
-        // 定期检查（以防遗漏）
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang', 'class'] });
+        observer.observe(document.body, { attributes: true, attributeFilter: ['lang', 'class'] });
+        // 定期检查
         setInterval(forceLogoChinese, 500);
     })();
     </script>
