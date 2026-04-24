@@ -23,6 +23,31 @@
     
     <!-- Lenis Smooth Scroll -->
     <script src="assets/js/lenis.min.js"></script>
+    <script>
+    // 翻译模式下强制 Logo 显示"谷奈斯"
+    (function() {
+        function forceLogoChinese() {
+            var logoTexts = document.querySelectorAll('.logo-text');
+            logoTexts.forEach(function(el) {
+                if (el.textContent.trim() !== '谷奈斯') {
+                    el.textContent = '谷奈斯';
+                }
+            });
+        }
+        // 初始执行
+        forceLogoChinese();
+        // 监听 DOM 变化（应对翻译插件动态替换）
+        var observer = new MutationObserver(function() {
+            forceLogoChinese();
+        });
+        var logoElements = document.querySelectorAll('.logo-text, .logo');
+        logoElements.forEach(function(el) {
+            observer.observe(el, { childList: true, subtree: true, characterData: true });
+        });
+        // 定期检查（以防遗漏）
+        setInterval(forceLogoChinese, 500);
+    })();
+    </script>
 
     <style>
         /* Body texture background */
