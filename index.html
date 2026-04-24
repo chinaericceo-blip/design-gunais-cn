@@ -23,51 +23,7 @@
     
     <!-- Lenis Smooth Scroll -->
     <script src="assets/js/lenis.min.js"></script>
-    <script>
-    // Logo 翻译控制：正常显示 GUNAIS，翻译后强制显示"谷奈斯"
-    (function() {
-        var isTranslated = false;
-        
-        function updateLogo() {
-            var logos = document.querySelectorAll('.logo-text');
-            logos.forEach(function(el) {
-                var text = el.textContent.trim();
-                
-                // 如果包含中文字符，认为已被翻译
-                if (/[\u4e00-\u9fa5]/.test(text)) {
-                    isTranslated = true;
-                }
-                
-                // 翻译后强制显示"谷奈斯"
-                if (isTranslated) {
-                    el.textContent = '谷奈斯';
-                } else {
-                    el.textContent = 'GUNAIS';
-                }
-            });
-        }
-        
-        // 立即执行
-        updateLogo();
-        
-        // 监听变化
-        var observer = new MutationObserver(function() {
-            updateLogo();
-        });
-        
-        // 观察所有可能包含 logo 的区域
-        var targets = document.querySelectorAll('.header, .banner, .logo, nav, .logo-text');
-        targets.forEach(function(target) {
-            observer.observe(target, { childList: true, characterData: true, subtree: true });
-        });
-        
-        // 备用：观察整个 body
-        observer.observe(document.body, { childList: true, characterData: true, subtree: true });
-        
-        // 高频检查
-        setInterval(updateLogo, 100);
-    })();
-    </script>
+    
 
     <style>
         /* Body texture background */
@@ -114,7 +70,7 @@
 <div class="header">
     <div class="box">
         <a href="index.html" class="logo">
-            <span class="logo-text">GUNAIS</span>
+            <span class="logo-text" translate="no">GUNAIS</span>
         </a>
         <div class="navbar-toggle">
             <span class="line-top"></span>
@@ -168,7 +124,7 @@
     <div class="menu">
         <div class="l">
             <a href="index.html" target="_self" class="animated fadeInUpLeft">
-                <span class="logo-text" style="color:#fff;">GUNAIS</span>
+                <span class="logo-text" style="color:#fff;" translate="no">GUNAIS</span>
             </a>
         </div>
         <div class="navbox">
