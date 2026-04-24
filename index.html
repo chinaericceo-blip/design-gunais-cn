@@ -24,60 +24,48 @@
     <!-- Lenis Smooth Scroll -->
     <script src="assets/js/lenis.min.js"></script>
     <script>
-    // 翻译模式下强制 Logo 显示"谷奈斯"
+    // Logo 翻译控制：正常显示 GUNAIS，翻译后强制显示"谷奈斯"
     (function() {
-        var lastLogoText = 'GUNAIS';
-        var hasBeenTranslated = false;
+        var isTranslated = false;
         
-        function forceLogoChinese() {
-            var logoTexts = document.querySelectorAll('.logo-text');
-            logoTexts.forEach(function(el) {
-                var current = el.textContent.trim();
+        function updateLogo() {
+            var logos = document.querySelectorAll('.logo-text');
+            logos.forEach(function(el) {
+                var text = el.textContent.trim();
                 
-                // 检测是否被翻译成中文了
-                if (current !== 'GUNAIS' && current !== '谷奈斯' && /[\u4e00-\u9fa5]/.test(current)) {
-                    hasBeenTranslated = true;
+                // 如果包含中文字符，认为已被翻译
+                if (/[\u4e00-\u9fa5]/.test(text)) {
+                    isTranslated = true;
                 }
                 
-                if (hasBeenTranslated || current === '谷奈斯' || /[\u4e00-\u9fa5]/.test(current)) {
-                    // 翻译模式下显示"谷奈斯"
-                    if (current !== '谷奈斯') {
-                        el.textContent = '谷奈斯';
-                    }
+                // 翻译后强制显示"谷奈斯"
+                if (isTranslated) {
+                    el.textContent = '谷奈斯';
                 } else {
-                    // 正常模式保持 GUNAIS
-                    if (current !== 'GUNAIS') {
-                        el.textContent = 'GUNAIS';
-                    }
+                    el.textContent = 'GUNAIS';
                 }
             });
         }
         
-        // 监听 DOM 变化（检测翻译）
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList' || mutation.type === 'characterData') {
-                    var logoTexts = document.querySelectorAll('.logo-text');
-                    logoTexts.forEach(function(el) {
-                        var current = el.textContent.trim();
-                        // 如果原始文本 GUNAIS 被替换成其他内容（可能是翻译）
-                        if (current !== 'GUNAIS' && current !== '谷奈斯') {
-                            hasBeenTranslated = true;
-                        }
-                    });
-                }
-            });
-            forceLogoChinese();
+        // 立即执行
+        updateLogo();
+        
+        // 监听变化
+        var observer = new MutationObserver(function() {
+            updateLogo();
         });
         
-        // 观察整个文档
-        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+        // 观察所有可能包含 logo 的区域
+        var targets = document.querySelectorAll('.header, .banner, .logo, nav, .logo-text');
+        targets.forEach(function(target) {
+            observer.observe(target, { childList: true, characterData: true, subtree: true });
+        });
         
-        // 定期检查
-        setInterval(forceLogoChinese, 300);
+        // 备用：观察整个 body
+        observer.observe(document.body, { childList: true, characterData: true, subtree: true });
         
-        // 初始执行
-        forceLogoChinese();
+        // 高频检查
+        setInterval(updateLogo, 100);
     })();
     </script>
 
