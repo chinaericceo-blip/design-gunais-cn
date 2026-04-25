@@ -64,10 +64,10 @@
         
         /* Tab Content */
         .tab-content {
-            display: none;
+            display: none !important;
         }
         .tab-content.active {
-            display: block;
+            display: block !important;
         }
         
         /* Hero Section */
@@ -346,18 +346,86 @@
             }
         }
         @media screen and (max-width: 768px) {
+            .tab-nav-item {
+                font-size: 5vw;
+                padding: 3vw 5vw;
+            }
+            .tab-nav-item.active::after {
+                bottom: -3vw;
+                height: 4px;
+            }
+            .hero-founder {
+                padding: 25vw 5vw 12vw;
+            }
+            .hero-founder .name {
+                font-size: 10vw;
+                letter-spacing: 0.5vw;
+            }
+            .hero-founder .title {
+                font-size: 4vw;
+            }
+            .hero-founder .quote {
+                font-size: 4vw;
+            }
+            .page-header .title {
+                font-size: 8vw;
+            }
+            .page-header .subtitle {
+                font-size: 3vw;
+            }
             .team-list {
                 grid-template-columns: 1fr;
+                gap: 8vw;
+                padding: 4vw 5vw 12vw;
+            }
+            .team-item .img {
+                aspect-ratio: 1;
+                margin-bottom: 4vw;
+            }
+            .team-item .name {
+                font-size: 5vw;
+                margin-bottom: 1vw;
+            }
+            .team-item .position {
+                font-size: 3.5vw;
+            }
+            .team-item .desc {
+                font-size: 3.5vw;
+                margin-top: 2vw;
             }
             .awards-list {
                 grid-template-columns: 1fr;
+                gap: 5vw;
+            }
+            .award-item .award-year {
+                font-size: 8vw;
+            }
+            .award-item .award-name {
+                font-size: 4vw;
+            }
+            .award-item .award-project {
+                font-size: 3.5vw;
+            }
+            .filter-list .item {
+                font-size: 4vw;
+                padding: 2vw 4vw;
             }
             .awards-summary {
                 padding: 8vw 5vw 12vw;
             }
+            .awards-summary .title {
+                font-size: 6vw;
+                margin-bottom: 6vw;
+            }
             .awards-stats {
                 flex-direction: column;
-                gap: 6vw;
+                gap: 8vw;
+            }
+            .stat-item .number {
+                font-size: 12vw;
+            }
+            .stat-item .label {
+                font-size: 4vw;
             }
         }
     </style>
@@ -696,53 +764,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Tab Navigation
-    const tabItems = document.querySelectorAll('.tab-nav-item');
-    const tabContents = document.querySelectorAll('.tab-content');
-    
-    tabItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
-            
-            // Update active tab
-            tabItems.forEach(function(ti) { ti.classList.remove('active'); });
-            this.classList.add('active');
-            
-            // Show corresponding content
-            tabContents.forEach(function(content) {
-                content.classList.remove('active');
-                if (content.id === 'tab-' + tabId) {
-                    content.classList.add('active');
+    // Tab Navigation - Team / Awards
+    (function() {
+        const tabItems = document.querySelectorAll('.tab-nav-item');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Update active tab indicator
+                tabItems.forEach(function(ti) {
+                    ti.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Show/hide corresponding content - use both class and style
+                tabContents.forEach(function(content) {
+                    if (content.id === 'tab-' + tabId) {
+                        content.style.display = 'block';
+                        content.classList.add('active');
+                        content.style.visibility = 'visible';
+                        content.style.opacity = '1';
+                    } else {
+                        content.style.display = 'none';
+                        content.classList.remove('active');
+                        content.style.visibility = 'hidden';
+                        content.style.opacity = '0';
+                    }
+                });
+                
+                // Reinitialize animations for newly visible content
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
                 }
             });
-            
-            // Reinitialize animations for newly visible content
-            if (typeof AOS !== 'undefined') {
-                AOS.refresh();
-            }
         });
-    });
+    })();
     
     // Year filter functionality (for awards tab)
-    document.querySelectorAll('.filter-list .item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            document.querySelectorAll('.filter-list .item').forEach(function(i) {
-                i.classList.remove('on');
-            });
-            this.classList.add('on');
-            
-            var year = this.getAttribute('data-year');
-            var items = document.querySelectorAll('#tab-awards .award-item');
-            
-            items.forEach(function(item) {
-                if (year === 'all' || item.getAttribute('data-year') === year) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+    (function() {
+        var yearFilters = document.querySelectorAll('.filter-list .item');
+        var awardItems = document.querySelectorAll('#tab-awards .award-item');
+        
+        yearFilters.forEach(function(filter) {
+            filter.addEventListener('click', function() {
+                // Update active filter
+                yearFilters.forEach(function(f) {
+                    f.classList.remove('on');
+                });
+                this.classList.add('on');
+                
+                var year = this.getAttribute('data-year');
+                
+                // Filter award items
+                awardItems.forEach(function(item) {
+                    var itemYear = item.getAttribute('data-year');
+                    if (year === 'all' || itemYear === year) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
             });
         });
-    });
+    })();
 });
 </script>
 </body>
