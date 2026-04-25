@@ -74,6 +74,7 @@
         </a>
         <div class="navbar-toggle">
             <span class="line-top"></span>
+            <span class="line-middle"></span>
             <span class="line-bottom"></span>
         </div>
     </div>
@@ -181,9 +182,10 @@
      ※ 替换视频: 将视频文件放入 videos/ 文件夹后修改 src 路径
 ============================================================ -->
 <div class="banner">
-    <video id="heroVideo"
+    <video id="video"
         src="https://img.gunais.com/gunais.com/videos/lifestyle-video.mp4"
         preload="metadata"
+        autoplay
         muted
         playsinline
         webkit-playsinline
@@ -191,7 +193,8 @@
         x5-video-player-fullscreen="true"
         data-object-fit="cover"
         controlslist="nodownload"
-        draggable="true">
+        style="cursor: pointer;"
+        onclick="if(this.paused){this.play();}else{this.pause();}">
     </video>
     <!-- 左下角播放按钮 -->
     <div class="video-play-btn" id="videoPlayBtn">

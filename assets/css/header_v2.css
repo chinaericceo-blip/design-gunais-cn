@@ -51,6 +51,7 @@
 
 .header .box .navbar-toggle span {
     display: block;
+    width: 50%;
     height: 1.5px;
     background-color: #ffffff;
     transition: transform .4s ease;
@@ -59,6 +60,10 @@
 
 .header .box .navbar-toggle.active .line-top {
     transform: translateY(3.75px) rotate(45deg);
+}
+
+.header .box .navbar-toggle.active .line-middle {
+    opacity: 0;
 }
 
 .header .box .navbar-toggle.active .line-bottom {
