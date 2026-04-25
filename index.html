@@ -74,7 +74,6 @@
         </a>
         <div class="navbar-toggle">
             <span class="line-top"></span>
-            <span class="line-middle"></span>
             <span class="line-bottom"></span>
         </div>
     </div>
@@ -96,7 +95,11 @@
             </div>
         </div>
         <div class="item">
-            <a href="portfolio.html" class="a1 f_36">PORTFOLIO</a>
+            <a class="a1 f_36 no-click">PORTFOLIO</a>
+            <div class="pList f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
         </div>
         <div class="item">
             <a href="career.html" class="a1 f_36">CAREER</a>
@@ -152,7 +155,14 @@
         </div>
     </div>
     <div class="item">
-        <a href="portfolio.html">PORTFOLIO</a>
+        <div class="tb">
+            <a class="no-click">PORTFOLIO</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="portfolio.html">CURATED</a>
+            <a href="portfolio.html#all">ALL</a>
+        </div>
     </div>
     <div class="item">
         <a href="career.html">CAREER</a>
@@ -183,9 +193,10 @@
 ============================================================ -->
 <div class="banner">
     <video id="video"
-        src="https://img.gunais.com/gunais.com/videos/lifestyle-video.mp4"
+        src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/videos/lifestyle-video.mp4"
         preload="metadata"
         autoplay
+        loop
         muted
         playsinline
         webkit-playsinline
@@ -193,16 +204,8 @@
         x5-video-player-fullscreen="true"
         data-object-fit="cover"
         controlslist="nodownload"
-        style="cursor: pointer;"
-        onclick="if(this.paused){this.play();}else{this.pause();}">
+        draggable="true">
     </video>
-    <!-- 左下角播放按钮 -->
-    <div class="video-play-btn" id="videoPlayBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
-            <circle cx="18" cy="18" r="17" stroke="white" stroke-width="1.5" fill="rgba(0,0,0,0.3)"/>
-            <path d="M15 12L26 18L15 24V12Z" fill="white"/>
-        </svg>
-    </div>
     <div class="down">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="13" viewBox="0 0 24 13" fill="none">
             <path d="M23 0.999999L12 12L1 0.999998" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -227,7 +230,7 @@
         <div>
             <div class="big_img">
                 <!-- ※ 替换图片 -->
-                <img src="https://img.gunais.com/gunais.com/images/SOtK5dKuEQZsL.webp?sign=ae52da2e5814f1a00efdd578ea5f85af&t=1777126077" alt="GUNAIS Design Story">
+                <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/SOtK5dKuEQZsL.webp" alt="GUNAIS Design Story">
             </div>
             <div class="flex1 wow animated fadeInUp_">
                 <div class="p1 f_36">OUR STORY</div>
@@ -327,7 +330,7 @@
                 <div class="swiper-slide swiper-slide-active">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/KyJKTpx1oDBSV.webp?sign=88897ba3a5b243f06819aa537073876d&t=1777126077" alt="COMMERCIAL SPACE DESIGN">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/KyJKTpx1oDBSV.webp" alt="COMMERCIAL SPACE DESIGN">
                             <div class="text f_16 Tinos">COMMERCIAL<br>SPACE DESIGN</div>
                         </div>
                     </div>
@@ -336,7 +339,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/q3dFuMW4jHisn.webp?sign=5e922d7e285b41124c93a96c9f127fa8&t=1777126077" alt="INTERIOR DESIGN">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/q3dFuMW4jHisn.webp" alt="INTERIOR DESIGN">
                             <div class="text f_16 Tinos">INTERIOR DESIGN</div>
                         </div>
                     </div>
@@ -345,7 +348,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/0twy9EaFSlBEo.webp?sign=a5de9f3d502e70cb09a270f8c01f0566&t=1777126077" alt="CONSTRUCTION DRAWING">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/0twy9EaFSlBEo.webp" alt="CONSTRUCTION DRAWING">
                             <div class="text f_16 Tinos">CONSTRUCTION<br>DRAWING DEEPENING</div>
                         </div>
                     </div>
@@ -354,7 +357,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/Q7R0RGJjgMA4s.webp?sign=31a35ce829cb75f4b3d7465b42ee834d&t=1777126077" alt="EPC DESIGN MANAGEMENT">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/Q7R0RGJjgMA4s.webp" alt="EPC DESIGN MANAGEMENT">
                             <div class="text f_16 Tinos">EPC DESIGN<br>MANAGEMENT</div>
                         </div>
                     </div>
@@ -363,7 +366,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/YKv3HYEpwvFQi.webp?sign=9474fc386cbd866cd056accefd0e823f&t=1777126077" alt="HOSPITALITY DESIGN">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/YKv3HYEpwvFQi.webp" alt="HOSPITALITY DESIGN">
                             <div class="text f_16 Tinos">HOSPITALITY DESIGN</div>
                         </div>
                     </div>
@@ -372,7 +375,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/kCMB4oremjUAM.webp?sign=e0359e604598b73d26591d7428268476&t=1777126077" alt="EXHIBITION DESIGN">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/kCMB4oremjUAM.webp" alt="EXHIBITION DESIGN">
                             <div class="text f_16 Tinos">EXHIBITION &amp;<br>SHOWROOM DESIGN</div>
                         </div>
                     </div>
@@ -381,7 +384,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/Ypch8ZKLhRd25.webp?sign=47d614467a215de7b1d2a9b29608e131&t=1777126077" alt="HERITAGE RESTORATION">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/Ypch8ZKLhRd25.webp" alt="HERITAGE RESTORATION">
                             <div class="text f_16 Tinos">HERITAGE RESTORATION</div>
                         </div>
                     </div>
@@ -390,7 +393,7 @@
                 <div class="swiper-slide">
                     <div class="img">
                         <div class="scale">
-                            <img src="https://img.gunais.com/gunais.com/images/ZijFkjcEcZFQ7.webp?sign=1695391f396c4db3359f4d148019558f&t=1777126077" alt="ON-SITE TECHNICAL SERVICES">
+                            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/ZijFkjcEcZFQ7.webp" alt="ON-SITE TECHNICAL SERVICES">
                             <div class="text f_16 Tinos">ON-SITE TECHNICAL<br>SERVICES</div>
                         </div>
                     </div>
@@ -422,7 +425,7 @@
     </div>
     <div class="img item_hover wow animated fadeInUp_">
         <!-- ※ 替换图片 -->
-        <img src="https://img.gunais.com/gunais.com/images/KeIIwBeQ6VOR0.webp?sign=110b5f3349ee2ddd908691cd46d9012c&t=1777126077" alt="SPACE AS ART">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/KeIIwBeQ6VOR0.webp" alt="SPACE AS ART">
     </div>
 </div>
 
@@ -432,7 +435,7 @@
 ============================================================ -->
 <div class="section4 item_hover wow animated fadeInUp_">
     <!-- ※ 替换图片 -->
-    <img src="https://img.gunais.com/gunais.com/images/qbEmQPSlVM3l3.webp?sign=4c07011ef6c6f1e6e9ea79a596b9ace1&t=1777126077" alt="GUNAIS Featured Project">
+    <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/qbEmQPSlVM3l3.webp" alt="GUNAIS Featured Project">
 </div>
 
 <!-- ============================================================
@@ -442,14 +445,14 @@
 <div class="section5">
     <div class="l">
         <!-- ※ 替换背景图 -->
-        <img src="https://img.gunais.com/gunais.com/images/6887127547350.webp?sign=7bd4481db1e11abf033881bf1d95f140&t=1777126077" class="common_bg" alt="">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6887127547350.webp" class="common_bg" alt="">
         <div class="title f_32 wow animated fadeInUp_">
             <!-- ※ 可填入项目名称，如：上海虹桥航站楼 -->
         </div>
     </div>
     <div class="img2 wow animated fadeInUp_">
         <!-- ※ 替换图片 -->
-        <img src="https://img.gunais.com/gunais.com/images/6887127937687.webp?sign=95a2112e2a5c63013166d3009a69120f&t=1777126077" alt="GUNAIS Featured Project">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/6887127937687.webp" alt="GUNAIS Featured Project">
     </div>
 </div>
 
@@ -461,10 +464,10 @@
 <div class="section6">
     <div class="item1 item_hover wow animated fadeInUp_">
         <!-- ※ 替换图片 -->
-        <img src="https://img.gunais.com/gunais.com/images/ZVztlA7rQETnE.webp?sign=1bc9bf830f587e81d06cf42e152a25f6&t=1777126077" alt="GUNAIS Design Detail">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/ZVztlA7rQETnE.webp" alt="GUNAIS Design Detail">
     </div>
     <div class="big_img item_hover wow animated fadeInUp_">
-        <video src="https://img.gunais.com/gunais.com/videos/SYSP2.mp4?sign=0bd2631f03662e0da15281b633cffb68&t=1777126077"
+        <video src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/videos/SYSP2.mp4"
             controls
             autoplay
             muted
@@ -480,7 +483,7 @@
     </div>
     <div class="item2 item_hover wow animated fadeInUp_">
         <!-- ※ 替换图片 -->
-        <img src="https://img.gunais.com/gunais.com/images/t0JmtmoDtOEtK.webp?sign=b696edd3479a6c1bdc9b9cb75b61d60f&t=1777126077" alt="GUNAIS Design Philosophy">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/t0JmtmoDtOEtK.webp" alt="GUNAIS Design Philosophy">
     </div>
 </div>
 
@@ -491,10 +494,10 @@
 <div class="section7">
     <div class="l">
         <!-- ※ 替换背景图 -->
-        <img src="https://img.gunais.com/gunais.com/images/689adb6ebae49.webp?sign=596b07a91e7ddece8e2777e261667ae4&t=1777126077" class="common_bg" alt="">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/689adb6ebae49.webp" class="common_bg" alt="">
         <div class="img wow animated fadeInUp_">
             <!-- ※ 替换图片 -->
-            <img src="https://img.gunais.com/gunais.com/images/689adb78ec26a.webp?sign=575e1dce33a01c74311b57745a2758ab&t=1777126077" alt="GUNAIS News">
+            <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/689adb78ec26a.webp" alt="GUNAIS News">
         </div>
         <div class="p1 f_36 wow animated fadeInUp_">
             EXCHANGE THOUGHTS<br>EXPAND WORLDS
@@ -502,7 +505,7 @@
     </div>
     <div class="img2 wow animated fadeInUp_">
         <!-- ※ 替换图片 -->
-        <img src="https://img.gunais.com/gunais.com/images/68835eeeecffe.webp?sign=cd7d1321d9e80bc351674b663df184e1&t=1777126077" alt="GUNAIS Events">
+        <img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/68835eeeecffe.webp" alt="GUNAIS Events">
     </div>
 </div>
 
@@ -561,7 +564,7 @@
                     <div class="qr-popup" id="wechatQrPopup">
                         <div class="qr-popup-content">
                             <div class="qr-title">Follow Us on WeChat</div>
-                            <div class="qr-code"><img src="https://img.gunais.com/gunais.com/images/wechat-qr.png?sign=74dd16b86809c56316a4e3027eee682f&t=1777126077" alt="WeChat QR Code"></div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
                             <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
                         </div>
                     </div>
@@ -634,60 +637,6 @@ document.addEventListener('DOMContentLoaded', function() {
             popup.style.display = 'none';
         }
     });
-    
-    // ===== 首屏视频自动播放 + 手动播放控制 =====
-    (function() {
-        const heroVideo = document.getElementById('heroVideo');
-        const playBtn = document.getElementById('videoPlayBtn');
-        
-        if (!heroVideo || !playBtn) return;
-        
-        // 标记是否已自动播放过
-        let autoPlayed = false;
-        
-        // 自动播放一次
-        function autoPlayOnce() {
-            heroVideo.muted = false; // 需要取消静音才能播放声音
-            heroVideo.play().then(() => {
-                autoPlayed = true;
-            }).catch(function(err) {
-                console.log('自动播放被阻止:', err);
-            });
-        }
-        
-        // 视频结束或暂停时显示按钮
-        heroVideo.addEventListener('ended', function() {
-            heroVideo.pause();
-            playBtn.classList.remove('hidden');
-        });
-        
-        heroVideo.addEventListener('pause', function() {
-            if (autoPlayed) {
-                playBtn.classList.remove('hidden');
-            }
-        });
-        
-        // 视频开始播放时隐藏按钮
-        heroVideo.addEventListener('playing', function() {
-            playBtn.classList.add('hidden');
-        });
-        
-        // 点击播放按钮
-        playBtn.addEventListener('click', function() {
-            heroVideo.muted = false;
-            heroVideo.play();
-        });
-        
-        // 页面加载后延迟自动播放（等待视频加载）
-        window.addEventListener('load', function() {
-            setTimeout(autoPlayOnce, 500);
-        });
-        
-        // 如果视频已经 cached，立即播放
-        if (heroVideo.readyState >= 3) {
-            autoPlayOnce();
-        }
-    })();
 });
 </script>
 

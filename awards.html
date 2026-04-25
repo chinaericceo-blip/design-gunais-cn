@@ -22,7 +22,7 @@
         body {
             background: #fff;
         }
-        /* 移除 .wow { visibility: hidden; } - 让内容正常显示 */
+        .wow { visibility: hidden; }
         
         /* Page Header */
         .page-header {
@@ -171,44 +171,6 @@
             .awards-list {
                 grid-template-columns: 1fr;
             }
-            .filter-list {
-                gap: 2vw;
-            }
-            .filter-list .item {
-                font-size: 3vw;
-                padding: 2.5vw 4vw;
-            }
-            .awards-grid {
-                padding: 4vw 5vw 8vw;
-            }
-            .award-item {
-                padding: 4vw;
-            }
-            .award-item .award-year {
-                font-size: 8vw;
-            }
-            .award-item .award-name {
-                font-size: 4vw;
-            }
-            .award-item .award-project {
-                font-size: 3vw;
-            }
-            .awards-summary {
-                padding: 8vw 5vw 12vw;
-            }
-            .awards-summary .title {
-                font-size: 5vw;
-            }
-            .awards-stats {
-                flex-direction: column;
-                gap: 6vw;
-            }
-            .stat-item .number {
-                font-size: 10vw;
-            }
-            .stat-item .label {
-                font-size: 3.5vw;
-            }
         }
     </style>
 </head>
@@ -224,7 +186,6 @@
         </a>
         <div class="navbar-toggle">
             <span class="line-top"></span>
-            <span class="line-middle"></span>
             <span class="line-bottom"></span>
         </div>
     </div>
@@ -244,7 +205,11 @@
             </div>
         </div>
         <div class="item">
-            <a href="portfolio.html" class="a1 ff3 f_36">PORTFOLIO</a>
+            <a class="a1 ff3 f_36 no-click">PORTFOLIO</a>
+            <div class="pList ff7 f_20">
+                <a href="portfolio.html">CURATED</a>
+                <a href="portfolio.html#all">ALL</a>
+            </div>
         </div>
         <div class="item">
             <a href="join.html" class="a1 f_36">CAREER</a>
@@ -296,7 +261,12 @@
     <div class="item">
         <div class="tb">
             <a class="no-click">PORTFOLIO</a>
-        <a href="portfolio.html">PORTFOLIO</a>
+            <img src="assets/icons/arrow.svg" alt="">
+        </div>
+        <div class="types_top">
+            <a href="portfolio.html">CURATED</a>
+            <a href="portfolio.html#all">ALL</a>
+        </div>
     </div>
     <div class="item">
         <a href="join.html">CAREER</a>
@@ -416,7 +386,7 @@
                     <div class="qr-popup" id="wechatQrPopup">
                         <div class="qr-popup-content">
                             <div class="qr-title">Follow Us on WeChat</div>
-                            <div class="qr-code"><img src="https://img.gunais.com/gunais.com/images/wechat-qr.png?sign=74dd16b86809c56316a4e3027eee682f&t=1777126077" alt="WeChat QR Code"></div>
+                            <div class="qr-code"><img src="https://gunais-cn2026-1328884096.cos.ap-shanghai.myqcloud.com/gunais.com/images/wechat-qr.png" alt="WeChat QR Code"></div>
                             <div class="qr-desc">Scan to connect<br>Design Excellence Awaits</div>
                         </div>
                     </div>
