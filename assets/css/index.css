@@ -680,12 +680,13 @@ img {
     .section1 .content .flex2 .dis { width: 100%; height: auto; gap: 22px; margin-top: 20px; }
     .section1 .content .flex2 .dis .img { height: 40px; }
 
-    .section2 { padding: 50px 5%; }
-    .section2 .t .cut { height: 180px; }
-    .section2 .t .title { line-height: unset; margin: 0 0 20px; font-size: 20px; }
-    .section2 .t .p1 { margin: 0 0 10px; font-size: 14px; }
-    .section2 .t .p2 { line-height: 1.5; width: 100%; font-size: 13px; }
-    .section2 .content { margin: 30px 0 0 0; }
+    .section2 { padding: 30px 5%; }
+    .section2 .t { flex-direction: column; }
+    .section2 .t .cut { height: auto; width: 100%; margin-bottom: 20px; }
+    .section2 .t .title { line-height: unset; margin: 0 0 15px; font-size: 18px; text-align: center; }
+    .section2 .t .p1 { margin: 0 0 8px; font-size: 12px; text-align: center; }
+    .section2 .t .p2 { line-height: 1.5; width: 100%; font-size: 12px; text-align: center; }
+    .section2 .content { margin: 20px 0 0 0; width: 100%; }
     .section2 .content .swiper1 { width: 100%; height: auto; }
     .section2 .content .swiper1 .swiper-slide .img { height: 280px; }
     .section2 .content .swiper1 .swiper-slide .img .scale { height: 100%; }
