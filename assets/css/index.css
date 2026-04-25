@@ -694,12 +694,13 @@ img {
     .section2 .content .swiper-pagination { margin: 30px auto 0; }
     .section2 .content2 { width: 100%; margin: 50px auto 0; font-size: 22px; }
 
-    .section3 { height: auto; flex-direction: column; }
+    .section3 { height: auto; flex-direction: column; align-items: stretch; }
+    .section3 .l { width: 100%; min-height: auto; }
     .section3 .img { width: 100%; height: 60vw; }
     .section3 .img img { height: 100%; }
-    .section3 .l .t1 { width: 100%; text-align: left; position: static; transform: none; padding: 5%; }
-    .section3 .l .t1 .p1 { margin: 0 0 15px; text-align: left; font-size: 36px; }
-    .section3 .l .t1 .p2 { text-align: left; font-size: 14px; }
+    .section3 .l .t1 { width: 100%; text-align: center; position: static; transform: none; padding: 8vw 5%; }
+    .section3 .l .t1 .p1 { margin: 0 0 4vw; text-align: center; font-size: 28px; }
+    .section3 .l .t1 .p2 { text-align: center; font-size: 12px; }
 
     .section4 { width: 94%; aspect-ratio: 3 / 2; margin: 6vw auto; }
     .section4 img { width: 100%; height: 100%; object-fit: cover; }
