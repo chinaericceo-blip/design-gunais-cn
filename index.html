@@ -181,11 +181,9 @@
      ※ 替换视频: 将视频文件放入 videos/ 文件夹后修改 src 路径
 ============================================================ -->
 <div class="banner">
-    <video id="video"
+    <video id="heroVideo"
         src="https://img.gunais.com/gunais.com/videos/lifestyle-video.mp4"
         preload="metadata"
-        autoplay
-        loop
         muted
         playsinline
         webkit-playsinline
@@ -195,6 +193,13 @@
         controlslist="nodownload"
         draggable="true">
     </video>
+    <!-- 左下角播放按钮 -->
+    <div class="video-play-btn" id="videoPlayBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="17" stroke="white" stroke-width="1.5" fill="rgba(0,0,0,0.3)"/>
+            <path d="M15 12L26 18L15 24V12Z" fill="white"/>
+        </svg>
+    </div>
     <div class="down">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="13" viewBox="0 0 24 13" fill="none">
             <path d="M23 0.999999L12 12L1 0.999998" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -626,6 +631,60 @@ document.addEventListener('DOMContentLoaded', function() {
             popup.style.display = 'none';
         }
     });
+    
+    // ===== 首屏视频自动播放 + 手动播放控制 =====
+    (function() {
+        const heroVideo = document.getElementById('heroVideo');
+        const playBtn = document.getElementById('videoPlayBtn');
+        
+        if (!heroVideo || !playBtn) return;
+        
+        // 标记是否已自动播放过
+        let autoPlayed = false;
+        
+        // 自动播放一次
+        function autoPlayOnce() {
+            heroVideo.muted = false; // 需要取消静音才能播放声音
+            heroVideo.play().then(() => {
+                autoPlayed = true;
+            }).catch(function(err) {
+                console.log('自动播放被阻止:', err);
+            });
+        }
+        
+        // 视频结束或暂停时显示按钮
+        heroVideo.addEventListener('ended', function() {
+            heroVideo.pause();
+            playBtn.classList.remove('hidden');
+        });
+        
+        heroVideo.addEventListener('pause', function() {
+            if (autoPlayed) {
+                playBtn.classList.remove('hidden');
+            }
+        });
+        
+        // 视频开始播放时隐藏按钮
+        heroVideo.addEventListener('playing', function() {
+            playBtn.classList.add('hidden');
+        });
+        
+        // 点击播放按钮
+        playBtn.addEventListener('click', function() {
+            heroVideo.muted = false;
+            heroVideo.play();
+        });
+        
+        // 页面加载后延迟自动播放（等待视频加载）
+        window.addEventListener('load', function() {
+            setTimeout(autoPlayOnce, 500);
+        });
+        
+        // 如果视频已经 cached，立即播放
+        if (heroVideo.readyState >= 3) {
+            autoPlayOnce();
+        }
+    })();
 });
 </script>
 

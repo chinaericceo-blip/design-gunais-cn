@@ -24,6 +24,52 @@
         }
         .wow { visibility: hidden; }
         
+        /* Tab Navigation */
+        .tab-nav {
+            padding: 0 5vw;
+            text-align: center;
+            margin-bottom: 3vw;
+        }
+        .tab-nav-list {
+            display: inline-flex;
+            justify-content: center;
+            gap: 4vw;
+            border-bottom: 1px solid rgba(39,39,39,0.15);
+            padding-bottom: 1vw;
+        }
+        .tab-nav-item {
+            font-family: var(--font-heading);
+            font-size: 1vw;
+            color: rgba(39,39,39,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0.5vw 1vw;
+            position: relative;
+        }
+        .tab-nav-item:hover {
+            color: rgba(39,39,39,0.7);
+        }
+        .tab-nav-item.active {
+            color: #272727;
+        }
+        .tab-nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.1vw;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #272727;
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        
         /* Hero Section */
         .hero-founder {
             padding: 12vw 5vw 6vw;
@@ -124,8 +170,116 @@
             line-height: 1.6;
         }
         
+        /* Filter Bar */
+        .filter-bar {
+            padding: 0 5vw 3vw;
+            text-align: center;
+        }
+        .filter-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3vw;
+            margin-bottom: 1.5vw;
+        }
+        .filter-list .item {
+            padding: 0.5vw 1.2vw;
+            font-family: var(--font-heading);
+            font-size: 0.75vw;
+            color: rgba(39,39,39,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-list .item:hover,
+        .filter-list .item.on {
+            color: #272727;
+        }
+        
+        /* Awards Grid */
+        .awards-grid {
+            padding: 2vw 5vw 4vw;
+        }
+        .awards-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .award-item {
+            background: #fff;
+            padding: 2vw;
+            text-align: center;
+        }
+        .award-item .award-year {
+            font-family: var(--font-heading);
+            font-size: 2vw;
+            color: rgba(39,39,39,0.15);
+            margin-bottom: 1vw;
+        }
+        .award-item .award-name {
+            font-family: var(--font-heading);
+            font-size: 1vw;
+            color: #272727;
+            letter-spacing: 0.05vw;
+            margin-bottom: 0.5vw;
+        }
+        .award-item .award-project {
+            font-family: var(--font-body);
+            font-size: 0.85vw;
+            color: rgba(39,39,39,0.6);
+        }
+        
+        /* Awards Summary */
+        .awards-summary {
+            padding: 4vw 5vw 6vw;
+            border-top: 1px solid rgba(39,39,39,0.1);
+            text-align: center;
+        }
+        .awards-summary .title {
+            font-family: var(--font-heading);
+            font-size: 1.5vw;
+            color: #272727;
+            margin-bottom: 3vw;
+            letter-spacing: 0.15vw;
+        }
+        .awards-stats {
+            display: flex;
+            justify-content: center;
+            gap: 8vw;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .number {
+            font-family: var(--font-heading);
+            font-size: 3vw;
+            color: #272727;
+        }
+        .stat-item .label {
+            font-family: var(--font-body);
+            font-size: 0.9vw;
+            color: rgba(39,39,39,0.5);
+            margin-top: 0.5vw;
+        }
+        
         /* Responsive */
         @media screen and (max-width: 1024px) {
+            .tab-nav {
+                margin-bottom: 5vw;
+            }
+            .tab-nav-list {
+                gap: 8vw;
+                padding-bottom: 2vw;
+            }
+            .tab-nav-item {
+                font-size: 3vw;
+                padding: 2vw;
+            }
+            .tab-nav-item.active::after {
+                bottom: -2.2vw;
+                height: 3px;
+            }
             .hero-founder {
                 padding: 22vw 5vw 10vw;
             }
@@ -154,10 +308,56 @@
             .team-item .position {
                 font-size: 2vw;
             }
+            /* Awards Tab Responsive */
+            .filter-bar {
+                padding: 0 5vw 5vw;
+            }
+            .filter-list {
+                gap: 2vw;
+            }
+            .filter-list .item {
+                font-size: 2.5vw;
+                padding: 2vw 4vw;
+            }
+            .awards-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4vw;
+            }
+            .award-item .award-year {
+                font-size: 5vw;
+            }
+            .award-item .award-name {
+                font-size: 2.5vw;
+            }
+            .award-item .award-project {
+                font-size: 2vw;
+            }
+            .awards-summary .title {
+                font-size: 4vw;
+            }
+            .stat-item .number {
+                font-size: 8vw;
+            }
+            .stat-item .label {
+                font-size: 2.5vw;
+            }
+            .awards-stats {
+                gap: 12vw;
+            }
         }
         @media screen and (max-width: 768px) {
             .team-list {
                 grid-template-columns: 1fr;
+            }
+            .awards-list {
+                grid-template-columns: 1fr;
+            }
+            .awards-summary {
+                padding: 8vw 5vw 12vw;
+            }
+            .awards-stats {
+                flex-direction: column;
+                gap: 6vw;
             }
         }
     </style>
@@ -278,38 +478,105 @@
     </div>
 </div>
 
-<!-- PAGE HEADER -->
-<div class="page-header wow animated fadeInUp_">
-    <div class="title">TEAM</div>
-    <div class="subtitle">MORE THAN DESIGNERS — WE'RE SPATIAL INNOVATORS FUELED BY COLLABORATIVE FIRE</div>
+<!-- TAB NAVIGATION -->
+<div class="tab-nav">
+    <div class="tab-nav-list">
+        <div class="tab-nav-item active" data-tab="team">TEAM</div>
+        <div class="tab-nav-item" data-tab="awards">AWARDS</div>
+    </div>
 </div>
 
-<!-- TEAM GRID -->
-<div class="team-grid">
-    <div class="team-list">
-        <div class="team-item wow animated fadeInUp_">
-            <div class="img">
-                <img src="https://img.gunais.com/gunais.com/images/SYANG.JPG" alt="Eric Y">
+<!-- TAB CONTENT: TEAM -->
+<div id="tab-team" class="tab-content active">
+    <!-- PAGE HEADER -->
+    <div class="page-header wow animated fadeInUp_">
+        <div class="title">TEAM</div>
+        <div class="subtitle">MORE THAN DESIGNERS — WE'RE SPATIAL INNOVATORS FUELED BY COLLABORATIVE FIRE</div>
+    </div>
+
+    <!-- TEAM GRID -->
+    <div class="team-grid">
+        <div class="team-list">
+            <div class="team-item wow animated fadeInUp_">
+                <div class="img">
+                    <img src="https://img.gunais.com/gunais.com/images/SYANG.JPG" alt="Eric Y">
+                </div>
+                <div class="name">Eric Y (邵阳)</div>
+                <div class="position">Founder & Principal Designer</div>
+                <div class="desc">ICDA Senior Interior Architect, Member of China Architecture Association. 15+ years in design industry, specializing in commercial space design and EPC management.</div>
             </div>
-            <div class="name">Eric Y (邵阳)</div>
-            <div class="position">Founder & Principal Designer</div>
-            <div class="desc">ICDA Senior Interior Architect, Member of China Architecture Association. 15+ years in design industry, specializing in commercial space design and EPC management.</div>
+            <div class="team-item wow animated fadeInUp_">
+                <div class="img">
+                    <img src="https://img.gunais.com/gunais.com/images/yxj.png" alt="Lisa (杨晓娟)">
+                </div>
+                <div class="name">Lisa (杨晓娟)</div>
+                <div class="position">Co-Founder</div>
+                <div class="desc">Co-Founder, responsible for operations management and strategic development. Driving sustainable growth through industry expertise and team building.</div>
+            </div>
+            <div class="team-item wow animated fadeInUp_">
+                <div class="img">
+                    <img src="https://img.gunais.com/gunais.com/images/4000.png" alt="Sim (刘泽)">
+                </div>
+                <div class="name">Sim (刘泽)</div>
+                <div class="position">Senior Designers</div>
+                <div class="desc">A technical team of senior designers, specializing in construction drawing detailing and project management, ensuring high-quality project delivery.</div>
+            </div>
         </div>
-        <div class="team-item wow animated fadeInUp_">
-            <div class="img">
-                <img src="https://img.gunais.com/gunais.com/images/yxj.png" alt="Lisa (杨晓娟)">
-            </div>
-            <div class="name">Lisa (杨晓娟)</div>
-            <div class="position">Co-Founder</div>
-            <div class="desc">Co-Founder, responsible for operations management and strategic development. Driving sustainable growth through industry expertise and team building.</div>
+    </div>
+</div>
+
+<!-- TAB CONTENT: AWARDS -->
+<div id="tab-awards" class="tab-content">
+    <!-- PAGE HEADER -->
+    <div class="page-header wow animated fadeInUp_">
+        <div class="title">AWARDS</div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar wow animated fadeInUp_">
+        <div class="filter-list">
+            <div class="item on" data-year="all">ALL</div>
+            <div class="item" data-year="2025">2025</div>
+            <div class="item" data-year="2024">2024</div>
+            <div class="item" data-year="2023">2023</div>
+            <div class="item" data-year="2022">2022</div>
         </div>
-        <div class="team-item wow animated fadeInUp_">
-            <div class="img">
-                <img src="https://img.gunais.com/gunais.com/images/4000.png" alt="Sim (刘泽)">
+    </div>
+
+    <!-- AWARDS GRID -->
+    <div class="awards-grid">
+        <div class="awards-list">
+            <div class="award-item wow animated fadeInUp_" data-year="2025">
+                <div class="award-year">2025</div>
+                <div class="award-name">Best Commercial Space Design Award</div>
             </div>
-            <div class="name">Sim (刘泽)</div>
-            <div class="position">Senior Designers</div>
-            <div class="desc">A technical team of senior designers, specializing in construction drawing detailing and project management, ensuring high-quality project delivery.</div>
+            <div class="award-item wow animated fadeInUp_" data-year="2025">
+                <div class="award-year">2025</div>
+                <div class="award-name">Interior Design Excellence Award</div>
+            </div>
+            <div class="award-item wow animated fadeInUp_" data-year="2025">
+                <div class="award-year">2025</div>
+                <div class="award-name">Retail Design Innovation Award</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AWARDS SUMMARY -->
+    <div class="awards-summary">
+        <div class="title">AWARDS SUMMARY</div>
+        <div class="awards-stats">
+            <div class="stat-item">
+                <div class="number">17+</div>
+                <div class="label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">100+</div>
+                <div class="label">Satisfied Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">10+</div>
+                <div class="label">Design Awards</div>
+            </div>
         </div>
     </div>
 </div>
@@ -427,6 +694,54 @@ document.addEventListener('DOMContentLoaded', function() {
         if (popup && popup.style.display === 'block') {
             popup.style.display = 'none';
         }
+    });
+    
+    // Tab Navigation
+    const tabItems = document.querySelectorAll('.tab-nav-item');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Update active tab
+            tabItems.forEach(function(ti) { ti.classList.remove('active'); });
+            this.classList.add('active');
+            
+            // Show corresponding content
+            tabContents.forEach(function(content) {
+                content.classList.remove('active');
+                if (content.id === 'tab-' + tabId) {
+                    content.classList.add('active');
+                }
+            });
+            
+            // Reinitialize animations for newly visible content
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+    });
+    
+    // Year filter functionality (for awards tab)
+    document.querySelectorAll('.filter-list .item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.filter-list .item').forEach(function(i) {
+                i.classList.remove('on');
+            });
+            this.classList.add('on');
+            
+            var year = this.getAttribute('data-year');
+            var items = document.querySelectorAll('#tab-awards .award-item');
+            
+            items.forEach(function(item) {
+                if (year === 'all' || item.getAttribute('data-year') === year) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
     });
 });
 </script>
